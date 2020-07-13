@@ -2,9 +2,8 @@ import json
 import pathlib
 from datetime import datetime
 
-import matplotlib.pyplot as plt
-
 import dufte
+from matplotlib import pyplot as plt
 
 plt.style.use(dufte.style)
 

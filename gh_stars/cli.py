@@ -3,7 +3,7 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 
 from .__about__ import __version__
 from .main import update_file
@@ -22,7 +22,7 @@ def main(argv=None):
             filenames[-1],
             timedelta(days=args.max_gap_days),
             repo=repo,
-            token=args.token,
+            token=args.token_file.readline().strip() if args.token_file else None,
             title="GitHub stars",
             verbose=True,
         )
@@ -53,10 +53,15 @@ def parse_args(argv):
         "--max-gap-days",
         required=True,
         type=int,
-        help="maximum number of days between two measurements",
+        help="Maximum number of days between two measurements",
     )
 
-    parser.add_argument("-t", "--token", type=str, help="GitHub token")
+    parser.add_argument(
+        "-t",
+        "--token-file",
+        type=argparse.FileType("r"),
+        help="File containing a GitHub token (can be - [stdin])",
+    )
 
     parser.add_argument(
         "-o",

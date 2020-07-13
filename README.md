@@ -49,11 +49,10 @@ A collection of the GitHub stars for of a number of topics.
 #### Databases
 ![github-databases](https://nschloe.github.io/gh-stars/github-databases.svg)
 
-#### JavaScript package managers
-![github-javascript-package-managers](https://nschloe.github.io/gh-stars/github-javascript-package-managers.svg)
-
-#### JavaScript testing frameworks
-![github-javascript-testing-frameworks](https://nschloe.github.io/gh-stars/github-javascript-testing-frameworks.svg)
+#### JavaScript
+| ![github-javascript-package-managers](https://nschloe.github.io/gh-stars/github-javascript-package-managers.svg) | ![github-javascript-testing-frameworks](https://nschloe.github.io/gh-stars/github-javascript-testing-frameworks.svg) |  ![github-popular-javascript](https://nschloe.github.io/gh-stars/github-popular-javascript.svg) |
+|:----:|:----:|:----:|
+| Package managers | Test frameworks | Popular packages |
 
 #### Text editors
 ![github-text-editors](https://nschloe.github.io/gh-stars/github-text-editors.svg)
@@ -61,8 +60,8 @@ A collection of the GitHub stars for of a number of topics.
 #### Operating systems
 ![github-operating-systems](https://nschloe.github.io/gh-stars/github-operating-systems.svg)
 
-#### Shells
-![github-shells](https://nschloe.github.io/gh-stars/github-shells.svg)
+#### Linux window managers
+![github-linux-window-managers](https://nschloe.github.io/gh-stars/github-linux-window-managers.svg)
 
 #### Code-hosting platforms
 ![github-code-hosting-platforms](https://nschloe.github.io/gh-stars/github-code-hosting-platforms.svg)
@@ -88,18 +87,20 @@ A collection of the GitHub stars for of a number of topics.
 #### Machine learning
 ![github-machine-learning](https://nschloe.github.io/gh-stars/github-machine-learning.svg)
 
-#### Scientific Python
-![github-scientific-python](https://nschloe.github.io/gh-stars/github-scientific-python.svg)
+#### Python
+| ![github-scientific-python](https://nschloe.github.io/gh-stars/github-scientific-python.svg) |  ![github-python-plotting](https://nschloe.github.io/gh-stars/github-python-plotting.svg) |  ![github-python-testing](https://nschloe.github.io/gh-stars/github-python-testing.svg) |
+|:----:|:----:|:----:|
+| Science | Plotting | Testing |
 
-#### Python plotting
-![github-python-plotting](https://nschloe.github.io/gh-stars/github-python-plotting.svg)
+#### Terminals
+| ![github-shells](https://nschloe.github.io/gh-stars/github-shells.svg) | ![github-linux-terminal-emulators](https://nschloe.github.io/gh-stars/github-linux-terminal-emulators.svg) | ![github-terminal-color-schemes](https://nschloe.github.io/gh-stars/github-terminal-color-schemes.svg) |
+|:----:|:----:|:----:|
+| Shells | Terminal emulators | Color schemes |
 
-#### Python testing
-![github-python-testing](https://nschloe.github.io/gh-stars/github-python-testing.svg)
-
-#### Popular JavaScript packages
-![github-popular-javascript](https://nschloe.github.io/gh-stars/github-popular-javascript.svg)
-
+#### vim
+| ![github-vim-plugin-managers](https://nschloe.github.io/gh-stars/github-vim-plugin-managers.svg) |  ![github-vim-plugins](https://nschloe.github.io/gh-stars/github-vim-plugins.svg) |
+|:----:|:----:|
+| Plug-in managers | Plug-ins |
 
 ### Related projects
 

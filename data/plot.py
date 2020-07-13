@@ -1,8 +1,9 @@
 import json
 import pathlib
 
-import gh_stars
 from matplotlib import pyplot as plt
+
+import gh_stars
 
 this_dir = pathlib.Path(__file__).resolve().parent
 with open(this_dir / "groups.json") as f:

@@ -25,7 +25,7 @@ def update_groups():
                 repo=repo,
                 license="CC BY",
                 creator="Nico Schlömer",
-                token=token
+                token=token,
             )
 
 

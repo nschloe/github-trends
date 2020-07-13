@@ -10,16 +10,16 @@
 gh-stars is a Python/command-line tool that collects the star count from [GitHub
 stars](http://github.com/) and produces nice plots from it.
 
-For example, with
-are produced with
+For example,
 ```
 gh-stars nschloe/meshio nschloe/quadpy -m 30 -t file-with-gh-token -o nschloe.svg
 ```
-the plots
+gives
 
 [github-nschloe](https://nschloe.github.io/gh-stars/nschloe.svg)
 
-GitHub and has a rate limit so you might want to get a token and provide it to gh-stars.
+(GitHub and has a rate limit so you might want to get a token and provide it to
+gh-stars.)
 
 Install with
 ```

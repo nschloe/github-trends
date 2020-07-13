@@ -5,12 +5,12 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-from ..__about__ import __version__
-from ..github import update_file
-from ..tools import plot
+from .__about__ import __version__
+from .main import update_file
+from .tools import plot
 
 
-def star_history(argv=None):
+def main(argv=None):
     args = parse_args(argv)
 
     # get the data
@@ -81,7 +81,7 @@ def parse_args(argv):
 
     version = "\n".join(
         [
-            "hotware {} [Python {}.{}.{}]".format(
+            "gh_stars {} [Python {}.{}.{}]".format(
                 __version__,
                 sys.version_info.major,
                 sys.version_info.minor,

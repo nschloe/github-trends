@@ -93,26 +93,33 @@ A collection of the GitHub stars for of a number of topics.
 #### Python
 * Science
   ![github-scientific-python](https://nschloe.github.io/gh-stars/github-scientific-python.svg)
+
 * Plotting
   ![github-python-plotting](https://nschloe.github.io/gh-stars/github-python-plotting.svg)
+
 * Testing
   ![github-python-testing](https://nschloe.github.io/gh-stars/github-python-testing.svg)
 
 #### Terminals
 * Shells
   ![github-shells](https://nschloe.github.io/gh-stars/github-shells.svg)
+
 * Terminal emulators
   ![github-linux-terminal-emulators](https://nschloe.github.io/gh-stars/github-linux-terminal-emulators.svg)
+
 * Color schemes
   ![github-terminal-color-schemes](https://nschloe.github.io/gh-stars/github-terminal-color-schemes.svg)
+
 * Monospaced fonts
   ![github-monospaced-fonts](https://nschloe.github.io/gh-stars/github-monospaced-fonts.svg)
 
 #### vim
 * vim variants
   ![github-vim-variants](https://nschloe.github.io/gh-stars/github-vim-variants.svg)
+
 * Plug-in managers
   ![github-vim-plugin-managers](https://nschloe.github.io/gh-stars/github-vim-plugin-managers.svg)
+
 * Plug-ins
   ![github-vim-plugins](https://nschloe.github.io/gh-stars/github-vim-plugins.svg)
 

@@ -50,9 +50,12 @@ A collection of the GitHub stars for of a number of topics.
 ![github-databases](https://nschloe.github.io/gh-stars/github-databases.svg)
 
 #### JavaScript
-| ![github-javascript-package-managers](https://nschloe.github.io/gh-stars/github-javascript-package-managers.svg) | ![github-javascript-testing-frameworks](https://nschloe.github.io/gh-stars/github-javascript-testing-frameworks.svg) |  ![github-popular-javascript](https://nschloe.github.io/gh-stars/github-popular-javascript.svg) |
-|:----:|:----:|:----:|
-| Package managers | Test frameworks | Popular packages |
+* Package managers
+  ![github-javascript-package-managers](https://nschloe.github.io/gh-stars/github-javascript-package-managers.svg)
+* Testing frameworks
+  ![github-javascript-testing-frameworks](https://nschloe.github.io/gh-stars/github-javascript-testing-frameworks.svg)
+* Popular packages
+  ![github-popular-javascript](https://nschloe.github.io/gh-stars/github-popular-javascript.svg)
 
 #### Text editors
 ![github-text-editors](https://nschloe.github.io/gh-stars/github-text-editors.svg)
@@ -88,19 +91,30 @@ A collection of the GitHub stars for of a number of topics.
 ![github-machine-learning](https://nschloe.github.io/gh-stars/github-machine-learning.svg)
 
 #### Python
-| ![github-scientific-python](https://nschloe.github.io/gh-stars/github-scientific-python.svg) |  ![github-python-plotting](https://nschloe.github.io/gh-stars/github-python-plotting.svg) |  ![github-python-testing](https://nschloe.github.io/gh-stars/github-python-testing.svg) |
-|:----:|:----:|:----:|
-| Science | Plotting | Testing |
+* Science
+  ![github-scientific-python](https://nschloe.github.io/gh-stars/github-scientific-python.svg)
+* Plotting
+  ![github-python-plotting](https://nschloe.github.io/gh-stars/github-python-plotting.svg)
+* Testing
+  ![github-python-testing](https://nschloe.github.io/gh-stars/github-python-testing.svg) |
 
 #### Terminals
-| ![github-shells](https://nschloe.github.io/gh-stars/github-shells.svg) | ![github-linux-terminal-emulators](https://nschloe.github.io/gh-stars/github-linux-terminal-emulators.svg) | ![github-terminal-color-schemes](https://nschloe.github.io/gh-stars/github-terminal-color-schemes.svg) |
-|:----:|:----:|:----:|
-| Shells | Terminal emulators | Color schemes |
+* Shells
+  ![github-shells](https://nschloe.github.io/gh-stars/github-shells.svg)
+* Terminal emulators
+  ![github-linux-terminal-emulators](https://nschloe.github.io/gh-stars/github-linux-terminal-emulators.svg)
+* Color schemes
+  ![github-terminal-color-schemes](https://nschloe.github.io/gh-stars/github-terminal-color-schemes.svg) |
+* Monospaced fonts
+  ![github-monospaced-fonts](https://nschloe.github.io/gh-stars/github-monospaced-fonts.svg) |
 
 #### vim
-| ![github-vim-plugin-managers](https://nschloe.github.io/gh-stars/github-vim-plugin-managers.svg) |  ![github-vim-plugins](https://nschloe.github.io/gh-stars/github-vim-plugins.svg) |
-|:----:|:----:|
-| Plug-in managers | Plug-ins |
+* vim variants
+  ![github-vim-variants](https://nschloe.github.io/gh-stars/github-vim-variants.svg)
+* Plug-in managers
+  ![github-vim-plugin-managers](https://nschloe.github.io/gh-stars/github-vim-plugin-managers.svg)
+* Plug-ins
+  ![github-vim-plugins](https://nschloe.github.io/gh-stars/github-vim-plugins.svg)
 
 ### Related projects
 

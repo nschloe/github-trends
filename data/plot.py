@@ -1,8 +1,9 @@
 import json
 import pathlib
 
-import gh_stars
 from matplotlib import pyplot as plt
+
+import gh_stars
 
 this_dir = pathlib.Path(__file__).resolve().parent
 with open(this_dir / "groups.json") as f:
@@ -17,7 +18,7 @@ for group_name, group in data.items():
     gh_stars.plot(filenames, cut=0.05)
     plt.title("Number of GitHub stars", fontsize=14)
 
-    # hotware.plot_per_day(filenames)
+    # gh_stars.plot_per_day(filenames)
     # plt.title("Daily number of GitHub stars", fontsize=14)
 
     plt.show()

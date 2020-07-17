@@ -96,7 +96,7 @@ A collection of the GitHub stars for of a number of topics.
 * Plotting
   ![github-python-plotting](https://nschloe.github.io/gh-stars/github-python-plotting.svg)
 * Testing
-  ![github-python-testing](https://nschloe.github.io/gh-stars/github-python-testing.svg) |
+  ![github-python-testing](https://nschloe.github.io/gh-stars/github-python-testing.svg)
 
 #### Terminals
 * Shells
@@ -104,9 +104,9 @@ A collection of the GitHub stars for of a number of topics.
 * Terminal emulators
   ![github-linux-terminal-emulators](https://nschloe.github.io/gh-stars/github-linux-terminal-emulators.svg)
 * Color schemes
-  ![github-terminal-color-schemes](https://nschloe.github.io/gh-stars/github-terminal-color-schemes.svg) |
+  ![github-terminal-color-schemes](https://nschloe.github.io/gh-stars/github-terminal-color-schemes.svg)
 * Monospaced fonts
-  ![github-monospaced-fonts](https://nschloe.github.io/gh-stars/github-monospaced-fonts.svg) |
+  ![github-monospaced-fonts](https://nschloe.github.io/gh-stars/github-monospaced-fonts.svg)
 
 #### vim
 * vim variants

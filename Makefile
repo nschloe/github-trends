@@ -12,7 +12,7 @@ upload:
 	twine upload dist/*
 
 update:
-	python3 data/update.py
+	python3 data/update.py -t ~/.github-access-token
 
 nschloe:
 	 gh-stars nschloe/tikzplotlib nschloe/meshio nschloe/perfplot nschloe/quadpy nschloe/betterbib nschloe/pygmsh nschloe/tuna nschloe/awesome-scientific-computing nschloe/optimesh nschloe/pygalmesh -m 30 -t ~/.github-access-token -o nschloe.svg

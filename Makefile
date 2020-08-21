@@ -11,6 +11,12 @@ upload:
 	python3 -m pep517.build --source --binary .
 	twine upload dist/*
 
+update:
+	python3 data/update.py
+
+nschloe:
+	 gh-stars nschloe/tikzplotlib nschloe/meshio nschloe/perfplot nschloe/quadpy nschloe/betterbib nschloe/pygmsh nschloe/tuna nschloe/awesome-scientific-computing nschloe/optimesh nschloe/pygalmesh -m 30 -t ~/.github-access-token -o nschloe.svg
+
 tag:
 	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "master" ]; then exit 1; fi
 	# Always create a github "release"; this automatically creates a Git tag, too.

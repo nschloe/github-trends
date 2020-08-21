@@ -15,6 +15,7 @@ def main(argv=None):
 
     # get the data
     filenames = []
+    token = args.token_file.readline().strip() if args.token_file else None
     for repo in args.repos:
         p = Path(".") if args.cache_dir is None else Path(args.cache_dir)
         filenames.append(p / ("github-" + repo.replace("/", "_") + ".json"))
@@ -22,7 +23,7 @@ def main(argv=None):
             filenames[-1],
             timedelta(days=args.max_gap_days),
             repo=repo,
-            token=args.token_file.readline().strip() if args.token_file else None,
+            token=token,
             title="GitHub stars",
             verbose=True,
         )

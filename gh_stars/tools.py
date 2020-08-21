@@ -18,7 +18,7 @@ def show(*args, **kwargs):
     plt.show()
 
 
-def plot(filenames, sort=True, cut=None):
+def plot(filenames, sort=True, cut=None, max_num=20):
     if sort:
         # sort them such that the largest at the last time step gets plotted first and
         # the colors are in a nice order
@@ -45,6 +45,18 @@ def plot(filenames, sort=True, cut=None):
             for filename, max_val in zip(filenames, max_vals)
             if max_val > cut * max_overall
         ]
+
+    if max_num is not None:
+        # show only max_num repos
+        val_last = []
+        for filename in filenames:
+            with open(filename) as f:
+                content = json.load(f)
+            vals = list(content["data"].values())
+            val_last.append(vals[-1])
+        idx = _argsort(val_last)[::-1]
+        idx = idx[:max_num]
+        filenames = [filenames[k] for k in idx]
 
     for filename in filenames:
         filename = pathlib.Path(filename)

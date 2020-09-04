@@ -3,9 +3,8 @@ VERSION=$(shell python3 -c "from configparser import ConfigParser; p = ConfigPar
 default:
 	@echo "\"make publish\"?"
 
-upload:
+upload: clean
 	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "master" ]; then exit 1; fi
-	rm -f dist/*
 	# python3 setup.py sdist bdist_wheel
 	# https://stackoverflow.com/a/58756491/353337
 	python3 -m pep517.build --source --binary .
@@ -15,7 +14,7 @@ update:
 	python3 data/update.py -t ~/.github-access-token
 
 nschloe:
-	 gh-stars nschloe/tikzplotlib nschloe/meshio nschloe/perfplot nschloe/quadpy nschloe/betterbib nschloe/pygmsh nschloe/tuna nschloe/awesome-scientific-computing nschloe/optimesh nschloe/pygalmesh -m 30 -t ~/.github-access-token -o nschloe.svg
+	 gh-stars nschloe/tikzplotlib nschloe/meshio nschloe/perfplot nschloe/quadpy nschloe/betterbib nschloe/pygmsh nschloe/tuna nschloe/awesome-scientific-computing nschloe/termplotlib nschloe/optimesh -m 30 -t ~/.github-access-token -o nschloe.svg
 
 tag:
 	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "master" ]; then exit 1; fi

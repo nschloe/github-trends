@@ -78,6 +78,9 @@ A collection of the GitHub stars for of a number of topics.
 #### Office suites
 ![github-office-suites](https://nschloe.github.io/gh-stars/github-office-suites.svg)
 
+#### Video editors
+![github-video-editors](https://nschloe.github.io/gh-stars/github-video-editors.svg)
+
 #### Computer algebra systems
 ![github-computer-algebra-systems](https://nschloe.github.io/gh-stars/github-computer-algebra-systems.svg)
 

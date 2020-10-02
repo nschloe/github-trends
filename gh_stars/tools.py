@@ -19,52 +19,34 @@ def show(*args, **kwargs):
 
 
 def plot(filenames, sort=True, cut=None, max_num=20):
+    # read data
+    data = []
+    for filename in filenames:
+        with open(filename) as f:
+            data.append(json.load(f))
+
     if sort:
         # sort them such that the largest at the last time step gets plotted first and
         # the colors are in a nice order
-        last_vals = []
-        for filename in filenames:
-            with open(filename) as f:
-                content = json.load(f)
-            last_vals.append(list(content["data"].values())[-1])
-
-        filenames = [filenames[i] for i in _argsort(last_vals)[::-1]]
+        last_vals = [list(content["data"].values())[-1] for content in data]
+        data = [data[i] for i in _argsort(last_vals)[::-1]]
 
     if cut is not None:
         # cut those files where the max data is less than cut*max_overall
-        max_vals = []
-        for filename in filenames:
-            with open(filename) as f:
-                content = json.load(f)
-            vals = list(content["data"].values())
-            max_vals.append(max(vals))
-
+        max_vals = [max(list(content["data"].values())) for content in data]
         max_overall = max(max_vals)
-        filenames = [
-            filename
-            for filename, max_val in zip(filenames, max_vals)
+        data = [
+            content
+            for content, max_val in zip(data, max_vals)
             if max_val > cut * max_overall
         ]
 
     if max_num is not None:
         # show only max_num repos
-        val_last = []
-        for filename in filenames:
-            with open(filename) as f:
-                content = json.load(f)
-            vals = list(content["data"].values())
-            val_last.append(vals[-1])
-        idx = _argsort(val_last)[::-1]
-        idx = idx[:max_num]
-        filenames = [filenames[k] for k in idx]
+        data = data[:max_num]
 
-    for filename in filenames:
-        filename = pathlib.Path(filename)
-        assert filename.is_file(), f"{filename} not found."
-
-        with open(filename) as f:
-            content = json.load(f)
-
+    n = len(data)
+    for k, content in enumerate(data):
         data = content["data"]
         data = {datetime.fromisoformat(key): value for key, value in data.items()}
 
@@ -72,7 +54,7 @@ def plot(filenames, sort=True, cut=None, max_num=20):
         values = list(data.values())
         label = content["name"]
 
-        plt.plot(times, values, label=label)
+        plt.plot(times, values, label=label, zorder=n - k)
 
     dufte.legend()
 

@@ -103,6 +103,9 @@ A collection of the GitHub stars for of a number of topics.
 * Testing
   ![github-python-testing](https://nschloe.github.io/gh-stars/github-python-testing.svg)
 
+* Static code analysis
+  ![github-python-static-analysis](https://nschloe.github.io/gh-stars/github-python-static-analysis.svg)
+
 #### Terminals
 * Shells
   ![github-shells](https://nschloe.github.io/gh-stars/github-shells.svg)

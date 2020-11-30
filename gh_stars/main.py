@@ -67,8 +67,6 @@ def update_file(
     with open(filename, "w") as f:
         json.dump(d, f, indent=2, ensure_ascii=False)
 
-    return
-
 
 def _bisect_until_second_time(url, headers, time0, page0, page1):
     # For some GitHub repos, _many_ stars are reported at the same time as the first.

@@ -37,10 +37,10 @@ A collection of the GitHub stars for of a number of topics.
 #### Version control systems
 ![github-vcs](https://nschloe.github.io/gh-stars/github-version-control-systems.svg)
 
-#### Front-End frameworks
+#### Frontend frameworks
 ![github-frontend-frameworks](https://nschloe.github.io/gh-stars/github-frontend-frameworks.svg)
 
-#### Back-End frameworks
+#### Backend frameworks
 ![github-backend-frameworks](https://nschloe.github.io/gh-stars/github-backend-frameworks.svg)
 
 #### Browsers

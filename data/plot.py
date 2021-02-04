@@ -3,7 +3,7 @@ import pathlib
 
 from matplotlib import pyplot as plt
 
-import gh_stars
+import stargraph
 
 this_dir = pathlib.Path(__file__).resolve().parent
 with open(this_dir / "groups.json") as f:
@@ -15,10 +15,10 @@ for group_name, group in data.items():
         this_dir / "data" / (repo.replace("/", "_") + ".json") for repo in group
     ]
 
-    gh_stars.plot(filenames, cut=0.05)
+    stargraph.plot(filenames, cut=0.05)
     plt.title("Number of GitHub stars", fontsize=14)
 
-    # gh_stars.plot_per_day(filenames)
+    # stargraph.plot_per_day(filenames)
     # plt.title("Daily number of GitHub stars", fontsize=14)
 
     # plt.show()

@@ -14,12 +14,12 @@ update:
 	python3 data/update.py -t ~/.github-access-token
 
 nschloe:
-	 gh-stars nschloe/tikzplotlib nschloe/meshio nschloe/perfplot nschloe/quadpy nschloe/betterbib nschloe/pygmsh nschloe/tuna nschloe/awesome-scientific-computing nschloe/termplotlib nschloe/optimesh matlab2tikz/matlab2tikz -m 30 -t ~/.github-access-token -o nschloe.svg
+	 stargraph nschloe/tikzplotlib nschloe/meshio nschloe/perfplot nschloe/quadpy nschloe/betterbib nschloe/pygmsh nschloe/tuna nschloe/awesome-scientific-computing nschloe/termplotlib nschloe/optimesh matlab2tikz/matlab2tikz -m 30 -t ~/.github-access-token -o nschloe.svg
 
 tag:
 	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "master" ]; then exit 1; fi
 	# Always create a github "release"; this automatically creates a Git tag, too.
-	curl -H "Authorization: token `cat $(HOME)/.github-access-token`" -d '{"tag_name": "v$(VERSION)"}' https://api.github.com/repos/nschloe/gh-stars/releases
+	curl -H "Authorization: token `cat $(HOME)/.github-access-token`" -d '{"tag_name": "v$(VERSION)"}' https://api.github.com/repos/nschloe/stargraph/releases
 
 publish: tag upload
 

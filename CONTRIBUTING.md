@@ -1,8 +1,8 @@
-# gh-stars contributing guidelines
+# stargraph contributing guidelines
 
-The gh-stars community appreciates your contributions via issues and
+The stargraph community appreciates your contributions via issues and
 pull requests.  Note that the [code of conduct](CODE_OF_CONDUCT.md)
-applies to all interactions with the gh-stars project, including
+applies to all interactions with the stargraph project, including
 issues and pull requests.
 
 When submitting pull requests, please follow the style guidelines of

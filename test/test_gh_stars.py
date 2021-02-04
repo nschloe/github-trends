@@ -1,5 +1,5 @@
-import gh_stars
+import stargraph
 
 
-def test_gh_stars():
-    print(gh_stars.__version__)
+def test_stargraph():
+    print(stargraph.__version__)

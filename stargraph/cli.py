@@ -87,7 +87,7 @@ def parse_args(argv):
 
     version = "\n".join(
         [
-            "gh_stars {} [Python {}.{}.{}]".format(
+            "stargraph {} [Python {}.{}.{}]".format(
                 __version__,
                 sys.version_info.major,
                 sys.version_info.minor,

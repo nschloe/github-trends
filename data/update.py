@@ -3,7 +3,7 @@ import json
 import pathlib
 from datetime import timedelta
 
-import gh_stars
+import stargraph
 
 
 def update_groups():
@@ -19,7 +19,7 @@ def update_groups():
         print()
         for repo in group:
             print(repo, "...")
-            gh_stars.update_file(
+            stargraph.update_file(
                 this_dir / "data" / "{}.json".format(repo.replace("/", "_")),
                 max_interval_length=timedelta(days=30),
                 repo=repo,

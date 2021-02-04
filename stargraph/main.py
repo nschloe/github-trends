@@ -57,7 +57,7 @@ def update_file(
         d["creator"] = creator
     if license is not None:
         d["license"] = license
-    d["data source"] = "GitHub API via gh_stars"
+    d["data source"] = "GitHub API via stargraph"
     now = datetime.utcnow()
     now = now.replace(microsecond=0)
     d["last updated"] = now.isoformat()

@@ -1,4 +1,4 @@
-# gh-stars Code of Conduct
+# stargraph Code of Conduct
 
 ## Our Pledge
 

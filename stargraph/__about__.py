@@ -5,6 +5,6 @@ except ImportError:
     import importlib_metadata as metadata
 
 try:
-    __version__ = metadata.version("gh_stars")
+    __version__ = metadata.version("stargraph")
 except Exception:
     __version__ = "unknown"

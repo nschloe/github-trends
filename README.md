@@ -1,22 +1,24 @@
 # stargraph
 
-[![gh-actions](https://img.shields.io/github/workflow/status/nschloe/stargraph/ci?style=flat-square)](https://github.com/nschloe/stargraph/actions?query=workflow%3Aci)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
-[![PyPI pyversions](https://img.shields.io/pypi/pyversions/stargraph.svg?style=flat-square)](https://pypi.org/pypi/stargraph/)
 [![PyPi Version](https://img.shields.io/pypi/v/stargraph.svg?style=flat-square)](https://pypi.org/project/stargraph)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/stargraph.svg?style=flat-square)](https://pypi.org/pypi/stargraph/)
 [![GitHub stars](https://img.shields.io/github/stars/nschloe/stargraph.svg?style=flat-square&logo=github&label=Stars&logoColor=white)](https://github.com/nschloe/stargraph)
 [![PyPi downloads](https://img.shields.io/pypi/dm/stargraph.svg?style=flat-square)](https://pypistats.org/packages/stargraph)
+
+[![gh-actions](https://img.shields.io/github/workflow/status/nschloe/stargraph/ci?style=flat-square)](https://github.com/nschloe/stargraph/actions?query=workflow%3Aci)
+[![codecov](https://img.shields.io/codecov/c/github/nschloe/stargraph.svg?style=flat-square)](https://codecov.io/gh/nschloe/stargraph)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
 stargraph is a Python/command-line tool that collects the star count from [GitHub
 stars](http://github.com/) and produces nice plots from it.
 
 For example,
 ```
-stargraph nschloe/meshio nschloe/quadpy -m 30 -t file-with-gh-token -o nschloe.svg
+stargraph nschloe/stargraph nschloe/quadpy -m 30 -t file-with-gh-token -o nschloe.svg
 ```
 gives
 
-[github-nschloe](https://nschloe.github.io/stargraph/nschloe.svg)
+![github-nschloe](https://nschloe.github.io/stargraph/nschloe.svg)
 
 (GitHub and has a rate limit so you might want to get a token and provide it to
 stargraph.)

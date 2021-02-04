@@ -129,6 +129,8 @@ A collection of the GitHub stars for of a number of topics.
 * Plug-ins
   ![github-vim-plugins](https://nschloe.github.io/gh-stars/github-vim-plugins.svg)
 
+#### Documentation
+![documentation](https://nschloe.github.io/gh-stars/github-doc-generators.svg)
 
 #### Proofreading tools
   ![github-proofreading](https://nschloe.github.io/gh-stars/github-proofreading-tools.svg)

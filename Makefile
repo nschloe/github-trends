@@ -14,7 +14,7 @@ update:
 	python3 data/update.py -t ~/.github-access-token
 
 nschloe:
-	 gh-stars nschloe/tikzplotlib nschloe/meshio nschloe/perfplot nschloe/quadpy nschloe/betterbib nschloe/pygmsh nschloe/tuna nschloe/awesome-scientific-computing nschloe/termplotlib nschloe/optimesh -m 30 -t ~/.github-access-token -o nschloe.svg
+	 gh-stars nschloe/tikzplotlib nschloe/meshio nschloe/perfplot nschloe/quadpy nschloe/betterbib nschloe/pygmsh nschloe/tuna nschloe/awesome-scientific-computing nschloe/termplotlib nschloe/optimesh matlab2tikz/matlab2tikz -m 30 -t ~/.github-access-token -o nschloe.svg
 
 tag:
 	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "master" ]; then exit 1; fi

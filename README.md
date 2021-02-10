@@ -33,108 +33,111 @@ and use the command-line tools as displayed. The `-h` switch gives more details.
 
 A collection of the GitHub stars for of a number of topics.
 
-#### Programming languages
+### Programming languages
 ![github-programming-languages](https://nschloe.github.io/stargraph/github-programming-languages.svg)
 
-#### Version control systems
+### Version control systems
 ![github-vcs](https://nschloe.github.io/stargraph/github-version-control-systems.svg)
 
-#### Frontend frameworks
+### Frontend frameworks
 ![github-frontend-frameworks](https://nschloe.github.io/stargraph/github-frontend-frameworks.svg)
 
-#### Backend frameworks
+### Backend frameworks
 ![github-backend-frameworks](https://nschloe.github.io/stargraph/github-backend-frameworks.svg)
 
-#### Browsers
+### Browsers
 ![github-browsers](https://nschloe.github.io/stargraph/github-browsers.svg)
 
-#### Databases
+### Databases
 ![github-databases](https://nschloe.github.io/stargraph/github-databases.svg)
 
-#### JavaScript
-* Package managers
+### JavaScript
+
+##### Package managers
   ![github-javascript-package-managers](https://nschloe.github.io/stargraph/github-javascript-package-managers.svg)
-* Testing frameworks
+
+##### Testing frameworks
   ![github-javascript-testing-frameworks](https://nschloe.github.io/stargraph/github-javascript-testing-frameworks.svg)
-* Popular packages
+
+##### Popular packages
   ![github-popular-javascript](https://nschloe.github.io/stargraph/github-popular-javascript.svg)
 
-#### Text editors
+### Text editors
 ![github-text-editors](https://nschloe.github.io/stargraph/github-text-editors.svg)
 
-#### Operating systems
+### Operating systems
 ![github-operating-systems](https://nschloe.github.io/stargraph/github-operating-systems.svg)
 
-#### Linux window managers
+### Linux window managers
 ![github-linux-window-managers](https://nschloe.github.io/stargraph/github-linux-window-managers.svg)
 
-#### Code-hosting platforms
+### Code-hosting platforms
 ![github-code-hosting-platforms](https://nschloe.github.io/stargraph/github-code-hosting-platforms.svg)
 
-#### Content-management systems
+### Content-management systems
 ![github-content-management-systems](https://nschloe.github.io/stargraph/github-content-management-systems.svg)
 
-#### Continuous-integration services
+### Continuous-integration services
 ![github-continuous-integration-services](https://nschloe.github.io/stargraph/github-continuous-integration-services.svg)
 
-#### Office suites
+### Office suites
 ![github-office-suites](https://nschloe.github.io/stargraph/github-office-suites.svg)
 
-#### Video editors
+### Video editors
 ![github-video-editors](https://nschloe.github.io/stargraph/github-video-editors.svg)
 
-#### Computer algebra systems
+### Computer algebra systems
 ![github-computer-algebra-systems](https://nschloe.github.io/stargraph/github-computer-algebra-systems.svg)
 
-#### DevOps
+### DevOps
 ![github-devops](https://nschloe.github.io/stargraph/github-devops.svg)
 
-#### Build systems
+### Build systems
 ![github-build-systems](https://nschloe.github.io/stargraph/github-build-systems.svg)
 
-#### Machine learning
+### Machine learning
 ![github-machine-learning](https://nschloe.github.io/stargraph/github-machine-learning.svg)
 
-#### Python
-* Science
+### Python
+##### Science
   ![github-scientific-python](https://nschloe.github.io/stargraph/github-scientific-python.svg)
 
-* Plotting
+##### Plotting
   ![github-python-plotting](https://nschloe.github.io/stargraph/github-python-plotting.svg)
 
-* Testing
+##### Testing
   ![github-python-testing](https://nschloe.github.io/stargraph/github-python-testing.svg)
 
-* Static code analysis
+##### Static code analysis
   ![github-python-static-analysis](https://nschloe.github.io/stargraph/github-python-static-analysis.svg)
 
-#### Terminals
-* Shells
+### Terminals
+##### Shells
   ![github-shells](https://nschloe.github.io/stargraph/github-shells.svg)
 
-* Terminal emulators
+##### Terminal emulators
   ![github-linux-terminal-emulators](https://nschloe.github.io/stargraph/github-linux-terminal-emulators.svg)
 
-* Color schemes
+##### Color schemes
   ![github-terminal-color-schemes](https://nschloe.github.io/stargraph/github-terminal-color-schemes.svg)
 
-* Monospaced fonts
+##### Monospaced fonts
   ![github-monospaced-fonts](https://nschloe.github.io/stargraph/github-monospaced-fonts.svg)
 
-#### vim
-* vim variants
+### vim
+##### vim variants
   ![github-vim-variants](https://nschloe.github.io/stargraph/github-vim-variants.svg)
 
-* Plug-in managers
+##### Plug-in managers
   ![github-vim-plugin-managers](https://nschloe.github.io/stargraph/github-vim-plugin-managers.svg)
 
-* Plug-ins
+##### Plug-ins
   ![github-vim-plugins](https://nschloe.github.io/stargraph/github-vim-plugins.svg)
 
-#### Documentation
+### Documentation
 ![documentation](https://nschloe.github.io/stargraph/github-doc-generators.svg)
 
-#### Proofreading tools
+### Proofreading tools
   ![github-proofreading](https://nschloe.github.io/stargraph/github-proofreading-tools.svg)
 
 ### Related projects

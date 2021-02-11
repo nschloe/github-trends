@@ -111,6 +111,9 @@ A collection of the GitHub stars for of a number of topics.
 ##### Static code analysis
   ![github-python-static-analysis](https://nschloe.github.io/stargraph/github-python-static-analysis.svg)
 
+##### Code formatters
+  ![github-python-code-formatters](https://nschloe.github.io/stargraph/github-python-code-formatters.svg)
+
 ### Terminals
 ##### Shells
   ![github-shells](https://nschloe.github.io/stargraph/github-shells.svg)

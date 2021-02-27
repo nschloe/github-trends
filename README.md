@@ -143,6 +143,9 @@ A collection of the GitHub stars for of a number of topics.
 ### Proofreading tools
   ![github-proofreading](https://nschloe.github.io/stargraph/github-proofreading-tools.svg)
 
+### Chess
+  ![chess](https://nschloe.github.io/stargraph/github-chess.svg)
+
 ### Related projects
 
  * [star-history](https://github.com/timqian/star-history)

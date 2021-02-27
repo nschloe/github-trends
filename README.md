@@ -112,7 +112,7 @@ A collection of the GitHub stars for of a number of topics.
   ![github-python-static-analysis](https://nschloe.github.io/stargraph/github-python-static-analysis.svg)
 
 ##### Code formatters
-  ![github-python-code-formatters](https://nschloe.github.io/stargraph/github-python-code-formatters.svg)
+  ![github-python-code-formatters](https://nschloe.github.io/stargraph/github-python-formatters.svg)
 
 ### Terminals
 ##### Shells
@@ -142,6 +142,9 @@ A collection of the GitHub stars for of a number of topics.
 
 ### Proofreading tools
   ![github-proofreading](https://nschloe.github.io/stargraph/github-proofreading-tools.svg)
+
+### Chess
+  ![chess](https://nschloe.github.io/stargraph/github-chess.svg)
 
 ### Related projects
 

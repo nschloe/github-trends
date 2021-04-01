@@ -1,7 +1,9 @@
+import base64
 import json
 import pathlib
 import urllib
 from datetime import datetime, timedelta, timezone
+from typing import Optional
 
 import requests
 
@@ -103,6 +105,56 @@ def _bisect_until_second_time(url, headers, time0, page0, page1):
     return page0
 
 
+def get_time(repo: str, k: int, token: Optional[str], api: str = "v4"):
+    assert k >= 1
+    headers = {}
+    if token is not None:
+        headers["Authorization"] = f"token {token}"
+
+    if api == "v3":
+        url = f"https://api.github.com/repos/{repo}/stargazers"
+        # Send those headers to get starred_at
+        headers["Accept"] = "application/vnd.github.v3.star+json"
+        r = requests.get(url, headers=headers, params={"page": k, "per_page": 1})
+        assert (
+            r.ok
+        ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
+        time_str = r.json()[0]["starred_at"]
+    else:
+        # graphql
+        assert api == "v4"
+        url = "https://api.github.com/graphql"
+        owner, name = repo.split("/")
+        # construct the cursor according to
+        # <https://stackoverflow.com/a/64140209/353337>
+        # TODO unfortunately, this doesn't always work; keep an eye on
+        # <https://github.community/t/get-stargazer-time-with-custom-cursor/171929>
+        cursor = base64.b64encode(f"cursor:{k}".encode()).decode()
+        query = f"""
+        {{
+          repository(owner: "{owner}", name: "{name}") {{
+            stargazers (last: 1, before: "{cursor}") {{
+              edges {{
+               starredAt
+              }}
+            }}
+          }}
+        }}
+        """
+        r = requests.post(url, headers=headers, json={"query": query})
+        assert (
+            r.ok
+        ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
+        time_str = r.json()["data"]["repository"]["stargazers"]["edges"][0]["starredAt"]
+
+    # https://stackoverflow.com/a/969324/353337
+    date_fmt = "%Y-%m-%dT%H:%M:%S%z"
+    time = datetime.strptime(time_str, date_fmt)
+    # remove timezone information
+    time = time.replace(tzinfo=None)
+    return time
+
+
 def update_github_star_data(
     data,
     repo,
@@ -124,7 +176,7 @@ def update_github_star_data(
         headers["Authorization"] = f"token {token}"
 
     # Get last page. It'd be lovely if we could always get all stargazers (plus times),
-    # but GitHubs limits is 40k right now (Apr 2020).
+    # but GitHub limits is 40k right now (Apr 2020).
     # <https://stackoverflow.com/q/61360705/353337>
     r = requests.get(url, headers=headers, params={"per_page": 1})
     assert (
@@ -139,24 +191,15 @@ def update_github_star_data(
         ][0]
     )
 
-    # https://stackoverflow.com/a/969324/353337
-    date_fmt = "%Y-%m-%dT%H:%M:%S%z"
-
     # get times of first and last paged star
-    r = requests.get(url, headers=headers, params={"page": 1, "per_page": 1})
-    assert (
-        r.ok
-    ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
-    time_first = datetime.strptime(r.json()[0]["starred_at"], date_fmt)
-    # remove timezone information
-    time_first = time_first.replace(tzinfo=None)
-    #
-    r = requests.get(url, headers=headers, params={"page": last_page, "per_page": 1})
-    assert (
-        r.ok
-    ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
-    time_last = datetime.strptime(r.json()[0]["starred_at"], date_fmt)
-    time_last = time_last.replace(tzinfo=None)
+    time_first = get_time(repo, 1, token, "v3")
+    time_last = get_time(repo, last_page, token, "v3")
+
+    # time_first = get_time(repo, 1, token, "v4")
+    # print(time_first)
+    # time_last = get_time(repo, last_page, token, "v4")
+    # print(time_last)
+    # exit(1)
 
     times = list(data.keys())
     stars = list(data.values())
@@ -213,17 +256,7 @@ def update_github_star_data(
         # call at midpoint of the interval k
         mp = (stars[k] + stars[k + 1]) // 2
 
-        r = requests.get(url, headers=headers, params={"page": mp, "per_page": 1})
-        assert (
-            r.ok
-        ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
-
-        if len(r.json()) == 0:
-            # number of stargazers decreased?!
-            break
-
-        time = datetime.strptime(r.json()[0]["starred_at"], date_fmt)
-        time = time.replace(tzinfo=None)
+        time = get_time(repo, mp, token, "v3")
 
         if verbose:
             print(f"{time}: {mp}")

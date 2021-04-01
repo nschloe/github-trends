@@ -191,9 +191,6 @@ def update_github_star_data(
         ][0]
     )
 
-    # https://stackoverflow.com/a/969324/353337
-    date_fmt = "%Y-%m-%dT%H:%M:%S%z"
-
     # get times of first and last paged star
     time_first = get_time(repo, 1, token, "v3")
     time_last = get_time(repo, last_page, token, "v3")

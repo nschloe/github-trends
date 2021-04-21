@@ -128,6 +128,7 @@ def get_time(repo: str, k: int, token: Optional[str], api: str = "v4"):
         # construct the cursor according to
         # <https://stackoverflow.com/a/64140209/353337>
         # TODO unfortunately, this doesn't always work; keep an eye on
+        # <https://github.com/isaacs/github/issues/1958>
         # <https://github.community/t/get-stargazer-time-with-custom-cursor/171929>
         cursor = base64.b64encode(f"cursor:{k}".encode()).decode()
         query = f"""

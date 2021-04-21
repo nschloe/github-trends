@@ -105,7 +105,7 @@ def _bisect_until_second_time(url, headers, time0, page0, page1):
     return page0
 
 
-def get_time(repo: str, k: int, token: Optional[str], api: str = "v4"):
+def get_time(repo: str, k: int, token: Optional[str], api: str = "v3"):
     assert k >= 1
     headers = {}
     if token is not None:
@@ -256,6 +256,8 @@ def update_github_star_data(
 
         # call at midpoint of the interval k
         mp = (stars[k] + stars[k + 1]) // 2
+
+        assert mp <= last_page, f"Requested page {mp}, only got {last_page} pages"
 
         time = get_time(repo, mp, token, "v3")
 

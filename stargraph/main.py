@@ -105,7 +105,7 @@ def _bisect_until_second_time(url, headers, time0, page0, page1):
     return page0
 
 
-def get_time(repo: str, k: int, token: Optional[str], api: str = "v4"):
+def get_time(repo: str, k: int, token: Optional[str], api: str = "v3"):
     assert k >= 1
     headers = {}
     if token is not None:
@@ -128,6 +128,7 @@ def get_time(repo: str, k: int, token: Optional[str], api: str = "v4"):
         # construct the cursor according to
         # <https://stackoverflow.com/a/64140209/353337>
         # TODO unfortunately, this doesn't always work; keep an eye on
+        # <https://github.com/isaacs/github/issues/1958>
         # <https://github.community/t/get-stargazer-time-with-custom-cursor/171929>
         cursor = base64.b64encode(f"cursor:{k}".encode()).decode()
         query = f"""
@@ -255,6 +256,8 @@ def update_github_star_data(
 
         # call at midpoint of the interval k
         mp = (stars[k] + stars[k + 1]) // 2
+
+        assert mp <= last_page, f"Requested page {mp}, only got {last_page} pages"
 
         time = get_time(repo, mp, token, "v3")
 

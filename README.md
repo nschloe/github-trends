@@ -151,6 +151,12 @@ A collection of the GitHub stars for of a number of topics.
 ### Chess
   ![chess](https://nschloe.github.io/stargraph/github-chess.svg)
 
+### Browser extensions
+  ![browser-extensions](https://nschloe.github.io/stargraph/github-browser-extensions.svg)
+
+### LaTeX
+  ![latex](https://nschloe.github.io/stargraph/github-latex.svg)
+
 ### Related projects
 
  * [star-history](https://github.com/timqian/star-history)

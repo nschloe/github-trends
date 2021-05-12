@@ -157,6 +157,9 @@ A collection of the GitHub stars for of a number of topics.
 ### LaTeX
   ![latex](https://nschloe.github.io/stargraph/github-latex.svg)
 
+### Music software
+  ![music-software](https://nschloe.github.io/stargraph/github-music-software.svg)
+
 ### Related projects
 
  * [star-history](https://github.com/timqian/star-history)

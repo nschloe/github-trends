@@ -176,6 +176,16 @@
     "psf/black",
     "PyCQA/isort"
   ],
+  "python-http-clients": [
+    "aio-libs/aiohttp",
+    "encode/httpx",
+    "httpie/httpie",
+    "httplib2/httplib2",
+    "psf/requests",
+    "spyoungtech/grequests",
+    "twisted/treq",
+    "urllib3/urllib3"
+  ],
   "popular-javascript": [
     "twbs/bootstrap",
     "d3/d3",

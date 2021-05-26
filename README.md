@@ -111,7 +111,7 @@ A collection of the GitHub stars for of a number of topics.
   ![github-python-testing](https://nschloe.github.io/stargraph/github-python-testing.svg)
 
 ##### HTTP clients
-  ![github-python-https-clients](https://nschloe.github.io/stargraph/github-python-https-clients.svg)
+  ![github-python-http-clients](https://nschloe.github.io/stargraph/github-python-http-clients.svg)
 
 ##### Static code analysis
   ![github-python-static-analysis](https://nschloe.github.io/stargraph/github-python-static-analysis.svg)

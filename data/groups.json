@@ -155,7 +155,8 @@
     "darrenburns/ward",
     "nose-devs/nose",
     "nose-devs/nose2",
-    "pytest-dev/pytest"
+    "pytest-dev/pytest",
+    "tox-dev/tox"
   ],
   "python-static-analysis": [
     "davidhalter/jedi",

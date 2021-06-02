@@ -153,11 +153,14 @@
   ],
   "python-testing": [
     "darrenburns/ward",
+    "HypothesisWorks/hypothesis",
     "nose-devs/nose",
     "nose-devs/nose2",
     "pytest-dev/pytest",
+    "robotframework/robotframework",
     "theacodes/nox",
-    "tox-dev/tox"
+    "tox-dev/tox",
+    "Yelp/Testify"
   ],
   "python-static-analysis": [
     "davidhalter/jedi",

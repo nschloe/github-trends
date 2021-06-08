@@ -75,10 +75,17 @@
     "jasmine/jasmine",
     "karma-runner/karma",
     "mochajs/mocha",
-    "puppeteer/puppeteer",
     "qunitjs/qunit",
     "sinonjs/sinon",
     "storybookjs/storybook"
+  ],
+  "javascript-browser-automation": [
+    "ariya/phantomjs",
+    "microsoft/playwright",
+    "puppeteer/puppeteer",
+    "segmentio/nightmare",
+    "SeleniumHQ/selenium",
+    "webdriverio/webdriverio"
   ],
   "content-management-systems": [
     "dnnsoftware/Dnn.Platform",

@@ -61,6 +61,9 @@ A collection of the GitHub stars for of a number of topics.
 ##### Testing frameworks
   ![github-javascript-testing-frameworks](https://nschloe.github.io/stargraph/github-javascript-testing-frameworks.svg)
 
+##### Browser automation
+  ![github-javascript-browser-automation](https://nschloe.github.io/stargraph/github-javascript-browser-automation.svg)
+
 ##### Popular packages
   ![github-popular-javascript](https://nschloe.github.io/stargraph/github-popular-javascript.svg)
 

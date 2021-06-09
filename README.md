@@ -64,6 +64,12 @@ A collection of the GitHub stars for of a number of topics.
 ##### Browser automation
   ![github-javascript-browser-automation](https://nschloe.github.io/stargraph/github-javascript-browser-automation.svg)
 
+##### Data visualization
+  ![github-javascript-data-visualization](https://nschloe.github.io/stargraph/github-javascript-data-visualization.svg)
+
+##### Math
+  ![github-javascript-math](https://nschloe.github.io/stargraph/github-javascript-math.svg)
+
 ##### Popular packages
   ![github-popular-javascript](https://nschloe.github.io/stargraph/github-popular-javascript.svg)
 

@@ -200,17 +200,34 @@
   ],
   "popular-javascript": [
     "twbs/bootstrap",
-    "d3/d3",
     "airbnb/javascript",
     "jquery/jquery",
     "facebook/react-native",
     "electron/electron",
     "axios/axios",
-    "mrdoob/three.js",
     "lodash/lodash",
     "moment/moment",
     "hakimel/reveal.js",
     "impress/impress.js"
+  ],
+  "javascript-data-visualization": [
+    "CesiumGS/cesium",
+    "chartjs/Chart.js",
+    "d3/d3",
+    "ElemeFE/v-charts",
+    "FormidableLabs/victory",
+    "frappe/charts",
+    "mermaid-js/mermaid",
+    "mrdoob/three.js",
+    "recharts/recharts",
+    "uber/react-vis"
+  ],
+  "javascript-math": [
+    "josdejong/mathjs",
+    "KaTeX/KaTeX",
+    "mathjax/MathJax",
+    "MikeMcl/bignumber.js",
+    "numbers/numbers.js"
   ],
   "operating-systems": [
     "klange/toaruos",

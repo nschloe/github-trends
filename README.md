@@ -172,6 +172,9 @@ A collection of the GitHub stars for of a number of topics.
 ### Music software
   ![music-software](https://nschloe.github.io/stargraph/github-music-software.svg)
 
+### Dependency managers
+  ![dependency-managers](https://nschloe.github.io/stargraph/github-dependency-managers.svg)
+
 ### Related projects
 
  * [star-history](https://github.com/timqian/star-history)

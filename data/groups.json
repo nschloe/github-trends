@@ -223,6 +223,7 @@
     "highcharts/highcharts",
     "frappe/charts",
     "mermaid-js/mermaid",
+    "metricsgraphics/metrics-graphics",
     "mrdoob/three.js",
     "plotly/plotly.js",
     "recharts/recharts",
@@ -449,5 +450,10 @@
     "PortAudio/portaudio",
     "sonic-pi-net/sonic-pi",
     "Tonejs/Tone.js"
+  ],
+  "dependency-managers": [
+    "dependabot/dependabot-core",
+    "renovatebot/renovate",
+    "greenkeeperio/greenkeeper"
   ]
 }

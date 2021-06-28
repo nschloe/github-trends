@@ -2,6 +2,7 @@ import argparse
 import json
 import pathlib
 from datetime import timedelta
+
 from rich.progress import Progress
 
 import stargraph
@@ -11,7 +12,6 @@ def _string_fixed_length(string, length):
     if len(string) > length:
         return string[:length]
     return string.rjust(length)
-
 
 
 def update_groups():

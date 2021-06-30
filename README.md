@@ -79,7 +79,7 @@ A collection of the GitHub stars for of a number of topics.
 ### Operating systems
 ![github-operating-systems](https://nschloe.github.io/stargraph/github-operating-systems.svg)
 
-### Linux window managers
+### Unix window managers
 ![github-linux-window-managers](https://nschloe.github.io/stargraph/github-linux-window-managers.svg)
 
 ### Code-hosting platforms

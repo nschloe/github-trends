@@ -30,11 +30,16 @@
   "text-editors": [
     "atom/atom",
     "emacs-mirror/emacs",
+    "helix-editor/helix",
+    "limetext/lime",
+    "mawww/kakoune",
     "microsoft/vscode",
     "neovim/neovim",
     "notepad-plus-plus/notepad-plus-plus",
+    "onivim/oni2",
     "vim/vim",
-    "VSCodium/vscodium"
+    "VSCodium/vscodium",
+    "zyedidia/micro"
   ],
   "shells": [
     "ash-shell/ash",

@@ -30,10 +30,11 @@
   "text-editors": [
     "atom/atom",
     "emacs-mirror/emacs",
+    "microsoft/vscode",
     "neovim/neovim",
     "notepad-plus-plus/notepad-plus-plus",
     "vim/vim",
-    "microsoft/vscode"
+    "VSCodium/vscodium"
   ],
   "shells": [
     "ash-shell/ash",
@@ -238,6 +239,7 @@
   ],
   "operating-systems": [
     "klange/toaruos",
+    "LineageOS/android",
     "microsoft/MS-DOS",
     "NodeOS/NodeOS",
     "reactos/reactos",

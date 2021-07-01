@@ -76,6 +76,9 @@ A collection of the GitHub stars for of a number of topics.
 ### Text editors
 ![github-text-editors](https://nschloe.github.io/stargraph/github-text-editors.svg)
 
+### VSCode extensions
+![github-vscode-extensions](https://nschloe.github.io/stargraph/github-vscode-extensions.svg)
+
 ### Operating systems
 ![github-operating-systems](https://nschloe.github.io/stargraph/github-operating-systems.svg)
 

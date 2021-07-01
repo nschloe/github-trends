@@ -462,5 +462,16 @@
     "dependabot/dependabot-core",
     "renovatebot/renovate",
     "greenkeeperio/greenkeeper"
+  ],
+  "vscode-extensions": [
+    "unbug/codelf",
+    "VSCodeVim/Vim",
+    "hediet/vscode-drawio",
+    "hediet/vscode-debug-visualizer",
+    "eamodio/vscode-gitlens",
+    "microsoft/vscode-cpptools",
+    "microsoft/codetour",
+    "Huachao/vscode-restclient",
+    "asvetliakov/vscode-neovim"
   ]
 }

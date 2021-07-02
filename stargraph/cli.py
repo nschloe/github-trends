@@ -3,6 +3,7 @@ import sys
 from datetime import timedelta
 from pathlib import Path
 
+import dufte
 from matplotlib import pyplot as plt
 
 from .__about__ import __version__
@@ -33,7 +34,7 @@ def main(argv=None):
 
     # plot it
     plot(filenames)
-    plt.title("Star count on GitHub")
+    dufte.ylabel("GitHub stars")
     if args.output:
         plt.savefig(args.output, transparent=True, bbox_inches="tight")
     else:

@@ -73,6 +73,9 @@ A collection of the GitHub stars for of a number of topics.
 ##### Popular packages
   ![github-popular-javascript](https://nschloe.github.io/stargraph/github-popular-javascript.svg)
 
+##### Node runners
+  ![github-node-runners](https://nschloe.github.io/stargraph/github-node-runners.svg)
+
 ### Text editors
 ![github-text-editors](https://nschloe.github.io/stargraph/github-text-editors.svg)
 

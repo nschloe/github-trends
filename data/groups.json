@@ -179,6 +179,7 @@
     "davidhalter/jedi",
     "facebook/pyre-check",
     "klen/pylama",
+    "microsoft/pylance-release",
     "microsoft/pyright",
     "PyCQA/pylint",
     "PyCQA/flake8",
@@ -241,6 +242,11 @@
     "mathjax/MathJax",
     "MikeMcl/bignumber.js",
     "numbers/numbers.js"
+  ],
+  "node-runners": [
+    "foreversd/forever",
+    "petruisfan/node-supervisor",
+    "remy/nodemon"
   ],
   "operating-systems": [
     "klange/toaruos",
@@ -365,6 +371,9 @@
     "dtinth/comic-mono-font",
     "googlefonts/Inconsolata",
     "IBM/plex",
+    "i-tu/Hasklig",
+    "JetBrains/JetBrainsMono",
+    "larsenwork/monoid",
     "microsoft/cascadia-code",
     "rubjo/victor-mono",
     "source-foundry/Hack",
@@ -456,12 +465,14 @@
     "PipeWire/pipewire",
     "PortAudio/portaudio",
     "sonic-pi-net/sonic-pi",
+    "temporary-audacity/audacity",
     "Tonejs/Tone.js"
   ],
   "dependency-managers": [
     "dependabot/dependabot-core",
+    "greenkeeperio/greenkeeper",
     "renovatebot/renovate",
-    "greenkeeperio/greenkeeper"
+    "snyk/snyk"
   ],
   "vscode-extensions": [
     "unbug/codelf",

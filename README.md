@@ -181,6 +181,9 @@ A collection of the GitHub stars for of a number of topics.
 ### Dependency managers
   ![dependency-managers](https://nschloe.github.io/stargraph/github-dependency-managers.svg)
 
+### Command-line helpers
+  ![command-line-helpers](https://nschloe.github.io/stargraph/github-command-line-helpers.svg)
+
 ### Related projects
 
  * [star-history](https://github.com/timqian/star-history)

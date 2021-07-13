@@ -484,5 +484,16 @@
     "microsoft/codetour",
     "Huachao/vscode-restclient",
     "asvetliakov/vscode-neovim"
+  ],
+  "command-line-helpers": [
+    "sharkdp/bat",
+    "chubin/cheat.sh",
+    "BurntSushi/ripgrep",
+    "junegunn/fzf",
+    "sharkdp/fd",
+    "chalk/chalk",
+    "ogham/exa",
+    "Peltoche/lsd",
+    "aristocratos/bpytop"
   ]
 }

@@ -485,15 +485,22 @@
     "Huachao/vscode-restclient",
     "asvetliakov/vscode-neovim"
   ],
-  "command-line-helpers": [
-    "sharkdp/bat",
-    "chubin/cheat.sh",
+  "command-line-tools": [
+    "aristocratos/bpytop",
     "BurntSushi/ripgrep",
-    "junegunn/fzf",
-    "sharkdp/fd",
     "chalk/chalk",
+    "chubin/cheat.sh",
+    "junegunn/fzf",
     "ogham/exa",
     "Peltoche/lsd",
-    "aristocratos/bpytop"
+    "sharkdp/bat",
+    "sharkdp/fd"
+  ],
+  "git-tools": [
+    "jesseduffield/lazygit",
+    "pre-commit/pre-commit",
+    "so-fancy/diff-so-fancy",
+    "tj/git-extras",
+    "typicode/husky"
   ]
 }

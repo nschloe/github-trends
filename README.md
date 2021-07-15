@@ -187,6 +187,9 @@ A collection of the GitHub stars for of a number of topics.
 ### Command-line tools
   ![command-line-tools](https://nschloe.github.io/stargraph/github-command-line-tools.svg)
 
+### Command-line system monitoring
+  ![command-line-system-monitoring](https://nschloe.github.io/stargraph/github-command-line-system-monitoring.svg)
+
 ### Git tools
   ![git-tools](https://nschloe.github.io/stargraph/github-git-tools.svg)
 

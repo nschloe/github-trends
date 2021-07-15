@@ -47,6 +47,9 @@ A collection of the GitHub stars for of a number of topics.
 ### Backend frameworks
 ![github-backend-frameworks](https://nschloe.github.io/stargraph/github-backend-frameworks.svg)
 
+### Universal-rendering frameworks
+![github-universal-rendering-frameworks](https://nschloe.github.io/stargraph/github-universal-rendering-frameworks.svg)
+
 ### Browsers
 ![github-browsers](https://nschloe.github.io/stargraph/github-browsers.svg)
 

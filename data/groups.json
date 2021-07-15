@@ -16,15 +16,22 @@
     "django/django",
     "expressjs/express",
     "feathersjs/feathers",
-    "gatsbyjs/gatsby",
     "koajs/koa",
     "laravel/laravel",
     "nodejs/node",
-    "nuxt/nuxt.js",
     "pallets/flask",
     "rails/rails",
     "spring-projects/spring-framework",
-    "symfony/symfony",
+    "symfony/symfony"
+  ],
+  "universal-rendering-frameworks": [
+    "angular/universal",
+    "gatsbyjs/gatsby",
+    "jaredpalmer/after.js",
+    "jaredpalmer/razzle",
+    "nuxt/nuxt.js",
+    "sveltejs/kit",
+    "sveltejs/sapper",
     "vercel/next.js"
   ],
   "text-editors": [

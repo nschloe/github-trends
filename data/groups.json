@@ -494,7 +494,6 @@
     "asvetliakov/vscode-neovim"
   ],
   "command-line-tools": [
-    "aristocratos/bpytop",
     "BurntSushi/ripgrep",
     "chalk/chalk",
     "chubin/cheat.sh",
@@ -503,6 +502,14 @@
     "Peltoche/lsd",
     "sharkdp/bat",
     "sharkdp/fd"
+  ],
+  "command-line-system-monitoring": [
+    "aristocratos/bpytop",
+    "ClementTsang/bottom",
+    "hishamhm/htop",
+    "htop-dev/htop",
+    "MrRio/vtop",
+    "nicolargo/glances"
   ],
   "git-tools": [
     "jesseduffield/lazygit",

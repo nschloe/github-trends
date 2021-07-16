@@ -264,7 +264,8 @@
     "reactos/reactos",
     "redox-os/redox",
     "SerenityOS/serenity",
-    "torvalds/linux"
+    "torvalds/linux",
+    "zzanehip/The-OldOS-Project"
   ],
   "programming-languages": [
     "apple/swift",
@@ -528,6 +529,7 @@
   ],
   "command-line-system-monitoring": [
     "aksakalli/gtop",
+    "aristocratos/bashtop",
     "aristocratos/bpytop",
     "cjbassi/gotop",
     "ClementTsang/bottom",

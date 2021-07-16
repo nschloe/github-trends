@@ -147,8 +147,12 @@ A collection of the GitHub stars for of a number of topics.
 ##### Color schemes
   ![github-terminal-color-schemes](https://nschloe.github.io/stargraph/github-terminal-color-schemes.svg)
 
+### Fonts
 ##### Monospaced fonts
   ![github-monospaced-fonts](https://nschloe.github.io/stargraph/github-monospaced-fonts.svg)
+
+##### Other fonts
+  ![github-other-fonts](https://nschloe.github.io/stargraph/github-other-fonts.svg)
 
 ### vim
 ##### vim variants
@@ -192,6 +196,9 @@ A collection of the GitHub stars for of a number of topics.
 
 ### Git tools
   ![git-tools](https://nschloe.github.io/stargraph/github-git-tools.svg)
+
+### Data formats
+  ![data-formats](https://nschloe.github.io/stargraph/github-data-formats.svg)
 
 ### Related projects
 

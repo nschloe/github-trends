@@ -374,7 +374,9 @@
   "monospaced-fonts": [
     "adobe-fonts/source-code-pro",
     "andreberg/Meslo-Font",
+    "arrowtype/recursive",
     "be5invis/Iosevka",
+    "belluzj/fantasque-sans",
     "dejavu-fonts/dejavu-fonts",
     "dtinth/comic-mono-font",
     "googlefonts/Inconsolata",
@@ -382,11 +384,31 @@
     "i-tu/Hasklig",
     "JetBrains/JetBrainsMono",
     "larsenwork/monoid",
+    "madmalik/mononoki",
     "microsoft/cascadia-code",
     "rubjo/victor-mono",
     "source-foundry/Hack",
     "supercomputra/SF-Mono-Font",
     "tonsky/FiraCode"
+  ],
+  "other-fonts": [
+    "aftertheflood/sparks",
+    "arrowtype/recursive",
+    "christiannaths/Redacted-Font",
+    "googlefonts/Inconsolata",
+    "googlefonts/noto-fonts",
+    "googlefonts/roboto",
+    "IBM/plex",
+    "impallari/Libre-Franklin",
+    "klepas/open-baskerville",
+    "larsenwork/Gidole",
+    "mozilla/zilla-slab",
+    "RedHatOfficial/Overpass",
+    "RoelN/SansBullshitSans",
+    "rsms/inter",
+    "sharanda/manrope",
+    "uswds/public-sans",
+    "weiweihuanghuang/Work-Sans"
   ],
   "proofreading-tools": [
     "amperser/proselint",
@@ -505,12 +527,15 @@
     "sharkdp/fd"
   ],
   "command-line-system-monitoring": [
+    "aksakalli/gtop",
     "aristocratos/bpytop",
+    "cjbassi/gotop",
     "ClementTsang/bottom",
     "hishamhm/htop",
     "htop-dev/htop",
     "MrRio/vtop",
-    "nicolargo/glances"
+    "nicolargo/glances",
+    "xxxserxxx/gotop"
   ],
   "git-tools": [
     "jesseduffield/lazygit",
@@ -518,5 +543,11 @@
     "so-fancy/diff-so-fancy",
     "tj/git-extras",
     "typicode/husky"
+  ],
+  "data-formats": [
+    "apache/parquet-format",
+    "HDFGroup/hdf5",
+    "wesm/feather",
+    "zarr-developers/zarr-python"
   ]
 }

@@ -16,14 +16,10 @@ stars](http://github.com/) and produces nice plots from it.
 
 For example,
 ```
-stargraph nschloe/stargraph nschloe/quadpy -m 30 -t file-with-gh-token -o nschloe.svg
+stargraph rust-lang/rust python/cpython -m 30 -t file-with-gh-token -o proglang.svg
 ```
-gives
-
-![github-nschloe](https://nschloe.github.io/stargraph/nschloe.svg)
-
-(GitHub and has a rate limit so you might want to get a token and provide it to
-stargraph.)
+gives [the plot below](#programming-languages). (GitHub and has a rate limit so you
+might want to get a token and provide it to stargraph.)
 
 Install with
 ```

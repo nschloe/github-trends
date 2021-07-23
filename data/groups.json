@@ -62,7 +62,9 @@
   ],
   "terminal-recorders": [
     "asciinema/asciinema",
+    "ConradIrwin/showterm",
     "faressoft/terminalizer",
+    "nbedos/termtosvg",
     "sassman/t-rec-rs"
   ],
   "databases": [
@@ -292,8 +294,9 @@
     "git/git",
     "apache/subversion"
   ],
-  "terminal-color-schemes": [
+  "color-schemes": [
     "altercation/solarized",
+    "arcticicestudio/nord",
     "ayu-theme/ayu-vim",
     "chriskempson/base16",
     "chriskempson/tomorrow-theme",

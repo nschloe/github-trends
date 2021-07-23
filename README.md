@@ -141,7 +141,7 @@ A collection of the GitHub stars for of a number of topics.
   ![github-linux-terminal-emulators](https://nschloe.github.io/stargraph/github-linux-terminal-emulators.svg)
 
 ##### Color schemes
-  ![github-terminal-color-schemes](https://nschloe.github.io/stargraph/github-terminal-color-schemes.svg)
+  ![github-color-schemes](https://nschloe.github.io/stargraph/github-color-schemes.svg)
 
 ### Fonts
 ##### Monospaced fonts

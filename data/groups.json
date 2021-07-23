@@ -60,6 +60,11 @@
     "tcsh-org/tcsh",
     "zsh-users/zsh"
   ],
+  "terminal-recorders": [
+    "asciinema/asciinema",
+    "faressoft/terminalizer",
+    "sassman/t-rec-rs"
+  ],
   "databases": [
     "elastic/elasticsearch",
     "MariaDB/server",
@@ -396,6 +401,7 @@
   ],
   "other-fonts": [
     "aftertheflood/sparks",
+    "alerque/libertinus",
     "arrowtype/recursive",
     "christiannaths/Redacted-Font",
     "googlefonts/Inconsolata",

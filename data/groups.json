@@ -283,12 +283,14 @@
     "JetBrains/kotlin",
     "JuliaLang/julia",
     "microsoft/TypeScript",
+    "nim-lang/Nim",
     "openjdk/jdk",
     "Perl/perl5",
     "php/php-src",
     "python/cpython",
     "ruby/ruby",
-    "rust-lang/rust"
+    "rust-lang/rust",
+    "vlang/v"
   ],
   "version-control-systems": [
     "git/git",
@@ -562,5 +564,10 @@
     "HDFGroup/hdf5",
     "wesm/feather",
     "zarr-developers/zarr-python"
+  ],
+  "compilers": [
+    "gcc-mirror/gcc",
+    "llvm/llvm-project",
+    "TinyCC/tinycc"
   ]
 }

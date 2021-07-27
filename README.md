@@ -196,6 +196,9 @@ A collection of the GitHub stars for of a number of topics.
 ### Data formats
   ![data-formats](https://nschloe.github.io/stargraph/github-data-formats.svg)
 
+### Compilers
+  ![compilers](https://nschloe.github.io/stargraph/github-compilers.svg)
+
 ### Related projects
 
  * [star-history](https://github.com/timqian/star-history)

@@ -1,7 +1,6 @@
 import argparse
 import json
 import pathlib
-from datetime import timedelta
 
 from rich.progress import Progress
 
@@ -31,9 +30,9 @@ def update_groups():
             progress.update(task2, total=len(repos), completed=0)
             for repo in repos:
                 progress.update(task2, description=_string_fixed_length(repo, 20))
+                nrepo = repo.replace("/", "_")
                 stargraph.update_file(
-                    this_dir / "data" / "{}.json".format(repo.replace("/", "_")),
-                    max_interval_length=timedelta(days=30),
+                    this_dir / "data" / f"{nrepo}.json",
                     repo=repo,
                     license="CC BY",
                     creator="Nico Schlömer",

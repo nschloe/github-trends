@@ -1,11 +1,10 @@
-import base64
 import json
 import pathlib
 from datetime import datetime
-from typing import Optional
 
 import numpy as np
 import requests
+from rich.progress import Progress
 
 
 def update_file(
@@ -59,110 +58,87 @@ def update_file(
         json.dump(d, f, indent=2, ensure_ascii=False)
 
 
-def get_time(repo: str, k: int, token: Optional[str], api: str = "v3"):
-    assert k >= 1
-    headers = {}
-    if token is not None:
-        headers["Authorization"] = f"token {token}"
-
-    if api == "v3":
-        url = f"https://api.github.com/repos/{repo}/stargazers"
-        # Send those headers to get starred_at
-        headers["Accept"] = "application/vnd.github.v3.star+json"
-        r = requests.get(url, headers=headers, params={"page": k, "per_page": 1})
-        assert (
-            r.ok
-        ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
-        time_str = r.json()[0]["starred_at"]
-    else:
-        # graphql
-        assert api == "v4"
-        url = "https://api.github.com/graphql"
-        owner, name = repo.split("/")
-        # construct the cursor according to
-        # <https://stackoverflow.com/a/64140209/353337>
-        # TODO unfortunately, this doesn't always work; keep an eye on
-        # <https://github.com/isaacs/github/issues/1958>
-        # <https://github.community/t/get-stargazer-time-with-custom-cursor/171929>
-        cursor = base64.b64encode(f"cursor:{k}".encode()).decode()
-        query = f"""
-        {{
-          repository(owner: "{owner}", name: "{name}") {{
-            stargazers (last: 1, before: "{cursor}") {{
-              edges {{
-               starredAt
-              }}
-            }}
-          }}
+def get_total_count(owner, name, token):
+    # find total
+    query = f"""
+    {{
+      repository(owner:"{owner}", name:"{name}") {{
+        stargazers {{
+          totalCount
         }}
-        """
-        r = requests.post(url, headers=headers, json={"query": query})
-        assert (
-            r.ok
-        ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
-        time_str = r.json()["data"]["repository"]["stargazers"]["edges"][0]["starredAt"]
-
-    # https://stackoverflow.com/a/969324/353337
-    date_fmt = "%Y-%m-%dT%H:%M:%S%z"
-    time = datetime.strptime(time_str, date_fmt)
-    # remove timezone information
-    time = time.replace(tzinfo=None)
-    return time
+      }}
+    }}
+    """
+    headers = {"Authorization": f"token {token}"}
+    res = requests.post(
+        "https://api.github.com/graphql", json={"query": query}, headers=headers
+    )
+    assert res.ok
+    return res.json()["data"]["repository"]["stargazers"]["totalCount"]
 
 
-def update_github_star_data(data, repo, token):
+def update_github_star_data(data, repo, token, verbose=False):
     last_known_datetime = None
-    # last_known_datetime = datetime(2008, 11, 1)
+    last_known_count = 0
 
     owner, name = repo.split("/")
+
+    total_count = get_total_count(owner, name, token)
+    num_api_calls = -(-(total_count - last_known_count) // 100)
+
     selection = "last: 100"
 
     now = datetime.utcnow().replace(microsecond=0)
 
-    datetimes = []
-    while True:
-        query = f"""
-        {{
-          repository(owner:"{owner}", name:"{name}") {{
-            stargazers({selection}) {{
-              pageInfo {{
-                hasPreviousPage
-                startCursor
-              }}
-              edges {{
-                starredAt
+    with Progress() as progress:
+        task = progress.add_task(repo, total=num_api_calls)
+
+        datetimes = []
+        while True:
+            query = f"""
+            {{
+              repository(owner:"{owner}", name:"{name}") {{
+                stargazers({selection}) {{
+                  pageInfo {{
+                    hasPreviousPage
+                    startCursor
+                  }}
+                  edges {{
+                    starredAt
+                  }}
+                }}
               }}
             }}
-          }}
-        }}
-        """
+            """
 
-        headers = {"Authorization": f"token {token}"}
+            headers = {"Authorization": f"token {token}"}
 
-        res = requests.post(
-            "https://api.github.com/graphql", json={"query": query}, headers=headers
-        )
-        assert res.ok
+            res = requests.post(
+                "https://api.github.com/graphql", json={"query": query}, headers=headers
+            )
+            assert res.ok
 
-        data = res.json()["data"]["repository"]["stargazers"]
-        batch = [
-            datetime.fromisoformat(item["starredAt"].replace("Z", ""))
-            for item in data["edges"]
-        ]
-        batch.reverse()
-        datetimes += batch
+            data = res.json()["data"]["repository"]["stargazers"]
+            batch = [
+                datetime.fromisoformat(item["starredAt"].replace("Z", ""))
+                for item in data["edges"]
+            ]
+            batch.reverse()
+            datetimes += batch
 
-        first_in_list = data["edges"][0]["starredAt"]
-        first_in_list = datetime.fromisoformat(first_in_list.replace("Z", ""))
+            first_in_list = data["edges"][0]["starredAt"]
+            first_in_list = datetime.fromisoformat(first_in_list.replace("Z", ""))
 
-        if not data["pageInfo"]["hasPreviousPage"]:
-            break
+            progress.advance(task)
 
-        cursor = data["pageInfo"]["startCursor"]
-        selection = f'last: 100, before: "{cursor}"'
+            if not data["pageInfo"]["hasPreviousPage"]:
+                break
 
-        if last_known_datetime is not None and first_in_list < last_known_datetime:
-            break
+            cursor = data["pageInfo"]["startCursor"]
+            selection = f'last: 100, before: "{cursor}"'
+
+            if last_known_datetime is not None and first_in_list < last_known_datetime:
+                break
 
     times = []
     counts = []

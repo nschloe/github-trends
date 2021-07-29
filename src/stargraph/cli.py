@@ -1,7 +1,6 @@
 import argparse
-import sys
-from datetime import timedelta
 from pathlib import Path
+from sys import version_info
 
 import dufte
 from matplotlib import pyplot as plt
@@ -22,7 +21,6 @@ def main(argv=None):
         filenames.append(p / ("github-" + repo.replace("/", "_") + ".json"))
         update_file(
             filenames[-1],
-            timedelta(days=args.max_gap_days),
             repo=repo,
             token=token,
             title="GitHub stars",
@@ -51,17 +49,10 @@ def parse_args(argv):
     parser.add_argument("repos", nargs="+", type=str, help="repositories to analyze")
 
     parser.add_argument(
-        "-m",
-        "--max-gap-days",
-        required=True,
-        type=int,
-        help="Maximum number of days between two measurements",
-    )
-
-    parser.add_argument(
         "-t",
         "--token-file",
         type=argparse.FileType("r"),
+        required=True,
         help="File containing a GitHub token (can be - [stdin])",
     )
 
@@ -86,18 +77,13 @@ def parse_args(argv):
         help="Which font to use (optional, default: default matplotlib font)",
     )
 
+    python_version = f"{version_info.major}.{version_info.minor}.{version_info.micro}"
     version = "\n".join(
         [
-            "stargraph {} [Python {}.{}.{}]".format(
-                __version__,
-                sys.version_info.major,
-                sys.version_info.minor,
-                sys.version_info.micro,
-            ),
-            "Copyright (C) 2020 Nico Schlömer <nico.schloemer@gmail.com>",
+            f"stargraph {__version__} [Python {python_version}]",
+            "Copyright (C) 2020-2021 Nico Schlömer <nico.schloemer@gmail.com>",
         ]
     )
-
     parser.add_argument(
         "--version",
         "-v",

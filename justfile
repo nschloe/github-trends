@@ -34,7 +34,7 @@ nschloe:
 		nschloe/dmsh \
 		nschloe/orthopy \
 		nschloe/dufte \
-		-m 30 -t ~/.github-access-token -o nschloe.svg
+		-t ~/.github-access-token -o nschloe.svg
 
 tag:
 	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "main" ]; then exit 1; fi

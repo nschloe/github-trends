@@ -1,16 +1,15 @@
 import base64
 import json
 import pathlib
-import urllib
-from datetime import datetime, timedelta, timezone
+from datetime import datetime
 from typing import Optional
 
+import numpy as np
 import requests
 
 
 def update_file(
     filename,
-    max_interval_length,
     repo=None,
     token=None,
     title="GitHub stars",
@@ -32,10 +31,6 @@ def update_file(
         if license is not None:
             assert content["license"] == license
 
-        now = datetime.utcnow()
-        if now - datetime.fromisoformat(content["last updated"]) < max_interval_length:
-            return
-
         data = content["data"]
     else:
         data = {}
@@ -43,13 +38,7 @@ def update_file(
 
     data = {datetime.fromisoformat(key): value for key, value in data.items()}
 
-    data = update_github_star_data(
-        data,
-        repo,
-        max_interval_length=max_interval_length,
-        token=token,
-        verbose=verbose,
-    )
+    data = update_github_star_data(data, repo, token, verbose=verbose)
 
     d = {}
     if title is not None:
@@ -68,41 +57,6 @@ def update_file(
 
     with open(filename, "w") as f:
         json.dump(d, f, indent=2, ensure_ascii=False)
-
-
-def _bisect_until_second_time(url, headers, time0, page0, page1):
-    # For some GitHub repos, _many_ stars are reported at the same time as the first.
-    # Find the first occurence of a different time stamp.
-    date_fmt = "%Y-%m-%dT%H:%M:%S%z"
-
-    # first check the second page, after that: proper bisection
-    page = page0 + 1
-    r = requests.get(url, headers=headers, params={"page": page, "per_page": 1})
-    assert (
-        r.ok
-    ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
-    time = datetime.strptime(r.json()[0]["starred_at"], date_fmt)
-    if time == time0:
-        page0 = page
-    else:
-        page1 = page
-
-    # bisection
-    while page0 + 1 < page1:
-        page = (page0 + page1) // 2
-        r = requests.get(url, headers=headers, params={"page": page, "per_page": 1})
-        assert (
-            r.ok
-        ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
-        time = datetime.strptime(r.json()[0]["starred_at"], date_fmt)
-
-        if time == time0:
-            page0 = page
-        else:
-            page1 = page
-
-    # return the last page with the time same time as the first
-    return page0
 
 
 def get_time(repo: str, k: int, token: Optional[str], api: str = "v3"):
@@ -156,144 +110,93 @@ def get_time(repo: str, k: int, token: Optional[str], api: str = "v3"):
     return time
 
 
-def update_github_star_data(
-    data,
-    repo,
-    max_interval_length=timedelta(0),
-    max_num_data_points=None,
-    token=None,
-    verbose=False,
-):
-    # argument validation
-    assert max_interval_length > timedelta(0) or max_num_data_points is not None
-    if max_num_data_points is not None:
-        assert max_num_data_points > 1
+def update_github_star_data(data, repo, token):
+    last_known_datetime = None
+    # last_known_datetime = datetime(2008, 11, 1)
 
-    url = f"https://api.github.com/repos/{repo}/stargazers"
-    # Send those headers to get starred_at
-    headers = {"Accept": "application/vnd.github.v3.star+json"}
+    owner, name = repo.split("/")
+    selection = "last: 100"
 
-    if token is not None:
-        headers["Authorization"] = f"token {token}"
+    now = datetime.utcnow().replace(microsecond=0)
 
-    # Get last page. It'd be lovely if we could always get all stargazers (plus times),
-    # but GitHub limits is 40k right now (Apr 2020).
-    # <https://stackoverflow.com/q/61360705/353337>
-    r = requests.get(url, headers=headers, params={"per_page": 1})
-    assert (
-        r.ok
-    ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
-    #
-    last_page_url, info = r.headers["link"].split(",")[1].split(";")
-    assert info.strip() == 'rel="last"'
-    last_page = int(
-        urllib.parse.parse_qs(urllib.parse.urlsplit(last_page_url.strip()[1:-1]).query)[
-            "page"
-        ][0]
-    )
-
-    # get times of first and last paged star
-    time_first = get_time(repo, 1, token, "v3")
-    time_last = get_time(repo, last_page, token, "v3")
-
-    # time_first = get_time(repo, 1, token, "v4")
-    # print(time_first)
-    # time_last = get_time(repo, last_page, token, "v4")
-    # print(time_last)
-    # exit(1)
-
-    times = list(data.keys())
-    stars = list(data.values())
-
-    # remove timezone info (it's UTC anyway)
-    times = [t.replace(tzinfo=None) for t in times]
-
-    if len(data) == 0:
-        times = [time_first, time_last]
-        stars = [1, last_page]
-        extra_times = []
-        extra_stars = []
-    else:
-        assert time_first == times[0], f"{time_first} != {times[0]}"
-
-        # break off the extra data
-        k1 = 0
-        for time in times:
-            if time_last < time:
-                break
-            k1 += 1
-
-        # not always true
-        # assert time_last == times[k1 - 1], f"{time_last} != {times[k1 - 1]}"
-        extra_times = times[k1:]
-        extra_stars = stars[k1:]
-        times = times[:k1]
-        stars = stars[:k1]
-
-        # append new data if necessary
-        if time_last > times[-1]:
-            times.append(time_last)
-            stars.append(last_page)
-
-    num_data_points = len(times) + len(extra_times)
+    datetimes = []
     while True:
-        # find longest interval with stars more than one apart
-        max_length = timedelta(0)
-        k = -1
-        for i in range(len(times) - 1):
-            if abs(stars[i + 1] - stars[i]) < 2:
-                continue
-            length = times[i + 1] - times[i]
-            if length > max_length:
-                k = i
-                max_length = length
-        assert k >= 0
+        query = f"""
+        {{
+          repository(owner:"{owner}", name:"{name}") {{
+            stargazers({selection}) {{
+              pageInfo {{
+                hasPreviousPage
+                startCursor
+              }}
+              edges {{
+                starredAt
+              }}
+            }}
+          }}
+        }}
+        """
 
-        if max_length < max_interval_length:
+        headers = {"Authorization": f"token {token}"}
+
+        res = requests.post(
+            "https://api.github.com/graphql", json={"query": query}, headers=headers
+        )
+        assert res.ok
+
+        data = res.json()["data"]["repository"]["stargazers"]
+        batch = [
+            datetime.fromisoformat(item["starredAt"].replace("Z", ""))
+            for item in data["edges"]
+        ]
+        batch.reverse()
+        datetimes += batch
+
+        first_in_list = data["edges"][0]["starredAt"]
+        first_in_list = datetime.fromisoformat(first_in_list.replace("Z", ""))
+
+        if not data["pageInfo"]["hasPreviousPage"]:
             break
-        if max_num_data_points is not None and num_data_points >= max_num_data_points:
+
+        cursor = data["pageInfo"]["startCursor"]
+        selection = f'last: 100, before: "{cursor}"'
+
+        if last_known_datetime is not None and first_in_list < last_known_datetime:
             break
 
-        # call at midpoint of the interval k
-        mp = (stars[k] + stars[k + 1]) // 2
+    times = []
+    counts = []
 
-        assert mp <= last_page, f"Requested page {mp}, only got {last_page} pages"
+    c = datetime(datetimes[0].year, datetimes[0].month, 1)
+    while len(datetimes) > 0:
+        # fast-backward to next beginning of the month
+        try:
+            k = next(i for i, dt in enumerate(datetimes) if dt < c)
+        except StopIteration:
+            times.append(c)
+            counts.append(len(datetimes))
+            break
 
-        time = get_time(repo, mp, token, "v3")
+        times.append(c)
+        counts.append(k)
 
-        if verbose:
-            print(f"{time}: {mp}")
+        c = decrement_month(c)
+        if last_known_datetime is not None and c <= last_known_datetime:
+            break
+        datetimes = datetimes[k:]
 
-        # sort this into the arrays
-        times.insert(k + 1, time)
-        stars.insert(k + 1, mp)
+    times.reverse()
+    counts.reverse()
 
-        num_data_points += 1
+    times = times + [now]
+    counts = [0] + counts
 
-    # For some GitHub repos, _many_ stars are reported at the same time as the first.
-    # Find the first occurence of a different time stamp.
-    k1 = 0
-    while times[k1] == times[0]:
-        k1 += 1
-    stars[0] = _bisect_until_second_time(url, headers, times[0], 1, stars[k1])
+    counts = [int(item) for item in np.cumsum(counts)]
 
-    # re-append extra data
-    times += extra_times
-    stars += extra_stars
+    return dict(zip(times, counts))
 
-    # get number of stars right now
-    now = datetime.now(timezone.utc).replace(tzinfo=None)
-    if now - times[-1] > max_interval_length:
-        r = requests.get(f"https://api.github.com/repos/{repo}", headers=headers)
-        assert (
-            r.ok
-        ), f"{r.url}, status code {r.status_code}, {r.reason}, {r.json()['message']}"
-        now_num_stars = r.json()["stargazers_count"]
-        now = now.replace(microsecond=0)
-        times.append(now)
-        stars.append(now_num_stars)
 
-    # remove timezone info (it's UTC anyway)
-    times = [t.replace(tzinfo=None) for t in times]
-
-    return dict(zip(times, stars))
+def decrement_month(dt):
+    month = (dt.month - 2) % 12 + 1
+    year = dt.year - month // 12
+    return datetime(year, month, 1)

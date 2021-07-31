@@ -84,6 +84,11 @@ def update_github_star_data(data, repo, token, progress_task):
     old_times = list(data.keys())
     old_counts = list(data.values())
 
+    now = datetime.utcnow().replace(microsecond=0)
+
+    if len(old_times) > 0 and old_times[-1] == datetime(now.year, now.month, 1):
+        return data
+
     owner, name = repo.split("/")
 
     progress, task = progress_task
@@ -95,8 +100,6 @@ def update_github_star_data(data, repo, token, progress_task):
         progress.update(task, description=repo, total=num, completed=0)
 
     selection = "last: 100"
-
-    now = datetime.utcnow().replace(microsecond=0)
 
     datetimes = []
     while True:

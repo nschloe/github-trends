@@ -13,7 +13,7 @@ def update_file(
     title="GitHub stars",
     creator=None,
     license=None,
-    progress_task=None,
+    progress_task=(None, None),
 ):
     filename = pathlib.Path(filename)
     if filename.is_file():
@@ -87,7 +87,8 @@ def update_github_star_data(data, repo, token, progress_task):
     total_count = get_num_remaining_api_calls(owner, name, token)
     last_counts = 0 if len(old_counts) == 0 else old_counts[-1]
     num = -(-(total_count - last_counts) // 100)
-    progress.update(task, description=repo, total=num, completed=0)
+    if progress is not None:
+        progress.update(task, description=repo, total=num, completed=0)
 
     selection = "last: 100"
 
@@ -129,7 +130,8 @@ def update_github_star_data(data, repo, token, progress_task):
         first_in_list = data["edges"][0]["starredAt"]
         first_in_list = datetime.fromisoformat(first_in_list.replace("Z", ""))
 
-        progress.advance(task)
+        if progress is not None:
+            progress.advance(task)
 
         if not data["pageInfo"]["hasPreviousPage"]:
             break
@@ -143,14 +145,15 @@ def update_github_star_data(data, repo, token, progress_task):
     new_times = []
     new_counts = []
 
-    c = datetime(datetimes[0].year, datetimes[0].month, 1)
+    c = now
+    first_day_of_the_month = datetime(datetimes[0].year, datetimes[0].month, 1)
     while True:
         if len(old_times) > 0 and c <= old_times[-1]:
             break
 
         # fast-backward to next beginning of the month
         try:
-            k = next(i for i, dt in enumerate(datetimes) if dt < c)
+            k = next(i for i, dt in enumerate(datetimes) if dt < first_day_of_the_month)
         except StopIteration:
             new_times.append(c)
             new_counts.append(len(datetimes))
@@ -159,25 +162,26 @@ def update_github_star_data(data, repo, token, progress_task):
         new_times.append(c)
         new_counts.append(k)
 
-        c = decrement_month(c)
+        c = first_day_of_the_month
+        first_day_of_the_month = decrement_month(first_day_of_the_month)
         datetimes = datetimes[k:]
 
     new_times.reverse()
     new_counts.reverse()
 
-    if len(old_times) > 0 and not (
-        old_times[-1].day == 1
-        and old_times[-1].hour == 0
-        and old_times[-1].minute == 0
-        and old_times[-1].second == 0
-    ):
-        old_times = old_times[:-1]
-        old_counts = old_counts[:-1]
+    # cut off the last count since that represents the stars in the running month
+    new_times = new_times[:-1]
+    new_counts = new_counts[:-1]
 
-    new_counts = [int(item) for item in np.cumsum(new_counts)]
-
-    times = old_times + new_times + [now]
-    counts = old_counts + new_counts
+    if len(old_counts) > 0:
+        cs = np.cumsum(new_counts) + old_counts[-1]
+        new_counts = [int(item) for item in cs]
+        times = old_times + new_times
+        counts = old_counts + new_counts
+    else:
+        times = [decrement_month(new_times[0])] + new_times
+        counts = [0] + new_counts
+        counts = [int(item) for item in np.cumsum(counts)]
 
     return dict(zip(times, counts))
 

@@ -73,7 +73,11 @@ def get_num_remaining_api_calls(owner, name, token):
         "https://api.github.com/graphql", json={"query": query}, headers=headers
     )
     assert res.ok
-    return res.json()["data"]["repository"]["stargazers"]["totalCount"]
+
+    res = res.json()
+    if "errors" in res:
+        raise RuntimeError(res["errors"][0]["message"])
+    return res["data"]["repository"]["stargazers"]["totalCount"]
 
 
 def update_github_star_data(data, repo, token, progress_task):

@@ -24,7 +24,6 @@ def main(argv=None):
             repo=repo,
             token=token,
             title="GitHub stars",
-            verbose=True,
         )
 
     if args.font is not None:

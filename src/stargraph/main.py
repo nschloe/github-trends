@@ -4,7 +4,6 @@ from datetime import datetime
 
 import numpy as np
 import requests
-from rich.progress import Progress
 
 
 def update_file(
@@ -14,7 +13,7 @@ def update_file(
     title="GitHub stars",
     creator=None,
     license=None,
-    verbose=False,
+    progress_task=None,
 ):
     filename = pathlib.Path(filename)
     if filename.is_file():
@@ -37,7 +36,7 @@ def update_file(
 
     data = {datetime.fromisoformat(key): value for key, value in data.items()}
 
-    data = update_github_star_data(data, repo, token, verbose=verbose)
+    data = update_github_star_data(data, repo, token, progress_task=progress_task)
 
     d = {}
     if title is not None:
@@ -58,7 +57,7 @@ def update_file(
         json.dump(d, f, indent=2, ensure_ascii=False)
 
 
-def get_total_count(owner, name, token):
+def get_num_remaining_api_calls(owner, name, token):
     # find total
     query = f"""
     {{
@@ -77,97 +76,108 @@ def get_total_count(owner, name, token):
     return res.json()["data"]["repository"]["stargazers"]["totalCount"]
 
 
-def update_github_star_data(data, repo, token, verbose=False):
-    last_known_datetime = None
-    last_known_count = 0
+def update_github_star_data(data, repo, token, progress_task):
+    old_times = list(data.keys())
+    old_counts = list(data.values())
 
     owner, name = repo.split("/")
 
-    total_count = get_total_count(owner, name, token)
-    num_api_calls = -(-(total_count - last_known_count) // 100)
+    progress, task = progress_task
+
+    total_count = get_num_remaining_api_calls(owner, name, token)
+    last_counts = 0 if len(old_counts) == 0 else old_counts[-1]
+    num = -(-(total_count - last_counts) // 100)
+    progress.update(task, description=repo, total=num, completed=0)
 
     selection = "last: 100"
 
     now = datetime.utcnow().replace(microsecond=0)
 
-    with Progress() as progress:
-        task = progress.add_task(repo, total=num_api_calls)
-
-        datetimes = []
-        while True:
-            query = f"""
-            {{
-              repository(owner:"{owner}", name:"{name}") {{
-                stargazers({selection}) {{
-                  pageInfo {{
-                    hasPreviousPage
-                    startCursor
-                  }}
-                  edges {{
-                    starredAt
-                  }}
-                }}
+    datetimes = []
+    while True:
+        query = f"""
+        {{
+          repository(owner:"{owner}", name:"{name}") {{
+            stargazers({selection}) {{
+              pageInfo {{
+                hasPreviousPage
+                startCursor
+              }}
+              edges {{
+                starredAt
               }}
             }}
-            """
+          }}
+        }}
+        """
 
-            headers = {"Authorization": f"token {token}"}
+        res = requests.post(
+            "https://api.github.com/graphql",
+            json={"query": query},
+            headers={"Authorization": f"token {token}"},
+        )
+        assert res.ok
 
-            res = requests.post(
-                "https://api.github.com/graphql", json={"query": query}, headers=headers
-            )
-            assert res.ok
+        data = res.json()["data"]["repository"]["stargazers"]
+        batch = [
+            datetime.fromisoformat(item["starredAt"].replace("Z", ""))
+            for item in data["edges"]
+        ]
+        batch.reverse()
+        datetimes += batch
 
-            data = res.json()["data"]["repository"]["stargazers"]
-            batch = [
-                datetime.fromisoformat(item["starredAt"].replace("Z", ""))
-                for item in data["edges"]
-            ]
-            batch.reverse()
-            datetimes += batch
+        first_in_list = data["edges"][0]["starredAt"]
+        first_in_list = datetime.fromisoformat(first_in_list.replace("Z", ""))
 
-            first_in_list = data["edges"][0]["starredAt"]
-            first_in_list = datetime.fromisoformat(first_in_list.replace("Z", ""))
+        progress.advance(task)
 
-            progress.advance(task)
+        if not data["pageInfo"]["hasPreviousPage"]:
+            break
 
-            if not data["pageInfo"]["hasPreviousPage"]:
-                break
+        cursor = data["pageInfo"]["startCursor"]
+        selection = f'last: 100, before: "{cursor}"'
 
-            cursor = data["pageInfo"]["startCursor"]
-            selection = f'last: 100, before: "{cursor}"'
+        if len(old_times) > 0 and first_in_list < old_times[-1]:
+            break
 
-            if last_known_datetime is not None and first_in_list < last_known_datetime:
-                break
-
-    times = []
-    counts = []
+    new_times = []
+    new_counts = []
 
     c = datetime(datetimes[0].year, datetimes[0].month, 1)
-    while len(datetimes) > 0:
+    while True:
+        if len(old_times) > 0 and c <= old_times[-1]:
+            break
+
         # fast-backward to next beginning of the month
         try:
             k = next(i for i, dt in enumerate(datetimes) if dt < c)
         except StopIteration:
-            times.append(c)
-            counts.append(len(datetimes))
+            new_times.append(c)
+            new_counts.append(len(datetimes))
             break
 
-        times.append(c)
-        counts.append(k)
+        new_times.append(c)
+        new_counts.append(k)
 
         c = decrement_month(c)
-        if last_known_datetime is not None and c <= last_known_datetime:
-            break
         datetimes = datetimes[k:]
 
-    times.reverse()
-    counts.reverse()
+    new_times.reverse()
+    new_counts.reverse()
 
-    times = times + [now]
-    counts = [0] + counts
+    if len(old_times) > 0 and not (
+        old_times[-1].day == 1
+        and old_times[-1].hour == 0
+        and old_times[-1].minute == 0
+        and old_times[-1].second == 0
+    ):
+        old_times = old_times[:-1]
+        old_counts = old_counts[:-1]
 
-    counts = [int(item) for item in np.cumsum(counts)]
+    new_counts = [int(item) for item in np.cumsum(new_counts)]
+
+    times = old_times + new_times + [now]
+    counts = old_counts + new_counts
 
     return dict(zip(times, counts))
 

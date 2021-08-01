@@ -153,7 +153,7 @@ def update_github_star_data(data, repo, token, progress_task):
     new_counts = []
 
     c = now
-    first_day_of_the_month = datetime(datetimes[0].year, datetimes[0].month, 1)
+    first_day_of_the_month = datetime(now.year, now.month, 1)
     while True:
         if len(old_times) > 0 and c <= old_times[-1]:
             break

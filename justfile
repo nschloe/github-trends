@@ -5,7 +5,7 @@ default:
 	@echo "\"make publish\"?"
 
 upload: clean
-	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "main" ]; then exit 1; fi
+	@if [ "$(git rev-parse --abbrev-ref HEAD)" != "main" ]; then exit 1; fi
 	# python3 setup.py sdist bdist_wheel
 	# https://stackoverflow.com/a/58756491/353337
 	python3 -m build --sdist --wheel .
@@ -37,7 +37,7 @@ nschloe:
 		-t ~/.github-access-token -o nschloe.svg
 
 tag:
-	@if [ "$(shell git rev-parse --abbrev-ref HEAD)" != "main" ]; then exit 1; fi
+	@if [ "$(git rev-parse --abbrev-ref HEAD)" != "main" ]; then exit 1; fi
 	# Always create a github "release"; this automatically creates a Git tag, too.
 	curl -H "Authorization: token `cat ~/.github-access-token`" -d '{"tag_name": "v{{version}}"}' https://api.github.com/repos/nschloe/{{name}}/releases
 

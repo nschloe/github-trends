@@ -77,6 +77,15 @@
     "apache/lucene-solr",
     "sqlite/sqlite"
   ],
+  "css-frameworks": [
+    "Dogfalo/materialize",
+    "jgthms/bulma",
+    "nostalgic-css/NES.css",
+    "picturepan2/spectre",
+    "Semantic-Org/Semantic-UI",
+    "tailwindlabs/tailwindcss",
+    "twbs/bootstrap"
+  ],
   "javascript-package-managers": [
     "bower/bower",
     "browserify/browserify",
@@ -222,7 +231,6 @@
     "urllib3/urllib3"
   ],
   "popular-javascript": [
-    "twbs/bootstrap",
     "airbnb/javascript",
     "jquery/jquery",
     "facebook/react-native",

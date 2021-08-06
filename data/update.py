@@ -42,6 +42,7 @@ def parse_args():
         "-t",
         "--token-file",
         type=argparse.FileType("r"),
+        required=True,
         help="File containing a GitHub token (can be - [stdin])",
     )
     return parser.parse_args()

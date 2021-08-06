@@ -79,6 +79,7 @@
   ],
   "css-frameworks": [
     "Dogfalo/materialize",
+    "foundation/foundation-sites",
     "jgthms/bulma",
     "nostalgic-css/NES.css",
     "picturepan2/spectre",
@@ -576,6 +577,9 @@
   "compilers": [
     "gcc-mirror/gcc",
     "llvm/llvm-project",
-    "TinyCC/tinycc"
+    "rui314/8cc",
+    "rui314/chibicc",
+    "TinyCC/tinycc",
+    "xoreaxeaxeax/movfuscator"
   ]
 }

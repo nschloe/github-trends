@@ -37,6 +37,8 @@ def update_file(
     data = {datetime.fromisoformat(key): value for key, value in data.items()}
 
     data = update_github_star_data(data, repo, token, progress_task=progress_task)
+    if data is None:
+        return
 
     d = {}
     if title is not None:
@@ -47,9 +49,6 @@ def update_file(
     if license is not None:
         d["license"] = license
     d["data source"] = "GitHub API via stargraph"
-    now = datetime.utcnow()
-    now = now.replace(microsecond=0)
-    d["last updated"] = now.isoformat()
 
     d["data"] = dict(zip([t.isoformat() for t in data.keys()], data.values()))
 
@@ -87,7 +86,7 @@ def update_github_star_data(data, repo, token, progress_task):
     now = datetime.utcnow().replace(microsecond=0)
 
     if len(old_times) > 0 and old_times[-1] == datetime(now.year, now.month, 1):
-        return data
+        return None
 
     owner, name = repo.split("/")
 

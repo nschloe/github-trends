@@ -37,6 +37,7 @@
     "vercel/next.js"
   ],
   "text-editors": [
+    "adobe/brackets",
     "atom/atom",
     "emacs-mirror/emacs",
     "helix-editor/helix",
@@ -46,6 +47,7 @@
     "neovim/neovim",
     "notepad-plus-plus/notepad-plus-plus",
     "onivim/oni2",
+    "syl20bnr/spacemacs",
     "vim/vim",
     "VSCodium/vscodium",
     "zyedidia/micro"
@@ -118,6 +120,12 @@
     "segmentio/nightmare",
     "SeleniumHQ/selenium",
     "webdriverio/webdriverio"
+  ],
+  "javascript-formatters": [
+    "beautify-web/js-beautify",
+    "Glavin001/atom-beautify",
+    "prettier/prettier",
+    "Unibeautify/unibeautify"
   ],
   "content-management-systems": [
     "dnnsoftware/Dnn.Platform",

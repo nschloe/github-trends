@@ -598,5 +598,11 @@
     "rui314/chibicc",
     "TinyCC/tinycc",
     "xoreaxeaxeax/movfuscator"
+  ],
+  "data-formats-for-humans": [
+    "hashicorp/hcl",
+    "json5/json5",
+    "toml-lang/toml",
+    "yaml/yaml-spec"
   ]
 }

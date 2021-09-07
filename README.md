@@ -202,6 +202,9 @@ A collection of the GitHub stars for of a number of topics.
 ### Data formats
   ![data-formats](https://nschloe.github.io/stargraph/github-data-formats.svg)
 
+### Data formats for humans
+  ![data-formats-for-humans](https://nschloe.github.io/stargraph/github-data-formats-for-humans.svg)
+
 ### Compilers
   ![compilers](https://nschloe.github.io/stargraph/github-compilers.svg)
 

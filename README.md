@@ -208,6 +208,9 @@ A collection of the GitHub stars for of a number of topics.
 ### Compilers
   ![compilers](https://nschloe.github.io/stargraph/github-compilers.svg)
 
+### Encryption
+  ![encryption](https://nschloe.github.io/stargraph/github-encryption.svg)
+
 ### Related projects
 
  * [star-history](https://github.com/timqian/star-history)

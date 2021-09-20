@@ -192,6 +192,7 @@
     "numpy/numpy",
     "pandas-dev/pandas",
     "psychopy/psychopy",
+    "pydata/xarray",
     "scipy/scipy",
     "sympy/sympy"
   ],
@@ -610,5 +611,11 @@
     "gpg/gnupg",
     "openssl/openssl",
     "signalapp/Signal-Android"
+  ],
+  "display-servers": [
+    "freedesktop/xorg-xserver",
+    "LibVNC/x11vnc",
+    "mirror/libX11",
+    "wayland-project/wayland"
   ]
 }

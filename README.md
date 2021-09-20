@@ -211,6 +211,9 @@ A collection of the GitHub stars for of a number of topics.
 ### Encryption
   ![encryption](https://nschloe.github.io/stargraph/github-encryption.svg)
 
+### Display servers
+  ![display-servers](https://nschloe.github.io/stargraph/github-display-servers.svg)
+
 ### Related projects
 
  * [star-history](https://github.com/timqian/star-history)

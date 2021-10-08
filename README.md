@@ -81,6 +81,9 @@ A collection of the GitHub stars for of a number of topics.
 ##### Node runners
   ![github-node-runners](https://nschloe.github.io/stargraph/github-node-runners.svg)
 
+##### Node version managers
+  ![github-node-version-managers](https://nschloe.github.io/stargraph/github-node-version-managers.svg)
+
 ### Text editors
 ![github-text-editors](https://nschloe.github.io/stargraph/github-text-editors.svg)
 

@@ -128,6 +128,10 @@
     "prettier/prettier",
     "Unibeautify/unibeautify"
   ],
+  "node-version-managers": [
+    "nvm-sh/nvm",
+    "tj/n"
+  ],
   "content-management-systems": [
     "dnnsoftware/Dnn.Platform",
     "drupal/drupal",

@@ -376,10 +376,12 @@
     "junegunn/vim-plug",
     "Shougo/neobundle.vim",
     "tpope/vim-pathogen",
-    "VundleVim/Vundle.vim"
+    "VundleVim/Vundle.vim",
+    "wbthomason/packer.nvim"
   ],
   "vim-plugins": [
     "airblade/vim-gitgutter",
+    "codota/TabNine",
     "dense-analysis/ale",
     "easymotion/vim-easymotion",
     "editorconfig/editorconfig-vim",

@@ -308,12 +308,14 @@
     "golang/go",
     "JetBrains/kotlin",
     "JuliaLang/julia",
+    "lua/lua",
     "microsoft/TypeScript",
     "nim-lang/Nim",
     "openjdk/jdk",
     "Perl/perl5",
     "php/php-src",
     "python/cpython",
+    "Roblox/luau",
     "ruby/ruby",
     "rust-lang/rust",
     "vlang/v"
@@ -380,6 +382,8 @@
   ],
   "vim-plugin-managers": [
     "junegunn/vim-plug",
+    "savq/paq-nvim",
+    "Shougo/dein.vim",
     "Shougo/neobundle.vim",
     "tpope/vim-pathogen",
     "VundleVim/Vundle.vim",
@@ -411,6 +415,24 @@
     "vim-airline/vim-airline",
     "ycm-core/YouCompleteMe",
     "Yggdroot/indentLine"
+  ],
+  "nvim-plugins": [
+     "asvetliakov/vscode-neovim",
+     "folke/tokyonight.nvim",
+     "glepnir/lspsaga.nvim",
+     "hrsh7th/nvim-compe",
+     "iamcco/markdown-preview.nvim",
+     "lukas-reineke/indent-blankline.nvim",
+     "ms-jpq/chadtree",
+     "ms-jpq/coq_nvim",
+     "nvim-lualine/lualine.nvim",
+     "nvim-neorg/neorg",
+     "nvim-telescope/telescope.nvim",
+     "nvim-treesitter/nvim-treesitter",
+     "neomake/neomake",
+     "neovim/nvim-lspconfig",
+     "romgrk/barbar.nvim",
+     "sbdchd/neoformat"
   ],
   "monospaced-fonts": [
     "adobe-fonts/source-code-pro",

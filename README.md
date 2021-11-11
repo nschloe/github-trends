@@ -217,9 +217,13 @@ A collection of the GitHub stars for of a number of topics.
 
 ![github-vim-plugin-managers](https://nschloe.github.io/stargraph/github-vim-plugin-managers.svg)
 
-##### Plug-ins
+##### Vim Plug-ins
 
 ![github-vim-plugins](https://nschloe.github.io/stargraph/github-vim-plugins.svg)
+
+##### Neovim Plug-ins
+
+![github-nvim-plugins](https://nschloe.github.io/stargraph/github-nvim-plugins.svg)
 
 ### Documentation
 

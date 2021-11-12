@@ -37,257 +37,257 @@ A collection of the GitHub stars for of a number of topics.
 
 ### Programming languages
 
-![github-programming-languages](https://nschloe.github.io/stargraph/github-programming-languages.svg)
+![programming-languages](https://nschloe.github.io/stargraph/programming-languages.svg)
 
 ### Version control systems
 
-![github-vcs](https://nschloe.github.io/stargraph/github-version-control-systems.svg)
+![vcs](https://nschloe.github.io/stargraph/version-control-systems.svg)
 
 ### Frontend frameworks
 
-![github-frontend-frameworks](https://nschloe.github.io/stargraph/github-frontend-frameworks.svg)
+![frontend-frameworks](https://nschloe.github.io/stargraph/frontend-frameworks.svg)
 
 ### Backend frameworks
 
-![github-backend-frameworks](https://nschloe.github.io/stargraph/github-backend-frameworks.svg)
+![backend-frameworks](https://nschloe.github.io/stargraph/backend-frameworks.svg)
 
 ### Universal-rendering frameworks
 
-![github-universal-rendering-frameworks](https://nschloe.github.io/stargraph/github-universal-rendering-frameworks.svg)
+![universal-rendering-frameworks](https://nschloe.github.io/stargraph/universal-rendering-frameworks.svg)
 
 ### Browsers
 
-![github-browsers](https://nschloe.github.io/stargraph/github-browsers.svg)
+![browsers](https://nschloe.github.io/stargraph/browsers.svg)
 
 ### Databases
 
-![github-databases](https://nschloe.github.io/stargraph/github-databases.svg)
+![databases](https://nschloe.github.io/stargraph/databases.svg)
 
 ### CSS frameworks
 
-![github-css-frameworks](https://nschloe.github.io/stargraph/github-css-frameworks.svg)
+![css-frameworks](https://nschloe.github.io/stargraph/css-frameworks.svg)
 
 ### JavaScript
 
 ##### Package managers
 
-![github-javascript-package-managers](https://nschloe.github.io/stargraph/github-javascript-package-managers.svg)
+![javascript-package-managers](https://nschloe.github.io/stargraph/javascript-package-managers.svg)
 
 ##### Testing frameworks
 
-![github-javascript-testing-frameworks](https://nschloe.github.io/stargraph/github-javascript-testing-frameworks.svg)
+![javascript-testing-frameworks](https://nschloe.github.io/stargraph/javascript-testing-frameworks.svg)
 
 ##### Browser automation
 
-![github-javascript-browser-automation](https://nschloe.github.io/stargraph/github-javascript-browser-automation.svg)
+![javascript-browser-automation](https://nschloe.github.io/stargraph/javascript-browser-automation.svg)
 
 ##### Code formatters
 
-![github-javascript-formatters](https://nschloe.github.io/stargraph/github-javascript-formatters.svg)
+![javascript-formatters](https://nschloe.github.io/stargraph/javascript-formatters.svg)
 
 ##### Data visualization
 
-![github-javascript-data-visualization](https://nschloe.github.io/stargraph/github-javascript-data-visualization.svg)
+![javascript-data-visualization](https://nschloe.github.io/stargraph/javascript-data-visualization.svg)
 
 ##### Math
 
-![github-javascript-math](https://nschloe.github.io/stargraph/github-javascript-math.svg)
+![javascript-math](https://nschloe.github.io/stargraph/javascript-math.svg)
 
 ##### Popular packages
 
-![github-popular-javascript](https://nschloe.github.io/stargraph/github-popular-javascript.svg)
+![popular-javascript](https://nschloe.github.io/stargraph/popular-javascript.svg)
 
 ##### Node runners
 
-![github-node-runners](https://nschloe.github.io/stargraph/github-node-runners.svg)
+![node-runners](https://nschloe.github.io/stargraph/node-runners.svg)
 
 ##### Node version managers
 
-![github-node-version-managers](https://nschloe.github.io/stargraph/github-node-version-managers.svg)
+![node-version-managers](https://nschloe.github.io/stargraph/node-version-managers.svg)
 
 ### Text editors
 
-![github-text-editors](https://nschloe.github.io/stargraph/github-text-editors.svg)
+![text-editors](https://nschloe.github.io/stargraph/text-editors.svg)
 
 ### VSCode extensions
 
-![github-vscode-extensions](https://nschloe.github.io/stargraph/github-vscode-extensions.svg)
+![vscode-extensions](https://nschloe.github.io/stargraph/vscode-extensions.svg)
 
 ### Operating systems
 
-![github-operating-systems](https://nschloe.github.io/stargraph/github-operating-systems.svg)
+![operating-systems](https://nschloe.github.io/stargraph/operating-systems.svg)
 
 ### Unix window managers
 
-![github-linux-window-managers](https://nschloe.github.io/stargraph/github-linux-window-managers.svg)
+![linux-window-managers](https://nschloe.github.io/stargraph/linux-window-managers.svg)
 
 ### Code-hosting platforms
 
-![github-code-hosting-platforms](https://nschloe.github.io/stargraph/github-code-hosting-platforms.svg)
+![code-hosting-platforms](https://nschloe.github.io/stargraph/code-hosting-platforms.svg)
 
 ### Content-management systems
 
-![github-content-management-systems](https://nschloe.github.io/stargraph/github-content-management-systems.svg)
+![content-management-systems](https://nschloe.github.io/stargraph/content-management-systems.svg)
 
 ### Continuous-integration services
 
-![github-continuous-integration-services](https://nschloe.github.io/stargraph/github-continuous-integration-services.svg)
+![continuous-integration-services](https://nschloe.github.io/stargraph/continuous-integration-services.svg)
 
 ### Office suites
 
-![github-office-suites](https://nschloe.github.io/stargraph/github-office-suites.svg)
+![office-suites](https://nschloe.github.io/stargraph/office-suites.svg)
 
 ### Video editors
 
-![github-video-editors](https://nschloe.github.io/stargraph/github-video-editors.svg)
+![video-editors](https://nschloe.github.io/stargraph/video-editors.svg)
 
 ### Computer algebra systems
 
-![github-computer-algebra-systems](https://nschloe.github.io/stargraph/github-computer-algebra-systems.svg)
+![computer-algebra-systems](https://nschloe.github.io/stargraph/computer-algebra-systems.svg)
 
 ### DevOps
 
-![github-devops](https://nschloe.github.io/stargraph/github-devops.svg)
+![devops](https://nschloe.github.io/stargraph/devops.svg)
 
 ### Build systems
 
-![github-build-systems](https://nschloe.github.io/stargraph/github-build-systems.svg)
+![build-systems](https://nschloe.github.io/stargraph/build-systems.svg)
 
 ### Machine learning
 
-![github-machine-learning](https://nschloe.github.io/stargraph/github-machine-learning.svg)
+![machine-learning](https://nschloe.github.io/stargraph/machine-learning.svg)
 
 ### Python
 
 ##### Science
 
-![github-scientific-python](https://nschloe.github.io/stargraph/github-scientific-python.svg)
+![scientific-python](https://nschloe.github.io/stargraph/scientific-python.svg)
 
 ##### Plotting
 
-![github-python-plotting](https://nschloe.github.io/stargraph/github-python-plotting.svg)
+![python-plotting](https://nschloe.github.io/stargraph/python-plotting.svg)
 
 ##### Testing
 
-![github-python-testing](https://nschloe.github.io/stargraph/github-python-testing.svg)
+![python-testing](https://nschloe.github.io/stargraph/python-testing.svg)
 
 ##### HTTP clients
 
-![github-python-http-clients](https://nschloe.github.io/stargraph/github-python-http-clients.svg)
+![python-http-clients](https://nschloe.github.io/stargraph/python-http-clients.svg)
 
 ##### Static code analysis
 
-![github-python-static-analysis](https://nschloe.github.io/stargraph/github-python-static-analysis.svg)
+![python-static-analysis](https://nschloe.github.io/stargraph/python-static-analysis.svg)
 
 ##### Code formatters
 
-![github-python-code-formatters](https://nschloe.github.io/stargraph/github-python-formatters.svg)
+![python-code-formatters](https://nschloe.github.io/stargraph/python-formatters.svg)
 
 ### Terminals
 
 ##### Shells
 
-![github-shells](https://nschloe.github.io/stargraph/github-shells.svg)
+![shells](https://nschloe.github.io/stargraph/shells.svg)
 
 ##### Terminal emulators
 
-![github-linux-terminal-emulators](https://nschloe.github.io/stargraph/github-linux-terminal-emulators.svg)
+![linux-terminal-emulators](https://nschloe.github.io/stargraph/linux-terminal-emulators.svg)
 
 ##### Color schemes
 
-![github-color-schemes](https://nschloe.github.io/stargraph/github-color-schemes.svg)
+![color-schemes](https://nschloe.github.io/stargraph/color-schemes.svg)
 
 ### Fonts
 
 ##### Monospaced fonts
 
-![github-monospaced-fonts](https://nschloe.github.io/stargraph/github-monospaced-fonts.svg)
+![monospaced-fonts](https://nschloe.github.io/stargraph/monospaced-fonts.svg)
 
 ##### Other fonts
 
-![github-other-fonts](https://nschloe.github.io/stargraph/github-other-fonts.svg)
+![other-fonts](https://nschloe.github.io/stargraph/other-fonts.svg)
 
 ### vim
 
 ##### vim variants
 
-![github-vim-variants](https://nschloe.github.io/stargraph/github-vim-variants.svg)
+![vim-variants](https://nschloe.github.io/stargraph/vim-variants.svg)
 
 ##### Plug-in managers
 
-![github-vim-plugin-managers](https://nschloe.github.io/stargraph/github-vim-plugin-managers.svg)
+![vim-plugin-managers](https://nschloe.github.io/stargraph/vim-plugin-managers.svg)
 
 ##### Vim Plug-ins
 
-![github-vim-plugins](https://nschloe.github.io/stargraph/github-vim-plugins.svg)
+![vim-plugins](https://nschloe.github.io/stargraph/vim-plugins.svg)
 
 ##### Neovim Plug-ins
 
-![github-nvim-plugins](https://nschloe.github.io/stargraph/github-nvim-plugins.svg)
+![nvim-plugins](https://nschloe.github.io/stargraph/nvim-plugins.svg)
 
 ### Documentation
 
-![documentation](https://nschloe.github.io/stargraph/github-doc-generators.svg)
+![documentation](https://nschloe.github.io/stargraph/doc-generators.svg)
 
 ### Proofreading tools
 
-![github-proofreading](https://nschloe.github.io/stargraph/github-proofreading-tools.svg)
+![proofreading](https://nschloe.github.io/stargraph/proofreading-tools.svg)
 
 ### Spell checkers
 
-![spell-checkers](https://nschloe.github.io/stargraph/github-spell-checkers.svg)
+![spell-checkers](https://nschloe.github.io/stargraph/spell-checkers.svg)
 
 ### Chess
 
-![chess](https://nschloe.github.io/stargraph/github-chess.svg)
+![chess](https://nschloe.github.io/stargraph/chess.svg)
 
 ### Browser extensions
 
-![browser-extensions](https://nschloe.github.io/stargraph/github-browser-extensions.svg)
+![browser-extensions](https://nschloe.github.io/stargraph/browser-extensions.svg)
 
 ### LaTeX
 
-![latex](https://nschloe.github.io/stargraph/github-latex.svg)
+![latex](https://nschloe.github.io/stargraph/latex.svg)
 
 ### Music software
 
-![music-software](https://nschloe.github.io/stargraph/github-music-software.svg)
+![music-software](https://nschloe.github.io/stargraph/music-software.svg)
 
 ### Dependency managers
 
-![dependency-managers](https://nschloe.github.io/stargraph/github-dependency-managers.svg)
+![dependency-managers](https://nschloe.github.io/stargraph/dependency-managers.svg)
 
 ### Command-line tools
 
-![command-line-tools](https://nschloe.github.io/stargraph/github-command-line-tools.svg)
+![command-line-tools](https://nschloe.github.io/stargraph/command-line-tools.svg)
 
 ### Command-line system monitoring
 
-![command-line-system-monitoring](https://nschloe.github.io/stargraph/github-command-line-system-monitoring.svg)
+![command-line-system-monitoring](https://nschloe.github.io/stargraph/command-line-system-monitoring.svg)
 
 ### Git tools
 
-![git-tools](https://nschloe.github.io/stargraph/github-git-tools.svg)
+![git-tools](https://nschloe.github.io/stargraph/git-tools.svg)
 
 ### Data formats
 
-![data-formats](https://nschloe.github.io/stargraph/github-data-formats.svg)
+![data-formats](https://nschloe.github.io/stargraph/data-formats.svg)
 
 ### Data formats for humans
 
-![data-formats-for-humans](https://nschloe.github.io/stargraph/github-data-formats-for-humans.svg)
+![data-formats-for-humans](https://nschloe.github.io/stargraph/data-formats-for-humans.svg)
 
 ### Compilers
 
-![compilers](https://nschloe.github.io/stargraph/github-compilers.svg)
+![compilers](https://nschloe.github.io/stargraph/compilers.svg)
 
 ### Encryption
 
-![encryption](https://nschloe.github.io/stargraph/github-encryption.svg)
+![encryption](https://nschloe.github.io/stargraph/encryption.svg)
 
 ### Display servers
 
-![display-servers](https://nschloe.github.io/stargraph/github-display-servers.svg)
+![display-servers](https://nschloe.github.io/stargraph/display-servers.svg)
 
 ### Related projects
 

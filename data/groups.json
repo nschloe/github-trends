@@ -402,8 +402,10 @@
     "mattn/emmet-vim",
     "mhinz/vim-startify",
     "neoclide/coc.nvim",
+    "neomake/neomake",
     "preservim/nerdcommenter",
     "preservim/nerdtree",
+    "sbdchd/neoformat",
     "terryma/vim-multiple-cursors",
     "tpope/vim-eunuch",
     "tpope/vim-fugitive",
@@ -431,11 +433,9 @@
      "nvim-neorg/neorg",
      "nvim-telescope/telescope.nvim",
      "nvim-treesitter/nvim-treesitter",
-     "neomake/neomake",
      "neovim/nvim-lspconfig",
      "phaazon/hop.nvim",
-     "romgrk/barbar.nvim",
-     "sbdchd/neoformat"
+     "romgrk/barbar.nvim"
   ],
   "monospaced-fonts": [
     "adobe-fonts/source-code-pro",
@@ -636,6 +636,7 @@
   ],
   "data-formats-for-humans": [
     "hashicorp/hcl",
+    "hjson/hjson",
     "json5/json5",
     "toml-lang/toml",
     "yaml/yaml-spec"

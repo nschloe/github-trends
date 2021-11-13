@@ -197,6 +197,10 @@ A collection of the GitHub stars for of a number of topics.
 
 ![color-schemes](https://nschloe.github.io/stargraph/color-schemes.svg)
 
+##### Terminal recorders
+
+![terminal-recorders](https://nschloe.github.io/stargraph/terminal-recorders.svg)
+
 ### Fonts
 
 ##### Monospaced fonts

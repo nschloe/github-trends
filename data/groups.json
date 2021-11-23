@@ -652,5 +652,16 @@
     "LibVNC/x11vnc",
     "mirror/libX11",
     "wayland-project/wayland"
+  ],
+  "dotfile-managers": [
+    "andsens/homeshick",
+    "anishathalye/dotbot",
+    "freshshell/fresh",
+    "nix-community/home-manager",
+    "RichiH/vcsh",
+    "technicalpickles/homesick",
+    "TheLocehiliosan/yadm",
+    "thoughtbot/rcm",
+    "twpayne/chezmoi"
   ]
 }

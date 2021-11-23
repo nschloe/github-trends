@@ -293,6 +293,10 @@ A collection of the GitHub stars for of a number of topics.
 
 ![display-servers](https://nschloe.github.io/stargraph/display-servers.svg)
 
+### Dotfile managers
+
+![dotfile-managers](https://nschloe.github.io/stargraph/dotfile-managers.svg)
+
 ### Related projects
 
 - [star-history](https://github.com/timqian/star-history)

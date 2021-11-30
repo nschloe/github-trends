@@ -183,6 +183,10 @@ A collection of the GitHub stars for of a number of topics.
 
 ![python-code-formatters](https://nschloe.github.io/stargraph/python-formatters.svg)
 
+##### Distribution
+
+![python-distribution](https://nschloe.github.io/stargraph/python-distribution.svg)
+
 ### Terminals
 
 ##### Shells

@@ -248,6 +248,15 @@
     "twisted/treq",
     "urllib3/urllib3"
   ],
+  "python-distribution": [
+    "indygreg/PyOxidizer",
+    "linkedin/shiv",
+    "marcelotduarte/cx_Freeze",
+    "Nuitka/Nuitka",
+    "pantsbuild/pex",
+    "pyinstaller/pyinstaller",
+    "takluyver/pynsist"
+  ],
   "popular-javascript": [
     "airbnb/javascript",
     "jquery/jquery",

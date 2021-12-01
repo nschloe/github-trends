@@ -67,11 +67,19 @@ A collection of the GitHub stars for of a number of topics.
 
 ![css-frameworks](https://nschloe.github.io/stargraph/css-frameworks.svg)
 
+### Static site generators
+
+![static-site-generators](https://nschloe.github.io/stargraph/static-site-generators.svg)
+
 ### JavaScript
 
 ##### Package managers
 
 ![javascript-package-managers](https://nschloe.github.io/stargraph/javascript-package-managers.svg)
+
+##### Bundlers
+
+![javascript-bundlers](https://nschloe.github.io/stargraph/javascript-bundlers.svg)
 
 ##### Testing frameworks
 

@@ -92,14 +92,17 @@
   ],
   "javascript-package-managers": [
     "bower/bower",
+    "npm/cli",
+    "pnpm/pnpm",
+    "yarnpkg/yarn"
+  ],
+  "javascript-bundlers": [
     "browserify/browserify",
     "gruntjs/grunt",
     "gulpjs/gulp",
-    "npm/cli",
     "parcel-bundler/parcel",
     "rollup/rollup",
-    "webpack/webpack",
-    "yarnpkg/yarn"
+    "webpack/webpack"
   ],
   "javascript-testing-frameworks": [
     "avajs/ava",
@@ -338,9 +341,14 @@
     "altercation/solarized",
     "arcticicestudio/nord",
     "ayu-theme/ayu-vim",
+    "challenger-deep-theme/vim",
     "chriskempson/base16",
     "chriskempson/tomorrow-theme",
+    "daltonmenezes/aura-theme",
     "dracula/dracula-theme",
+    "dylanaraps/pywal",
+    "joshdick/onedark.vim",
+    "Mayccoll/Gogh",
     "morhetz/gruvbox",
     "NLKNguyen/papercolor-theme",
     "romainl/Apprentice",
@@ -621,6 +629,7 @@
     "htop-dev/htop",
     "MrRio/vtop",
     "nicolargo/glances",
+    "nschloe/tiptop",
     "xxxserxxx/gotop"
   ],
   "git-tools": [
@@ -673,5 +682,22 @@
     "TheLocehiliosan/yadm",
     "thoughtbot/rcm",
     "twpayne/chezmoi"
+  ],
+  "static-site-generators": [
+    "11ty/eleventy",
+    "jekyll/jekyll",
+    "getgridea/gridea",
+    "getpelican/pelican",
+    "gohugoio/hugo",
+    "hexojs/hexo",
+    "imathis/octopress",
+    "middleman/middleman",
+    "mkdocs/mkdocs",
+    "nuxt/nuxt.js",
+    "rust-lang/mdBook",
+    "segmentio/metalsmith",
+    "slatedocs/slate",
+    "vercel/next.js",
+    "vuejs/vuepress"
   ]
 }

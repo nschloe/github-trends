@@ -2,7 +2,7 @@ import argparse
 from pathlib import Path
 from sys import version_info
 
-import dufte
+import mplx
 from matplotlib import pyplot as plt
 
 from .__about__ import __version__
@@ -31,7 +31,7 @@ def main(argv=None):
 
     # plot it
     plot(filenames)
-    dufte.ylabel("GitHub stars")
+    mplx.ylabel_top("GitHub stars")
     if args.output:
         plt.savefig(args.output, transparent=True, bbox_inches="tight")
     else:

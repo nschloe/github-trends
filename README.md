@@ -11,17 +11,8 @@
 [![codecov](https://img.shields.io/codecov/c/github/nschloe/stargraph.svg?style=flat-square)](https://codecov.io/gh/nschloe/stargraph)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
-stargraph is a Python/command-line tool that collects the star count from [GitHub
+stargraph is a Python tool that collects the star count from [GitHub
 stars](http://github.com/) and produces nice plots from it.
-
-For example,
-
-```
-stargraph rust-lang/rust python/cpython -m 30 -t file-with-gh-token -o proglang.svg
-```
-
-gives [the plot below](#programming-languages). (GitHub and has a rate limit so you
-might want to get a token and provide it to stargraph.)
 
 Install with
 
@@ -29,7 +20,11 @@ Install with
 pip install stargraph
 ```
 
-and use the command-line tools as displayed. The `-h` switch gives more details.
+and use in Python with
+
+```python
+import stargraph
+```
 
 ## Gallery
 

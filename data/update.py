@@ -17,7 +17,7 @@ def update_all():
     token = args.token_file.readline().strip() if args.token_file else None
 
     # merge lists
-    repos = sorted(set([item for lst in data.values() for item in lst]))
+    repos = sorted({item for lst in data.values() for item in lst})
 
     with Progress() as progress:
         task1 = progress.add_task("Total", total=len(repos))

@@ -1,7 +1,7 @@
 import json
 import pathlib
 
-import dufte
+import mplx
 from matplotlib import pyplot as plt
 
 import stargraph
@@ -18,7 +18,7 @@ for group_name, group in data.items():
 
     stargraph.plot(filenames, cut=0.05)
     # plt.title("Number of GitHub stars", fontsize=14)
-    dufte.ylabel("GitHub stars")
+    mplx.ylabel_top("GitHub stars")
 
     # stargraph.plot_per_day(filenames)
     # plt.title("Daily number of GitHub stars", fontsize=14)

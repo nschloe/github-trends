@@ -2,10 +2,15 @@ import json
 import pathlib
 from datetime import datetime
 
-import dufte
+import mplx
 from matplotlib import pyplot as plt
 
-plt.style.use(dufte.style)
+
+def _merge(a, b):
+    return {**a, **b}
+
+
+plt.style.use(_merge(mplx.styles.tab20r, mplx.styles.dufte))
 
 
 # https://stackoverflow.com/a/3382369/353337
@@ -56,7 +61,7 @@ def plot(filenames, sort=True, cut=None, max_num=20):
 
         plt.plot(times, values, label=label, zorder=n - k)
 
-    dufte.legend()
+    mplx.line_labels()
 
     if "creator" in content:
         _add_license_statement(content)
@@ -141,7 +146,7 @@ def plot_per_day(filenames, sort=True, cut=None):
     for k, (time, vals, label) in enumerate(zip(times, values, labels)):
         plt.plot(time, vals, label=label, zorder=n - k)
 
-    dufte.legend()
+    mplx.line_labels()
 
     if "creator" in content:
         _add_license_statement(content)

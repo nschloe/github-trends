@@ -304,6 +304,14 @@ A collection of the GitHub stars for of a number of topics.
 
 ![dotfile-managers](https://nschloe.github.io/stargraph/dotfile-managers.svg)
 
+### Video
+
+![video](https://nschloe.github.io/stargraph/video.svg)
+
+### Video downloaders
+
+![video-downloaders](https://nschloe.github.io/stargraph/video-downloaders.svg)
+
 ### Related projects
 
 - [star-history](https://github.com/timqian/star-history)

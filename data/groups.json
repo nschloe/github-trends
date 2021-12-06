@@ -699,5 +699,27 @@
     "slatedocs/slate",
     "vercel/next.js",
     "vuejs/vuepress"
+  ],
+  "video": [
+    "bilibili/ijkplayer",
+    "CarGuo/GSYVideoPlayer",
+    "FFmpeg/FFmpeg",
+    "iina/iina",
+    "mpv-player/mpv",
+    "sampotts/plyr",
+    "videojs/video.js",
+    "videolan/vlc"
+  ],
+  "video-downloaders": [
+    "coursera-dl/coursera-dl",
+    "iawia002/annie",
+    "jely2002/youtube-dl-gui",
+    "MrS0m30n3/youtube-dl-gui",
+    "pytube/pytube",
+    "soimort/you-get",
+    "subhra74/xdm",
+    "Tyrrrz/YoutubeDownloader",
+    "yt-dlp/yt-dlp",
+    "ytdl-org/youtube-dl"
   ]
 }

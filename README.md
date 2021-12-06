@@ -140,10 +140,6 @@ A collection of the GitHub stars for of a number of topics.
 
 ![office-suites](https://nschloe.github.io/stargraph/office-suites.svg)
 
-### Video editors
-
-![video-editors](https://nschloe.github.io/stargraph/video-editors.svg)
-
 ### Computer algebra systems
 
 ![computer-algebra-systems](https://nschloe.github.io/stargraph/computer-algebra-systems.svg)
@@ -303,6 +299,19 @@ A collection of the GitHub stars for of a number of topics.
 ### Dotfile managers
 
 ![dotfile-managers](https://nschloe.github.io/stargraph/dotfile-managers.svg)
+
+### Video
+
+![video](https://nschloe.github.io/stargraph/video.svg)
+
+### Video editors
+
+![video-editors](https://nschloe.github.io/stargraph/video-editors.svg)
+
+
+### Video downloaders
+
+![video-downloaders](https://nschloe.github.io/stargraph/video-downloaders.svg)
 
 ### Related projects
 

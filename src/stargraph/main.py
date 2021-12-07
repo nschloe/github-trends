@@ -12,8 +12,11 @@ from rich.progress import Progress
 
 class Cache:
     def __init__(self, repo: str):
+        cache_dir = Path(appdirs.user_cache_dir()) / "stargraph"
+        cache_dir.mkdir(parents=True, exist_ok=True)
+
         nrepo = repo.replace("/", "_")
-        self.filename = Path(appdirs.user_cache_dir()) / "stargraph" / f"{nrepo}.json"
+        self.filename = cache_dir / f"{nrepo}.json"
 
     def read(self) -> dict:
         if not self.filename.is_file():

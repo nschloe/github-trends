@@ -14,28 +14,6 @@ upload: clean
 update:
 	python3 data/update.py -t ~/.github-access-token
 
-nschloe:
-	stargraph \
-		nschloe/tikzplotlib \
-		nschloe/meshio \
-		nschloe/perfplot \
-		nschloe/quadpy \
-		nschloe/betterbib \
-		nschloe/pygmsh \
-		nschloe/tuna \
-		nschloe/awesome-scientific-computing \
-		nschloe/termplotlib \
-		nschloe/optimesh \
-		matlab2tikz/matlab2tikz \
-		nschloe/pygalmesh \
-		nschloe/stressberry \
-		nschloe/meshzoo \
-		nschloe/colorio \
-		nschloe/dmsh \
-		nschloe/orthopy \
-		nschloe/dufte \
-		-t ~/.github-access-token -o nschloe.svg
-
 tag:
 	@if [ "$(git rev-parse --abbrev-ref HEAD)" != "main" ]; then exit 1; fi
 	# Always create a github "release"; this automatically creates a Git tag, too.
@@ -44,8 +22,8 @@ tag:
 publish: tag upload
 
 clean:
-	@find . | grep -E "(__pycache__|\.pyc|\.pyo$\)" | xargs rm -rf
-	@rm -rf *.egg-info/ build/ dist/ MANIFEST .pytest_cache/
+	@find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
+	@rm -rf src/*.egg-info/ build/ dist/ .tox/
 
 format:
 	isort .

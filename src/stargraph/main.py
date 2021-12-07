@@ -1,98 +1,75 @@
-import json
-import pathlib
-from datetime import datetime
+from __future__ import annotations
 
+import json
+from datetime import datetime
+from pathlib import Path
+
+import appdirs
 import numpy as np
 import requests
+from rich.progress import Progress
 
 
-def update_file(
-    filename,
-    repo=None,
-    token=None,
-    title="GitHub stars",
-    creator=None,
-    license=None,
-    progress_task=(None, None),
-):
-    filename = pathlib.Path(filename)
-    if filename.is_file():
-        with open(filename) as f:
-            content = json.load(f)
+class Cache:
+    def __init__(self, repo: str):
+        cache_dir = Path(appdirs.user_cache_dir()) / "stargraph"
+        cache_dir.mkdir(parents=True, exist_ok=True)
 
-        if repo is not None:
-            assert content["name"] == repo
-        if title is not None:
-            assert content["title"] == title
-        if creator is not None:
-            assert content["creator"] == creator
-        if license is not None:
-            assert content["license"] == license
+        nrepo = repo.replace("/", "_")
+        self.filename = cache_dir / f"{nrepo}.json"
 
-        data = content["data"]
-    else:
-        data = {}
-        assert repo is not None
+    def read(self) -> dict:
+        if not self.filename.is_file():
+            return {}
+        try:
+            with open(self.filename) as f:
+                content = json.load(f)
+        except Exception:
+            return {}
+        return {datetime.fromisoformat(key): value for key, value in content.items()}
 
-    data = {datetime.fromisoformat(key): value for key, value in data.items()}
-
-    data = update_github_star_data(data, repo, token, progress_task=progress_task)
-    if data is None:
-        return
-
-    d = {}
-    if title is not None:
-        d["title"] = title
-    d["name"] = repo
-    if creator is not None:
-        d["creator"] = creator
-    if license is not None:
-        d["license"] = license
-    d["data source"] = "GitHub API via stargraph"
-
-    d["data"] = dict(zip([t.isoformat() for t in data.keys()], data.values()))
-
-    with open(filename, "w") as f:
-        json.dump(d, f, indent=2, ensure_ascii=False)
+    def write(self, data: dict[datetime, int]):
+        with open(self.filename, "w") as f:
+            json.dump(
+                {key.isoformat(): value for key, value in data.items()},
+                f,
+                indent=2,
+                ensure_ascii=False,
+            )
 
 
-def get_num_remaining_api_calls(owner, name, token):
-    # find total
-    query = f"""
-    {{
-      repository(owner:"{owner}", name:"{name}") {{
-        stargazers {{
-          totalCount
-        }}
-      }}
-    }}
-    """
-    headers = {"Authorization": f"token {token}"}
-    res = requests.post(
-        "https://api.github.com/graphql", json={"query": query}, headers=headers
-    )
-    assert res.ok
+def fetch_data(repos: list[str] | set[str], token: str):
+    out = {}
+    with Progress() as progress:
+        task1 = progress.add_task("Total", total=len(repos))
+        task2 = progress.add_task("Repo")
+        for repo in repos:
+            progress.update(task2, description=repo)
+            cache = Cache(repo)
 
-    res = res.json()
-    if "errors" in res:
-        raise RuntimeError(res["errors"][0]["message"])
-    return res["data"]["repository"]["stargazers"]["totalCount"]
+            data = cache.read()
+            data = _update(data, repo, token, progress_task=(progress, task2))
+            cache.write(data)
+
+            out[repo] = data
+            progress.advance(task1)
+    return out
 
 
-def update_github_star_data(data, repo, token, progress_task):
+def _update(data, repo, token, progress_task):
     old_times = list(data.keys())
     old_counts = list(data.values())
 
     now = datetime.utcnow().replace(microsecond=0)
 
     if len(old_times) > 0 and old_times[-1] == datetime(now.year, now.month, 1):
-        return None
+        return data
 
     owner, name = repo.split("/")
 
     progress, task = progress_task
 
-    total_count = get_num_remaining_api_calls(owner, name, token)
+    total_count = _get_num_remaining_api_calls(owner, name, token)
     last_counts = 0 if len(old_counts) == 0 else old_counts[-1]
     num = -(-(total_count - last_counts) // 100)
     if progress is not None:
@@ -169,7 +146,7 @@ def update_github_star_data(data, repo, token, progress_task):
         new_counts.append(k)
 
         c = first_day_of_the_month
-        first_day_of_the_month = decrement_month(first_day_of_the_month)
+        first_day_of_the_month = _decrement_month(first_day_of_the_month)
         datetimes = datetimes[k:]
 
     new_times.reverse()
@@ -185,14 +162,37 @@ def update_github_star_data(data, repo, token, progress_task):
         times = old_times + new_times
         counts = old_counts + new_counts
     else:
-        times = [decrement_month(new_times[0])] + new_times
+        times = [_decrement_month(new_times[0])] + new_times
         counts = [0] + new_counts
         counts = [int(item) for item in np.cumsum(counts)]
 
     return dict(zip(times, counts))
 
 
-def decrement_month(dt):
+def _get_num_remaining_api_calls(owner, name, token):
+    # find total
+    query = f"""
+    {{
+      repository(owner:"{owner}", name:"{name}") {{
+        stargazers {{
+          totalCount
+        }}
+      }}
+    }}
+    """
+    headers = {"Authorization": f"token {token}"}
+    res = requests.post(
+        "https://api.github.com/graphql", json={"query": query}, headers=headers
+    )
+    assert res.ok
+
+    res = res.json()
+    if "errors" in res:
+        raise RuntimeError(res["errors"][0]["message"])
+    return res["data"]["repository"]["stargazers"]["totalCount"]
+
+
+def _decrement_month(dt):
     month = (dt.month - 2) % 12 + 1
     year = dt.year - month // 12
     return datetime(year, month, 1)

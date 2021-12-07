@@ -18,8 +18,11 @@ class Cache:
     def read(self) -> dict:
         if not self.filename.is_file():
             return {}
-        with open(self.filename) as f:
-            content = json.load(f)
+        try:
+            with open(self.filename) as f:
+                content = json.load(f)
+        except Exception:
+            return {}
         return {datetime.fromisoformat(key): value for key, value in content.items()}
 
     def write(self, data: dict[datetime, int]):
@@ -32,7 +35,7 @@ class Cache:
             )
 
 
-def fetch_data(repos: list[str], token: str | None = None):
+def fetch_data(repos: list[str] | set[str], token: str | None = None):
     out = {}
     with Progress() as progress:
         task1 = progress.add_task("Total", total=len(repos))

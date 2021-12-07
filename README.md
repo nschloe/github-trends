@@ -5,7 +5,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/nschloe/stargraph.svg?style=flat-square&logo=github&label=Stars&logoColor=white)](https://github.com/nschloe/stargraph)
 [![PyPi downloads](https://img.shields.io/pypi/dm/stargraph.svg?style=flat-square)](https://pypistats.org/packages/stargraph)
 
-[![Discord](https://img.shields.io/static/v1?logo=discord&label=chat&message=on%20discord&color=7289da&style=flat-square)](https://discord.gg/hnTJ5MRX2Y)
+[![Discord](https://img.shields.io/static/v1?logo=discord&logoColor=white&label=chat&message=on%20discord&color=7289da&style=flat-square)](https://discord.gg/hnTJ5MRX2Y)
 
 [![gh-actions](https://img.shields.io/github/workflow/status/nschloe/stargraph/ci?style=flat-square)](https://github.com/nschloe/stargraph/actions?query=workflow%3Aci)
 [![codecov](https://img.shields.io/codecov/c/github/nschloe/stargraph.svg?style=flat-square)](https://codecov.io/gh/nschloe/stargraph)
@@ -14,21 +14,7 @@
 stargraph is a Python tool that collects the star count from [GitHub
 stars](http://github.com/) and produces nice plots from it.
 
-Install with
-
-```
-pip install stargraph
-```
-
-and use in Python with
-
-```python
-import stargraph
-```
-
 ## Gallery
-
-A collection of the GitHub stars for of a number of topics.
 
 ### Programming languages
 
@@ -320,4 +306,5 @@ A collection of the GitHub stars for of a number of topics.
 
 ### License
 
-This software is published under the [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This software is published under the [GPLv3
+license](https://www.gnu.org/licenses/gpl-3.0.en.html).

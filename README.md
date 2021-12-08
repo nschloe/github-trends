@@ -172,6 +172,10 @@ stars](http://github.com/) and produces nice plots from it.
 
 ![python-distribution](https://nschloe.github.io/stargraph/python-distribution.svg)
 
+##### Obfuscators
+
+![python-obfuscators](https://nschloe.github.io/stargraph/python-obfuscators.svg)
+
 ### Terminals
 
 ##### Shells

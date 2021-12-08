@@ -227,11 +227,13 @@
     "klen/pylama",
     "microsoft/pylance-release",
     "microsoft/pyright",
-    "PyCQA/pylint",
-    "PyCQA/flake8",
-    "PyCQA/pyflakes",
-    "PyCQA/prospector",
     "PyCQA/bandit",
+    "PyCQA/flake8",
+    "PyCQA/isort",
+    "PyCQA/prospector",
+    "PyCQA/pycodestyle",
+    "PyCQA/pyflakes",
+    "PyCQA/pylint",
     "python/mypy",
     "python-security/pyt"
   ],
@@ -260,6 +262,11 @@
     "py2exe/py2exe",
     "pyinstaller/pyinstaller",
     "takluyver/pynsist"
+  ],
+  "python-obfuscators": [
+    "dashingsoft/pyarmor",
+    "liftoff/pyminifier",
+    "Nuitka/Nuitka"
   ],
   "popular-javascript": [
     "airbnb/javascript",

@@ -222,6 +222,7 @@
     "Yelp/Testify"
   ],
   "python-static-analysis": [
+    "asottile/pyupgrade",
     "davidhalter/jedi",
     "facebook/pyre-check",
     "klen/pylama",
@@ -229,9 +230,12 @@
     "microsoft/pyright",
     "PyCQA/bandit",
     "PyCQA/flake8",
+    "PyCQA/flake8-bugbear",
     "PyCQA/isort",
+    "PyCQA/pep8-naming",
     "PyCQA/prospector",
     "PyCQA/pycodestyle",
+    "PyCQA/pydocstyle",
     "PyCQA/pyflakes",
     "PyCQA/pylint",
     "python/mypy",

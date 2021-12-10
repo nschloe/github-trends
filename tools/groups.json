@@ -396,6 +396,7 @@
     "thestinger/termite",
     "LukeSmithxyz/st",
     "alacritty/alacritty",
+    "Eugeny/tabby",
     "kovidgoyal/kitty",
     "gnome-terminator/terminator",
     "KDE/konsole",
@@ -550,6 +551,15 @@
     "veloce/lichobile",
     "Zeta36/chess-alpha-zero"
   ],
+  "chess-engines": [
+    "LeelaChessZero/lc0",
+    "mcostalba/Stockfish",
+    "manyoso/allie",
+    "thomasahle/sunfish",
+    "CSSLab/maia-chess",
+    "sfleischman105/Pleco",
+    "QueensGambit/CrazyAra"
+  ],
   "spell-checkers": [
     "codespell-project/codespell",
     "GNUAspell/aspell",
@@ -635,6 +645,7 @@
     "aristocratos/bashtop",
     "aristocratos/btop",
     "aristocratos/bpytop",
+    "bvaisvil/zenith",
     "cjbassi/gotop",
     "ClementTsang/bottom",
     "hishamhm/htop",
@@ -659,8 +670,10 @@
   ],
   "compilers": [
     "gcc-mirror/gcc",
+    "larmel/lacc",
     "llvm/llvm-project",
     "rui314/8cc",
+    "rui314/9cc",
     "rui314/chibicc",
     "TinyCC/tinycc",
     "xoreaxeaxeax/movfuscator"

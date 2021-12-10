@@ -76,7 +76,7 @@
     "mongodb/mongo",
     "mysql/mysql-server",
     "postgres/postgres",
-    "antirez/redis",
+    "redis/redis",
     "apache/lucene-solr",
     "sqlite/sqlite"
   ],
@@ -142,7 +142,7 @@
     "magento/magento2",
     "wikimedia/mediawiki",
     "PrestaShop/PrestaShop",
-    "TYPO3/TYPO3.CMS",
+    "TYPO3/typo3",
     "WordPress/WordPress"
   ],
   "code-hosting-platforms": [
@@ -400,7 +400,7 @@
     "kovidgoyal/kitty",
     "gnome-terminator/terminator",
     "KDE/konsole",
-    "billiob/terminology",
+    "borisfaure/terminology",
     "KDE/yakuake",
     "tmux/tmux",
     "gnunn1/tilix",
@@ -429,7 +429,7 @@
     "fatih/vim-go",
     "itchyny/lightline.vim",
     "junegunn/fzf.vim",
-    "majutsushi/tagbar",
+    "preservim/tagbar",
     "mattn/emmet-vim",
     "mhinz/vim-startify",
     "neoclide/coc.nvim",
@@ -576,7 +576,7 @@
     "gorhill/uBlock",
     "OctoLinker/OctoLinker",
     "ovity/octotree",
-    "sindresorhus/refined-github",
+    "refined-github/refined-github",
     "WorldBrain/Memex"
   ],
   "latex": [
@@ -623,7 +623,7 @@
     "VSCodeVim/Vim",
     "hediet/vscode-drawio",
     "hediet/vscode-debug-visualizer",
-    "eamodio/vscode-gitlens",
+    "gitkraken/vscode-gitlens",
     "microsoft/vscode-cpptools",
     "microsoft/codetour",
     "microsoft/vscode-python",
@@ -720,7 +720,7 @@
     "mkdocs/mkdocs",
     "nuxt/nuxt.js",
     "rust-lang/mdBook",
-    "segmentio/metalsmith",
+    "metalsmith/metalsmith",
     "slatedocs/slate",
     "vercel/next.js",
     "vuejs/vuepress"

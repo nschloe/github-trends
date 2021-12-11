@@ -329,6 +329,7 @@
   "programming-languages": [
     "apple/swift",
     "crystal-lang/crystal",
+    "dart-lang/sdk",
     "dotnet/csharplang",
     "golang/go",
     "JetBrains/kotlin",
@@ -343,7 +344,8 @@
     "Roblox/luau",
     "ruby/ruby",
     "rust-lang/rust",
-    "vlang/v"
+    "vlang/v",
+    "ziglang/zig"
   ],
   "version-control-systems": [
     "git/git",

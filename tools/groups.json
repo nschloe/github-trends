@@ -174,13 +174,19 @@
   "build-systems": [
     "bazelbuild/bazel",
     "boostorg/build",
+    "earthly/earthly",
     "facebook/buck",
     "Kitware/CMake",
     "mirror/make",
     "mesonbuild/meson",
     "ninja-build/ninja",
+    "pantsbuild/pants",
     "premake/premake-core",
-    "SCons/scons"
+    "SCons/scons",
+    "theos/theos",
+    "thought-machine/please",
+    "tj/mmake",
+    "waf-project/waf"
   ],
   "machine-learning": [
     "BVLC/caffe",
@@ -688,9 +694,33 @@
   "encryption": [
     "FiloSottile/age",
     "gpg/gnupg",
+    "henryboldi/felony",
     "openssl/openssl",
-    "signalapp/Signal-Android"
+    "veracrypt/VeraCrypt"
   ],
+  "messaging": [
+    "apache/pulsar",
+    "berty/berty",
+    "centrifugal/centrifugo",
+    "ChatSecure/ChatSecure-iOS",
+    "nsqio/nsq",
+    "signalapp/Signal-Android",
+    "tinode/chat"
+  ],
+  "android-apps": [
+    "almalence/OpenCamera",
+    "DrKLO/Telegram",
+    "guardianproject/orbot",
+    "kabouzeid/Phonograph",
+    "LawnchairLauncher/lawnchair",
+    "moezbhatti/qksms",
+    "mozilla-mobile/fenix",
+    "nextcloud/android",
+    "osmandapp/OsmAnd",
+    "signalapp/Signal-Android",
+    "videolan/vlc-android",
+    "watabou/pixel-dungeon"
+  ]
   "display-servers": [
     "freedesktop/xorg-xserver",
     "LibVNC/x11vnc",

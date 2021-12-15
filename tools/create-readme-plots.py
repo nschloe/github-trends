@@ -24,7 +24,7 @@ for group_name, repos in data.items():
     plt.text(
         xlim[0],
         -(ylim[1] - ylim[0]) * 0.1,
-        "GitHub API via nschloe/stargraph | Nico Schlömer @nschloe | CC BY",
+        "@nschloe / stargraph | Nico Schlömer | CC BY",
         fontsize="x-small",
         verticalalignment="top",
     )

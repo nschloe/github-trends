@@ -282,6 +282,14 @@ stars](http://github.com/) and produces nice plots from it.
 
 ![encryption](https://nschloe.github.io/stargraph/encryption.svg)
 
+### Messaging
+
+![messaging](https://nschloe.github.io/stargraph/messaging.svg)
+
+### Android apps
+
+![android-apps](https://nschloe.github.io/stargraph/android-apps.svg)
+
 ### Display servers
 
 ![display-servers](https://nschloe.github.io/stargraph/display-servers.svg)

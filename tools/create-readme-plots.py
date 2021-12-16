@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-import stargraph
+from _main import fetch_data, plot
 
 with open(Path.home() / ".github-access-token") as f:
     token = f.read().strip()
@@ -14,10 +14,10 @@ with open(this_dir / "groups.json") as f:
 
 all_repos = {repo for item in data.values() for repo in item}
 
-repo_data = stargraph.fetch_data(all_repos, token=token)
+repo_data = fetch_data(all_repos, token=token)
 
 for group_name, repos in data.items():
-    plt = stargraph.plot({repo: repo_data[repo] for repo in repos})
+    plt = plot({repo: repo_data[repo] for repo in repos})
 
     xlim = plt.gca().get_xlim()
     ylim = plt.gca().get_ylim()

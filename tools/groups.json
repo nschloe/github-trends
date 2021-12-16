@@ -131,10 +131,7 @@
     "prettier/prettier",
     "Unibeautify/unibeautify"
   ],
-  "node-version-managers": [
-    "nvm-sh/nvm",
-    "tj/n"
-  ],
+  "node-version-managers": ["nvm-sh/nvm", "tj/n"],
   "content-management-systems": [
     "dnnsoftware/Dnn.Platform",
     "drupal/drupal",
@@ -145,20 +142,10 @@
     "TYPO3/typo3",
     "WordPress/WordPress"
   ],
-  "code-hosting-platforms": [
-    "gitlabhq/gitlabhq"
-  ],
-  "continuous-integration-services": [
-    "jenkinsci/jenkins"
-  ],
-  "browsers": [
-    "chromium/chromium",
-    "MicrosoftEdge/MSEdge"
-  ],
-  "office-suites": [
-    "LibreOffice/core",
-    "apache/openoffice"
-  ],
+  "code-hosting-platforms": ["gitlabhq/gitlabhq"],
+  "continuous-integration-services": ["jenkinsci/jenkins"],
+  "browsers": ["chromium/chromium", "MicrosoftEdge/MSEdge"],
+  "office-suites": ["LibreOffice/core", "apache/openoffice"],
   "computer-algebra-systems": [
     "andrejv/maxima",
     "sagemath/sage",
@@ -354,10 +341,7 @@
     "vlang/v",
     "ziglang/zig"
   ],
-  "version-control-systems": [
-    "git/git",
-    "apache/subversion"
-  ],
+  "version-control-systems": ["git/git", "apache/subversion"],
   "color-schemes": [
     "altercation/solarized",
     "arcticicestudio/nord",
@@ -416,10 +400,7 @@
     "GNOME/gnome-terminal",
     "lanoxx/tilda"
   ],
-  "vim-variants": [
-    "vim/vim",
-    "neovim/neovim"
-  ],
+  "vim-variants": ["vim/vim", "neovim/neovim"],
   "vim-plugin-managers": [
     "junegunn/vim-plug",
     "savq/paq-nvim",
@@ -459,23 +440,23 @@
     "Yggdroot/indentLine"
   ],
   "nvim-plugins": [
-     "asvetliakov/vscode-neovim",
-     "folke/tokyonight.nvim",
-     "glepnir/lspsaga.nvim",
-     "hrsh7th/nvim-cmp",
-     "hrsh7th/nvim-compe",
-     "iamcco/markdown-preview.nvim",
-     "lukas-reineke/indent-blankline.nvim",
-     "mhartington/formatter.nvim",
-     "ms-jpq/chadtree",
-     "ms-jpq/coq_nvim",
-     "nvim-lualine/lualine.nvim",
-     "nvim-neorg/neorg",
-     "nvim-telescope/telescope.nvim",
-     "nvim-treesitter/nvim-treesitter",
-     "neovim/nvim-lspconfig",
-     "phaazon/hop.nvim",
-     "romgrk/barbar.nvim"
+    "asvetliakov/vscode-neovim",
+    "folke/tokyonight.nvim",
+    "glepnir/lspsaga.nvim",
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/nvim-compe",
+    "iamcco/markdown-preview.nvim",
+    "lukas-reineke/indent-blankline.nvim",
+    "mhartington/formatter.nvim",
+    "ms-jpq/chadtree",
+    "ms-jpq/coq_nvim",
+    "nvim-lualine/lualine.nvim",
+    "nvim-neorg/neorg",
+    "nvim-telescope/telescope.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "neovim/nvim-lspconfig",
+    "phaazon/hop.nvim",
+    "romgrk/barbar.nvim"
   ],
   "monospaced-fonts": [
     "adobe-fonts/source-code-pro",

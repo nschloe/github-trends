@@ -297,7 +297,6 @@
 
 ![video-editors](https://nschloe.github.io/stargraph/video-editors.svg)
 
-
 ### Video downloaders
 
 ![video-downloaders](https://nschloe.github.io/stargraph/video-downloaders.svg)

@@ -130,55 +130,44 @@ def _update(data, repo, token, progress_task):
     new_times = []
     new_counts = []
 
-    print("nt", new_times)
-    print(datetimes[0], datetimes[-1])
-
+    # fast-backward to the beginning of the month
     c = datetime(now.year, now.month, 1)
-    print("c", c)
-    while True:
-        if len(old_times) > 0 and c <= old_times[-1]:
-            print("a")
-            break
+    try:
+        k = next(i for i, dt in enumerate(datetimes) if dt < c)
+    except StopIteration:
+        datetimes = []
+    else:
+        datetimes = datetimes[k:]
 
-        # fast-backward to next beginning of the month
-        try:
-            k = next(i for i, dt in enumerate(datetimes) if dt < c)
-        except StopIteration:
-            print(
-                "b",
-            )
+    while True:
+        if len(datetimes) == 0 or (len(old_times) > 0 and c <= old_times[-1]):
             new_times.append(c)
             new_counts.append(0)
             break
 
         new_times.append(c)
-        new_counts.append(k)
-
         c = _decrement_month(c)
-        datetimes = datetimes[k:]
+        # fast-backward to next beginning of the month
+        try:
+            k = next(i for i, dt in enumerate(datetimes) if dt < c)
+        except StopIteration:
+            new_counts.append(len(datetimes))
+            datetimes = []
+        else:
+            new_counts.append(k)
+            datetimes = datetimes[k:]
 
     assert len(new_times) == len(new_counts)
 
     new_times.reverse()
     new_counts.reverse()
 
-    print("nt", new_times, len(new_times))
-    print("nc", new_counts, len(new_counts))
-
-    # # cut off the last count since that represents the stars in the running month
-    # new_times = new_times[:-1]
-    # new_counts = new_counts[:-1]
-
+    times = old_times[:-1] + new_times
+    cs = np.cumsum(new_counts)
     if len(old_counts) > 0:
-        cs = np.cumsum(new_counts) + old_counts[-1]
-        new_counts = [int(item) for item in cs]
-        times = old_times + new_times
-        counts = old_counts + new_counts
-    else:
-        print(new_times)
-        times = [_decrement_month(new_times[0])] + new_times
-        counts = [0] + new_counts
-        counts = [int(item) for item in np.cumsum(counts)]
+        cs += old_counts[-1]
+    new_counts = [int(item) for item in cs]
+    counts = old_counts[:-1] + new_counts
 
     return dict(zip(times, counts))
 

@@ -5,8 +5,10 @@ from datetime import datetime
 from pathlib import Path
 
 import appdirs
+import matplotx
 import numpy as np
 import requests
+from matplotlib import pyplot as plt
 from rich.progress import Progress
 
 
@@ -128,33 +130,44 @@ def _update(data, repo, token, progress_task):
     new_times = []
     new_counts = []
 
-    c = now
-    first_day_of_the_month = datetime(now.year, now.month, 1)
+    print("nt", new_times)
+    print(datetimes[0], datetimes[-1])
+
+    c = datetime(now.year, now.month, 1)
+    print("c", c)
     while True:
         if len(old_times) > 0 and c <= old_times[-1]:
+            print("a")
             break
 
         # fast-backward to next beginning of the month
         try:
-            k = next(i for i, dt in enumerate(datetimes) if dt < first_day_of_the_month)
+            k = next(i for i, dt in enumerate(datetimes) if dt < c)
         except StopIteration:
+            print(
+                "b",
+            )
             new_times.append(c)
-            new_counts.append(len(datetimes))
+            new_counts.append(0)
             break
 
         new_times.append(c)
         new_counts.append(k)
 
-        c = first_day_of_the_month
-        first_day_of_the_month = _decrement_month(first_day_of_the_month)
+        c = _decrement_month(c)
         datetimes = datetimes[k:]
+
+    assert len(new_times) == len(new_counts)
 
     new_times.reverse()
     new_counts.reverse()
 
-    # cut off the last count since that represents the stars in the running month
-    new_times = new_times[:-1]
-    new_counts = new_counts[:-1]
+    print("nt", new_times, len(new_times))
+    print("nc", new_counts, len(new_counts))
+
+    # # cut off the last count since that represents the stars in the running month
+    # new_times = new_times[:-1]
+    # new_counts = new_counts[:-1]
 
     if len(old_counts) > 0:
         cs = np.cumsum(new_counts) + old_counts[-1]
@@ -162,6 +175,7 @@ def _update(data, repo, token, progress_task):
         times = old_times + new_times
         counts = old_counts + new_counts
     else:
+        print(new_times)
         times = [_decrement_month(new_times[0])] + new_times
         counts = [0] + new_counts
         counts = [int(item) for item in np.cumsum(counts)]
@@ -196,3 +210,50 @@ def _decrement_month(dt):
     month = (dt.month - 2) % 12 + 1
     year = dt.year - month // 12
     return datetime(year, month, 1)
+
+
+def _merge(a, b):
+    return {**a, **b}
+
+
+plt.style.use(_merge(matplotx.styles.tab20r, matplotx.styles.dufte))
+
+
+# https://stackoverflow.com/a/3382369/353337
+def _argsort(seq):
+    return sorted(range(len(seq)), key=seq.__getitem__)
+
+
+def plot(data, sort: bool = True, cut: float | None = None, max_num: int = 20):
+    # convert data dict to list of tuples
+    data = list(data.items())
+
+    if sort:
+        # sort them such that the largest at the last time step gets plotted first and
+        # the colors are in a nice order
+        last_vals = [list(vals.values())[-1] for _, vals in data]
+        data = [data[i] for i in _argsort(last_vals)[::-1]]
+
+    if cut is not None:
+        # cut those files where the max data is less than cut*max_overall
+        max_vals = [max(list(vals.values())) for _, vals in data]
+        max_overall = max(max_vals)
+        data = [
+            content
+            for content, max_val in zip(data, max_vals)
+            if max_val > cut * max_overall
+        ]
+
+    if max_num is not None:
+        # show only max_num repos
+        data = data[:max_num]
+
+    n = len(data)
+    for k, (repo, values) in enumerate(data):
+        times = list(values.keys())
+        values = list(values.values())
+        plt.plot(times, values, label=repo, zorder=n - k)
+
+    matplotx.line_labels()
+    matplotx.ylabel_top("GitHub stars")
+    return plt

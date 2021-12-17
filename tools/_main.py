@@ -201,11 +201,7 @@ def _decrement_month(dt):
     return datetime(year, month, 1)
 
 
-def _merge(a, b):
-    return {**a, **b}
-
-
-plt.style.use(_merge(matplotx.styles.tab20r, matplotx.styles.dufte))
+plt.style.use(matplotx.styles.duftify(matplotx.styles.tab20r))
 
 
 # https://stackoverflow.com/a/3382369/353337

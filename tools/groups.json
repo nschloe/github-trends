@@ -43,6 +43,7 @@
     "helix-editor/helix",
     "limetext/lime",
     "mawww/kakoune",
+    "microsoft/monaco-editor",
     "microsoft/vscode",
     "neovim/neovim",
     "notepad-plus-plus/notepad-plus-plus",
@@ -123,6 +124,7 @@
     "puppeteer/puppeteer",
     "segmentio/nightmare",
     "SeleniumHQ/selenium",
+    "servo/servo",
     "webdriverio/webdriverio"
   ],
   "javascript-formatters": [
@@ -144,7 +146,16 @@
   ],
   "code-hosting-platforms": ["gitlabhq/gitlabhq"],
   "continuous-integration-services": ["jenkinsci/jenkins"],
-  "browsers": ["chromium/chromium", "MicrosoftEdge/MSEdge"],
+  "browsers": [
+    "atlas-engineer/nyxt",
+    "beakerbrowser/beaker",
+    "brave/brave-browser",
+    "chromium/chromium",
+    "MicrosoftEdge/MSEdge",
+    "mozilla-mobile/fenix",
+    "mozilla-mobile/firefox-ios",
+    "qutebrowser/qutebrowser"
+  ],
   "office-suites": ["LibreOffice/core", "apache/openoffice"],
   "computer-algebra-systems": [
     "andrejv/maxima",

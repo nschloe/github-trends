@@ -18,5 +18,5 @@ all_repos = {repo for item in data.values() for repo in item}
 
 for repo in track(all_repos, description="Checking..."):
     res = requests.get(f"https://github.com/{repo}", allow_redirects=False)
-    if res.status_code != 200:
+    if res.status_code != 200 and "Location" in res.headers:
         print(f"[red]{repo} {res.status_code} -> {res.headers['Location']}[/]")

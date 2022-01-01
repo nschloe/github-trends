@@ -301,6 +301,22 @@
 
 ![video-downloaders](https://nschloe.github.io/stargraph/video-downloaders.svg)
 
+### Password managers
+
+![password-managers](https://nschloe.github.io/stargraph/password-managers.svg)
+
+### Graphics software
+
+![graphics](https://nschloe.github.io/stargraph/graphics.svg)
+
+### GUI toolkits C/C++
+
+![gui-toolkits-c](https://nschloe.github.io/stargraph/gui-toolkits-c.svg)
+
+### GUI toolkits JavaScript
+
+![gui-toolkits-js](https://nschloe.github.io/stargraph/gui-toolkits-js.svg)
+
 ### Related projects
 
 - [star-history](https://github.com/timqian/star-history)

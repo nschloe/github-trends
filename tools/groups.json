@@ -280,8 +280,6 @@
   "popular-javascript": [
     "airbnb/javascript",
     "jquery/jquery",
-    "facebook/react-native",
-    "electron/electron",
     "axios/axios",
     "lodash/lodash",
     "moment/moment",
@@ -700,7 +698,8 @@
     "ChatSecure/ChatSecure-iOS",
     "nsqio/nsq",
     "signalapp/Signal-Android",
-    "tinode/chat"
+    "tinode/chat",
+    "vector-im/element-web"
   ],
   "android-apps": [
     "almalence/OpenCamera",
@@ -771,5 +770,35 @@
     "Tyrrrz/YoutubeDownloader",
     "yt-dlp/yt-dlp",
     "ytdl-org/youtube-dl"
+  ],
+  "graphics": ["inkscape/inkscape", "GNOME/gimp", "KDE/krita"],
+  "password-managers": [
+    "buttercup/buttercup-desktop",
+    "gopasspw/gopass",
+    "keepassx/keepassx",
+    "keepassxreboot/keepassxc",
+    "lesspass/lesspass",
+    "MacPass/MacPass"
+  ],
+  "gui-toolkits-c": [
+    "cegui/cegui",
+    "chromiumembedded/cef",
+    "cnjinhao/nana",
+    "dotnet/wpf",
+    "Enlightenment/efl",
+    "fltk/fltk",
+    "GNOME/gtk",
+    "juce-framework/JUCE",
+    "openjdk/jfx",
+    "qt/qtbase",
+    "tcltk/tcl",
+    "ultimatepp/ultimatepp",
+    "wxWidgets/wxWidgets"
+  ],
+  "gui-toolkits-js": [
+    "electron/electron",
+    "facebook/react-native",
+    "flutter/flutter",
+    "ionic-team/ionic-framework"
   ]
 }

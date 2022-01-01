@@ -391,23 +391,24 @@
     "swaywm/sway",
     "xmonad/xmonad"
   ],
-  "linux-terminal-emulators": [
-    "exg/rxvt-unicode",
-    "xfce-mirror/xfce4-terminal",
-    "Guake/guake",
-    "thestinger/termite",
-    "LukeSmithxyz/st",
+  "terminal-emulators": [
     "alacritty/alacritty",
-    "Eugeny/tabby",
-    "kovidgoyal/kitty",
-    "gnome-terminator/terminator",
-    "KDE/konsole",
     "borisfaure/terminology",
-    "KDE/yakuake",
-    "tmux/tmux",
-    "gnunn1/tilix",
+    "Eugeny/tabby",
+    "exg/rxvt-unicode",
     "GNOME/gnome-terminal",
-    "lanoxx/tilda"
+    "gnome-terminator/terminator",
+    "gnunn1/tilix",
+    "Guake/guake",
+    "KDE/konsole",
+    "KDE/yakuake",
+    "kovidgoyal/kitty",
+    "lanoxx/tilda",
+    "LukeSmithxyz/st",
+    "Maximus5/ConEmu",
+    "thestinger/termite",
+    "tmux/tmux",
+    "xfce-mirror/xfce4-terminal"
   ],
   "vim-variants": ["vim/vim", "neovim/neovim"],
   "vim-plugin-managers": [

@@ -175,7 +175,7 @@
 
 ##### Terminal emulators
 
-![linux-terminal-emulators](https://nschloe.github.io/stargraph/linux-terminal-emulators.svg)
+![terminal-emulators](https://nschloe.github.io/stargraph/terminal-emulators.svg)
 
 ##### Color schemes
 

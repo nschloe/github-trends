@@ -62,7 +62,7 @@ def fetch_data(repos: list[str] | set[str], token: str, cache_dir: Path | None) 
 
 def _update(data, repo, token, progress_task):
     old_times = list(data.keys())
-    old_counts = list(data.values())
+    old_numstars = list(data.values())
 
     now = datetime.utcnow().replace(microsecond=0)
 
@@ -74,7 +74,7 @@ def _update(data, repo, token, progress_task):
     progress, task = progress_task
 
     total_count = _get_num_remaining_api_calls(owner, name, token)
-    last_counts = 0 if len(old_counts) == 0 else old_counts[-1]
+    last_counts = 0 if len(old_numstars) == 0 else old_numstars[-1]
     num = -(-(total_count - last_counts) // 100)
     if progress is not None:
         progress.update(task, description=repo, total=num, completed=0)
@@ -130,7 +130,7 @@ def _update(data, repo, token, progress_task):
             break
 
     new_times = []
-    new_counts = []
+    new_numstars = []
 
     # fast-backward to the beginning of the month
     c = datetime(now.year, now.month, 1)
@@ -144,7 +144,7 @@ def _update(data, repo, token, progress_task):
     while True:
         if len(datetimes) == 0 or (len(old_times) > 0 and c <= old_times[-1]):
             new_times.append(c)
-            new_counts.append(0)
+            new_numstars.append(0)
             break
 
         new_times.append(c)
@@ -153,26 +153,27 @@ def _update(data, repo, token, progress_task):
         try:
             k = next(i for i, dt in enumerate(datetimes) if dt < c)
         except StopIteration:
-            new_counts.append(len(datetimes))
+            new_numstars.append(len(datetimes))
             datetimes = []
         else:
-            new_counts.append(k)
+            new_numstars.append(k)
             datetimes = datetimes[k:]
 
-    assert len(new_times) == len(new_counts)
+    assert len(new_times) == len(new_numstars)
 
     new_times.reverse()
-    new_counts.reverse()
+    new_numstars.reverse()
 
     times = old_times[:-1] + new_times
     # cumsum:
-    cs = list(accumulate(new_counts))
+    cs = list(accumulate(new_numstars))
     n = len(cs)
-    if len(old_counts) > 0:
+    if len(old_numstars) > 0:
         for k in range(n):
-            cs[k] += old_counts[-1][k]
-    new_counts = [int(item) for item in cs]
-    counts = [old_counts[:-1][k] + new_counts[k] for k in range(n)]
+            cs[k] += old_numstars[-1][k]
+    new_numstars = [int(item) for item in cs]
+    # list concatenation:
+    counts = old_numstars[:-1] + new_numstars
 
     return dict(zip(times, counts))
 

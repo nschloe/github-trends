@@ -2,20 +2,24 @@ from __future__ import annotations
 
 import json
 from datetime import datetime
+from itertools import accumulate
 from pathlib import Path
 
-import appdirs
 import matplotx
-import numpy as np
 import requests
 from matplotlib import pyplot as plt
 from rich.progress import Progress
 
 
 class Cache:
-    def __init__(self, repo: str, cache_dir: Path):
-        nrepo = repo.replace("/", "_")
+    def __init__(self, repo: str, cache_dir: Path | None):
+        if cache_dir is None:
+            import appdirs
+
+            cache_dir = Path(appdirs.user_cache_dir()) / "stargraph"
+
         cache_dir.mkdir(parents=True, exist_ok=True)
+        nrepo = repo.replace("/", "_")
         self.filename = cache_dir / f"{nrepo}.json"
 
     def read(self) -> dict:
@@ -38,11 +42,7 @@ class Cache:
             )
 
 
-def fetch_data(
-    repos: list[str] | set[str],
-    token: str,
-    cache_dir: Path = Path(appdirs.user_cache_dir()) / "stargraph",
-) -> dict:
+def fetch_data(repos: list[str] | set[str], token: str, cache_dir: Path | None) -> dict:
     out = {}
     with Progress() as progress:
         task1 = progress.add_task("Total", total=len(repos))
@@ -165,11 +165,14 @@ def _update(data, repo, token, progress_task):
     new_counts.reverse()
 
     times = old_times[:-1] + new_times
-    cs = np.cumsum(new_counts)
+    # cumsum:
+    cs = list(accumulate(new_counts))
+    n = len(cs)
     if len(old_counts) > 0:
-        cs += old_counts[-1]
+        for k in range(n):
+            cs[k] += old_counts[-1][k]
     new_counts = [int(item) for item in cs]
-    counts = old_counts[:-1] + new_counts
+    counts = [old_counts[:-1][k] + new_counts[k] for k in range(n)]
 
     return dict(zip(times, counts))
 

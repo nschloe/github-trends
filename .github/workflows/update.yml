@@ -22,7 +22,7 @@ jobs:
         env:
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: |
-          pip install appdirs matplotx numpy matplotlib requests rich
+          pip install matplotx matplotlib requests rich
           python3 tools/create-readme-plots.py
           rm -f *.svg
       - name: Commit data

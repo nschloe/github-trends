@@ -1,0 +1,30 @@
+name: update
+
+# at 4am at the first day of each month
+on:
+  schedule:
+    - cron: "50 11 * * *"
+    # - cron: "0 4 1 0 *"
+
+# on:
+#   push:
+#     branches:
+#       - main
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+            lfs: 'true'
+      - name: Create readme plots
+        run: |
+          python3 tools/create-readme-plots.py
+          rm -f *.svg
+      - name: Commit data
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Automated update"
+          git push

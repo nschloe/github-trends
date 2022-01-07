@@ -26,7 +26,6 @@ jobs:
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: |
           python3 tools/create-readme-plots.py
-          rm -rf tools/__pycache__/
       - name: Optimize files
         run: |
           npm install -g svgo
@@ -38,8 +37,14 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git diff
-          git diff-index --quiet HEAD
+          git status
           # https://stackoverflow.com/a/8123841/353337
+          git diff-index --quiet HEAD || git commit -am "Automated update"
+          git push
+      - name: Commit plots
+        run: |
+          git checkout gh-pages
+          mv /tmp/plots/*.svg .
+          git add *.svg
           git diff-index --quiet HEAD || git commit -am "Automated update"
           git push

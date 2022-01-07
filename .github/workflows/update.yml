@@ -46,7 +46,7 @@ jobs:
           git push
       - name: Commit plots
         run: |
-          git fetch gh-pages
+          git fetch
           git checkout gh-pages
           mv /tmp/plots/*.svg .
           git add *.svg

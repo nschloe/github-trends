@@ -1,15 +1,14 @@
 name: update
 
-  # # at 4am at the first day of each month
-  # on:
-  #   schedule:
-  #     - cron: "01 12 * * *"
-  #     # - cron: "0 4 1 0 *"
-
+  # at 3:37am at the first day of each month
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "37 3 1 0 *"
+
+# on:
+#   push:
+#     branches:
+#       - main
 
 jobs:
   update:

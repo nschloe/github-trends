@@ -37,7 +37,10 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # git status
+          # Weirdly, we need to execute *some* git command here to refresh
+          # git's internal status. Otherwise it'll incorrectly register a
+          # number of changed files. This probably has to do with gitlfs.
+          git status
           # https://stackoverflow.com/a/8123841/353337
           git diff-index --quiet HEAD || git commit -am "Automated update"
           git push

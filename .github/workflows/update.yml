@@ -3,7 +3,7 @@ name: update
 # at 4am at the first day of each month
 on:
   schedule:
-    - cron: "50 11 * * *"
+    - cron: "01 12 * * *"
     # - cron: "0 4 1 0 *"
 
 # on:

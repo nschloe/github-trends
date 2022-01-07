@@ -34,6 +34,7 @@ jobs:
           mkdir /tmp/plots/
           mv *.svg /tmp/plots/
       - name: Commit data
+        if: ${{ git diff-index --quiet HEAD }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"

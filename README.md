@@ -1,321 +1,321 @@
-# stargraph
+# gh-trends
 
-[![GitHub stars](https://img.shields.io/github/stars/nschloe/stargraph.svg?style=flat-square&logo=github&label=Stars&logoColor=white)](https://github.com/nschloe/stargraph)
+[![GitHub stars](https://img.shields.io/github/stars/nschloe/gh-trends.svg?style=flat-square&logo=github&label=Stars&logoColor=white)](https://github.com/nschloe/gh-trends)
 [![Discord](https://img.shields.io/static/v1?logo=discord&logoColor=white&label=chat&message=on%20discord&color=7289da&style=flat-square)](https://discord.gg/hnTJ5MRX2Y)
-[![gh-actions](https://img.shields.io/github/workflow/status/nschloe/stargraph/ci?style=flat-square)](https://github.com/nschloe/stargraph/actions?query=workflow%3Aci)
+[![gh-actions](https://img.shields.io/github/workflow/status/nschloe/gh-trends/ci?style=flat-square)](https://github.com/nschloe/gh-trends/actions?query=workflow%3Aci)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)
 
 ## Gallery
 
 ### Programming languages
 
-![programming-languages](https://nschloe.github.io/stargraph/programming-languages.svg)
+![programming-languages](https://nschloe.github.io/gh-trends/programming-languages.svg)
 
 ### Version control systems
 
-![vcs](https://nschloe.github.io/stargraph/version-control-systems.svg)
+![vcs](https://nschloe.github.io/gh-trends/version-control-systems.svg)
 
 ### Frontend frameworks
 
-![frontend-frameworks](https://nschloe.github.io/stargraph/frontend-frameworks.svg)
+![frontend-frameworks](https://nschloe.github.io/gh-trends/frontend-frameworks.svg)
 
 ### Backend frameworks
 
-![backend-frameworks](https://nschloe.github.io/stargraph/backend-frameworks.svg)
+![backend-frameworks](https://nschloe.github.io/gh-trends/backend-frameworks.svg)
 
 ### Universal-rendering frameworks
 
-![universal-rendering-frameworks](https://nschloe.github.io/stargraph/universal-rendering-frameworks.svg)
+![universal-rendering-frameworks](https://nschloe.github.io/gh-trends/universal-rendering-frameworks.svg)
 
 ### Browsers
 
-![browsers](https://nschloe.github.io/stargraph/browsers.svg)
+![browsers](https://nschloe.github.io/gh-trends/browsers.svg)
 
 ### Databases
 
-![databases](https://nschloe.github.io/stargraph/databases.svg)
+![databases](https://nschloe.github.io/gh-trends/databases.svg)
 
 ### CSS frameworks
 
-![css-frameworks](https://nschloe.github.io/stargraph/css-frameworks.svg)
+![css-frameworks](https://nschloe.github.io/gh-trends/css-frameworks.svg)
 
 ### Static site generators
 
-![static-site-generators](https://nschloe.github.io/stargraph/static-site-generators.svg)
+![static-site-generators](https://nschloe.github.io/gh-trends/static-site-generators.svg)
 
 ### JavaScript
 
 ##### Package managers
 
-![javascript-package-managers](https://nschloe.github.io/stargraph/javascript-package-managers.svg)
+![javascript-package-managers](https://nschloe.github.io/gh-trends/javascript-package-managers.svg)
 
 ##### Bundlers
 
-![javascript-bundlers](https://nschloe.github.io/stargraph/javascript-bundlers.svg)
+![javascript-bundlers](https://nschloe.github.io/gh-trends/javascript-bundlers.svg)
 
 ##### Testing frameworks
 
-![javascript-testing-frameworks](https://nschloe.github.io/stargraph/javascript-testing-frameworks.svg)
+![javascript-testing-frameworks](https://nschloe.github.io/gh-trends/javascript-testing-frameworks.svg)
 
 ##### Browser automation
 
-![javascript-browser-automation](https://nschloe.github.io/stargraph/javascript-browser-automation.svg)
+![javascript-browser-automation](https://nschloe.github.io/gh-trends/javascript-browser-automation.svg)
 
 ##### Code formatters
 
-![javascript-formatters](https://nschloe.github.io/stargraph/javascript-formatters.svg)
+![javascript-formatters](https://nschloe.github.io/gh-trends/javascript-formatters.svg)
 
 ##### Data visualization
 
-![javascript-data-visualization](https://nschloe.github.io/stargraph/javascript-data-visualization.svg)
+![javascript-data-visualization](https://nschloe.github.io/gh-trends/javascript-data-visualization.svg)
 
 ##### Math
 
-![javascript-math](https://nschloe.github.io/stargraph/javascript-math.svg)
+![javascript-math](https://nschloe.github.io/gh-trends/javascript-math.svg)
 
 ##### Popular packages
 
-![popular-javascript](https://nschloe.github.io/stargraph/popular-javascript.svg)
+![popular-javascript](https://nschloe.github.io/gh-trends/popular-javascript.svg)
 
 ##### Node runners
 
-![node-runners](https://nschloe.github.io/stargraph/node-runners.svg)
+![node-runners](https://nschloe.github.io/gh-trends/node-runners.svg)
 
 ##### Node version managers
 
-![node-version-managers](https://nschloe.github.io/stargraph/node-version-managers.svg)
+![node-version-managers](https://nschloe.github.io/gh-trends/node-version-managers.svg)
 
 ### Text editors
 
-![text-editors](https://nschloe.github.io/stargraph/text-editors.svg)
+![text-editors](https://nschloe.github.io/gh-trends/text-editors.svg)
 
 ### VSCode extensions
 
-![vscode-extensions](https://nschloe.github.io/stargraph/vscode-extensions.svg)
+![vscode-extensions](https://nschloe.github.io/gh-trends/vscode-extensions.svg)
 
 ### Operating systems
 
-![operating-systems](https://nschloe.github.io/stargraph/operating-systems.svg)
+![operating-systems](https://nschloe.github.io/gh-trends/operating-systems.svg)
 
 ### Unix window managers
 
-![linux-window-managers](https://nschloe.github.io/stargraph/linux-window-managers.svg)
+![linux-window-managers](https://nschloe.github.io/gh-trends/linux-window-managers.svg)
 
 ### Code-hosting platforms
 
-![code-hosting-platforms](https://nschloe.github.io/stargraph/code-hosting-platforms.svg)
+![code-hosting-platforms](https://nschloe.github.io/gh-trends/code-hosting-platforms.svg)
 
 ### Content-management systems
 
-![content-management-systems](https://nschloe.github.io/stargraph/content-management-systems.svg)
+![content-management-systems](https://nschloe.github.io/gh-trends/content-management-systems.svg)
 
 ### Continuous-integration services
 
-![continuous-integration-services](https://nschloe.github.io/stargraph/continuous-integration-services.svg)
+![continuous-integration-services](https://nschloe.github.io/gh-trends/continuous-integration-services.svg)
 
 ### Office suites
 
-![office-suites](https://nschloe.github.io/stargraph/office-suites.svg)
+![office-suites](https://nschloe.github.io/gh-trends/office-suites.svg)
 
 ### Computer algebra systems
 
-![computer-algebra-systems](https://nschloe.github.io/stargraph/computer-algebra-systems.svg)
+![computer-algebra-systems](https://nschloe.github.io/gh-trends/computer-algebra-systems.svg)
 
 ### DevOps
 
-![devops](https://nschloe.github.io/stargraph/devops.svg)
+![devops](https://nschloe.github.io/gh-trends/devops.svg)
 
 ### Build systems
 
-![build-systems](https://nschloe.github.io/stargraph/build-systems.svg)
+![build-systems](https://nschloe.github.io/gh-trends/build-systems.svg)
 
 ### Machine learning
 
-![machine-learning](https://nschloe.github.io/stargraph/machine-learning.svg)
+![machine-learning](https://nschloe.github.io/gh-trends/machine-learning.svg)
 
 ### Python
 
 ##### Science
 
-![scientific-python](https://nschloe.github.io/stargraph/scientific-python.svg)
+![scientific-python](https://nschloe.github.io/gh-trends/scientific-python.svg)
 
 ##### Plotting
 
-![python-plotting](https://nschloe.github.io/stargraph/python-plotting.svg)
+![python-plotting](https://nschloe.github.io/gh-trends/python-plotting.svg)
 
 ##### Testing
 
-![python-testing](https://nschloe.github.io/stargraph/python-testing.svg)
+![python-testing](https://nschloe.github.io/gh-trends/python-testing.svg)
 
 ##### HTTP clients
 
-![python-http-clients](https://nschloe.github.io/stargraph/python-http-clients.svg)
+![python-http-clients](https://nschloe.github.io/gh-trends/python-http-clients.svg)
 
 ##### Static code analysis
 
-![python-static-analysis](https://nschloe.github.io/stargraph/python-static-analysis.svg)
+![python-static-analysis](https://nschloe.github.io/gh-trends/python-static-analysis.svg)
 
 ##### Code formatters
 
-![python-code-formatters](https://nschloe.github.io/stargraph/python-formatters.svg)
+![python-code-formatters](https://nschloe.github.io/gh-trends/python-formatters.svg)
 
 ##### Distribution
 
-![python-distribution](https://nschloe.github.io/stargraph/python-distribution.svg)
+![python-distribution](https://nschloe.github.io/gh-trends/python-distribution.svg)
 
 ##### Obfuscators
 
-![python-obfuscators](https://nschloe.github.io/stargraph/python-obfuscators.svg)
+![python-obfuscators](https://nschloe.github.io/gh-trends/python-obfuscators.svg)
 
 ### Terminals
 
 ##### Shells
 
-![shells](https://nschloe.github.io/stargraph/shells.svg)
+![shells](https://nschloe.github.io/gh-trends/shells.svg)
 
 ##### Terminal emulators
 
-![terminal-emulators](https://nschloe.github.io/stargraph/terminal-emulators.svg)
+![terminal-emulators](https://nschloe.github.io/gh-trends/terminal-emulators.svg)
 
 ##### Color schemes
 
-![color-schemes](https://nschloe.github.io/stargraph/color-schemes.svg)
+![color-schemes](https://nschloe.github.io/gh-trends/color-schemes.svg)
 
 ##### Terminal recorders
 
-![terminal-recorders](https://nschloe.github.io/stargraph/terminal-recorders.svg)
+![terminal-recorders](https://nschloe.github.io/gh-trends/terminal-recorders.svg)
 
 ### Fonts
 
 ##### Monospaced fonts
 
-![monospaced-fonts](https://nschloe.github.io/stargraph/monospaced-fonts.svg)
+![monospaced-fonts](https://nschloe.github.io/gh-trends/monospaced-fonts.svg)
 
 ##### Other fonts
 
-![other-fonts](https://nschloe.github.io/stargraph/other-fonts.svg)
+![other-fonts](https://nschloe.github.io/gh-trends/other-fonts.svg)
 
 ### vim
 
 ##### vim variants
 
-![vim-variants](https://nschloe.github.io/stargraph/vim-variants.svg)
+![vim-variants](https://nschloe.github.io/gh-trends/vim-variants.svg)
 
 ##### Plug-in managers
 
-![vim-plugin-managers](https://nschloe.github.io/stargraph/vim-plugin-managers.svg)
+![vim-plugin-managers](https://nschloe.github.io/gh-trends/vim-plugin-managers.svg)
 
 ##### Vim Plug-ins
 
-![vim-plugins](https://nschloe.github.io/stargraph/vim-plugins.svg)
+![vim-plugins](https://nschloe.github.io/gh-trends/vim-plugins.svg)
 
 ##### Neovim Plug-ins
 
-![nvim-plugins](https://nschloe.github.io/stargraph/nvim-plugins.svg)
+![nvim-plugins](https://nschloe.github.io/gh-trends/nvim-plugins.svg)
 
 ### Documentation
 
-![documentation](https://nschloe.github.io/stargraph/doc-generators.svg)
+![documentation](https://nschloe.github.io/gh-trends/doc-generators.svg)
 
 ### Proofreading tools
 
-![proofreading](https://nschloe.github.io/stargraph/proofreading-tools.svg)
+![proofreading](https://nschloe.github.io/gh-trends/proofreading-tools.svg)
 
 ### Spell checkers
 
-![spell-checkers](https://nschloe.github.io/stargraph/spell-checkers.svg)
+![spell-checkers](https://nschloe.github.io/gh-trends/spell-checkers.svg)
 
 ### Chess
 
-![chess](https://nschloe.github.io/stargraph/chess.svg)
+![chess](https://nschloe.github.io/gh-trends/chess.svg)
 
 ### Browser extensions
 
-![browser-extensions](https://nschloe.github.io/stargraph/browser-extensions.svg)
+![browser-extensions](https://nschloe.github.io/gh-trends/browser-extensions.svg)
 
 ### LaTeX
 
-![latex](https://nschloe.github.io/stargraph/latex.svg)
+![latex](https://nschloe.github.io/gh-trends/latex.svg)
 
-### Music software
+### Audio software
 
-![music-software](https://nschloe.github.io/stargraph/music-software.svg)
+![music-software](https://nschloe.github.io/gh-trends/music-software.svg)
 
 ### Dependency managers
 
-![dependency-managers](https://nschloe.github.io/stargraph/dependency-managers.svg)
+![dependency-managers](https://nschloe.github.io/gh-trends/dependency-managers.svg)
 
 ### Command-line tools
 
-![command-line-tools](https://nschloe.github.io/stargraph/command-line-tools.svg)
+![command-line-tools](https://nschloe.github.io/gh-trends/command-line-tools.svg)
 
 ### Command-line system monitoring
 
-![command-line-system-monitoring](https://nschloe.github.io/stargraph/command-line-system-monitoring.svg)
+![command-line-system-monitoring](https://nschloe.github.io/gh-trends/command-line-system-monitoring.svg)
 
 ### Git tools
 
-![git-tools](https://nschloe.github.io/stargraph/git-tools.svg)
+![git-tools](https://nschloe.github.io/gh-trends/git-tools.svg)
 
 ### Data formats
 
-![data-formats](https://nschloe.github.io/stargraph/data-formats.svg)
+![data-formats](https://nschloe.github.io/gh-trends/data-formats.svg)
 
 ### Data formats for humans
 
-![data-formats-for-humans](https://nschloe.github.io/stargraph/data-formats-for-humans.svg)
+![data-formats-for-humans](https://nschloe.github.io/gh-trends/data-formats-for-humans.svg)
 
 ### Compilers
 
-![compilers](https://nschloe.github.io/stargraph/compilers.svg)
+![compilers](https://nschloe.github.io/gh-trends/compilers.svg)
 
 ### Encryption
 
-![encryption](https://nschloe.github.io/stargraph/encryption.svg)
+![encryption](https://nschloe.github.io/gh-trends/encryption.svg)
 
 ### Messaging
 
-![messaging](https://nschloe.github.io/stargraph/messaging.svg)
+![messaging](https://nschloe.github.io/gh-trends/messaging.svg)
 
 ### Android apps
 
-![android-apps](https://nschloe.github.io/stargraph/android-apps.svg)
+![android-apps](https://nschloe.github.io/gh-trends/android-apps.svg)
 
 ### Display servers
 
-![display-servers](https://nschloe.github.io/stargraph/display-servers.svg)
+![display-servers](https://nschloe.github.io/gh-trends/display-servers.svg)
 
 ### Dotfile managers
 
-![dotfile-managers](https://nschloe.github.io/stargraph/dotfile-managers.svg)
+![dotfile-managers](https://nschloe.github.io/gh-trends/dotfile-managers.svg)
 
 ### Video
 
-![video](https://nschloe.github.io/stargraph/video.svg)
+![video](https://nschloe.github.io/gh-trends/video.svg)
 
 ### Video editors
 
-![video-editors](https://nschloe.github.io/stargraph/video-editors.svg)
+![video-editors](https://nschloe.github.io/gh-trends/video-editors.svg)
 
 ### Video downloaders
 
-![video-downloaders](https://nschloe.github.io/stargraph/video-downloaders.svg)
+![video-downloaders](https://nschloe.github.io/gh-trends/video-downloaders.svg)
 
 ### Password managers
 
-![password-managers](https://nschloe.github.io/stargraph/password-managers.svg)
+![password-managers](https://nschloe.github.io/gh-trends/password-managers.svg)
 
 ### Graphics software
 
-![graphics](https://nschloe.github.io/stargraph/graphics.svg)
+![graphics](https://nschloe.github.io/gh-trends/graphics.svg)
 
 ### GUI toolkits C/C++
 
-![gui-toolkits-c](https://nschloe.github.io/stargraph/gui-toolkits-c.svg)
+![gui-toolkits-c](https://nschloe.github.io/gh-trends/gui-toolkits-c.svg)
 
 ### GUI toolkits JavaScript
 
-![gui-toolkits-js](https://nschloe.github.io/stargraph/gui-toolkits-js.svg)
+![gui-toolkits-js](https://nschloe.github.io/gh-trends/gui-toolkits-js.svg)
 
 ### Related projects
 

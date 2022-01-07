@@ -16,7 +16,7 @@ class Cache:
         if cache_dir is None:
             import appdirs
 
-            cache_dir = Path(appdirs.user_cache_dir()) / "stargraph"
+            cache_dir = Path(appdirs.user_cache_dir()) / "gh-trends"
 
         cache_dir.mkdir(parents=True, exist_ok=True)
         nrepo = repo.replace("/", "_")

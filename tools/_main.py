@@ -13,11 +13,9 @@ from rich.progress import Progress
 
 
 class Cache:
-    def __init__(self, repo: str):
-        cache_dir = Path(appdirs.user_cache_dir()) / "stargraph"
-        cache_dir.mkdir(parents=True, exist_ok=True)
-
+    def __init__(self, repo: str, cache_dir: Path):
         nrepo = repo.replace("/", "_")
+        cache_dir.mkdir(parents=True, exist_ok=True)
         self.filename = cache_dir / f"{nrepo}.json"
 
     def read(self) -> dict:
@@ -40,14 +38,18 @@ class Cache:
             )
 
 
-def fetch_data(repos: list[str] | set[str], token: str):
+def fetch_data(
+    repos: list[str] | set[str],
+    token: str,
+    cache_dir: Path = Path(appdirs.user_cache_dir()) / "stargraph",
+) -> dict:
     out = {}
     with Progress() as progress:
         task1 = progress.add_task("Total", total=len(repos))
         task2 = progress.add_task("Repo")
         for repo in repos:
             progress.update(task2, description=repo)
-            cache = Cache(repo)
+            cache = Cache(repo, cache_dir)
 
             data = cache.read()
             data = _update(data, repo, token, progress_task=(progress, task2))

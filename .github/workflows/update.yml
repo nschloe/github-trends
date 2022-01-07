@@ -37,12 +37,13 @@ jobs:
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git status
+          # git status
           # https://stackoverflow.com/a/8123841/353337
           git diff-index --quiet HEAD || git commit -am "Automated update"
           git push
       - name: Commit plots
         run: |
+          git fetch gh-pages
           git checkout gh-pages
           mv /tmp/plots/*.svg .
           git add *.svg

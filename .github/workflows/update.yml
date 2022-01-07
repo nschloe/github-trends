@@ -34,9 +34,9 @@ jobs:
           mkdir /tmp/plots/
           mv *.svg /tmp/plots/
       - name: Commit data
-        if: ${{ git diff-index --quiet HEAD }}
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "Automated update"
+          # https://stackoverflow.com/a/8123841/353337
+          git diff-index --quiet HEAD || git commit -am "Automated update"
           git push

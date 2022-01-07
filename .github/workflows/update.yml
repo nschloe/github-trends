@@ -30,6 +30,9 @@ jobs:
         run: |
           npm install -g svgo
           svgo *.svg
+          # and move them out of the way
+          mkdir /tmp/plots/
+          mv *.svg /tmp/plots/
       - name: Commit data
         run: |
           git config --local user.name "github-actions[bot]"

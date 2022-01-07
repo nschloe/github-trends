@@ -11,7 +11,7 @@ except KeyError:
     with open(Path.home() / ".github-access-token") as f:
         token = f.read().strip()
 
-this_dir = Path(__file__).parents[0]
+this_dir = Path(__file__).resolve().parent
 
 with open(this_dir / "groups.json") as f:
     data = json.load(f)
@@ -19,9 +19,7 @@ with open(this_dir / "groups.json") as f:
 
 all_repos = {repo for item in data.values() for repo in item}
 
-repo_data = fetch_data(
-    all_repos, token=token, cache_dir=Path(__file__).resolve().parent / ".." / "cache"
-)
+repo_data = fetch_data(all_repos, token=token, cache_dir=this_dir / ".." / "cache")
 
 for group_name, repos in data.items():
     plt = plot({repo: repo_data[repo] for repo in repos})

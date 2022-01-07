@@ -146,7 +146,12 @@
     "WordPress/WordPress"
   ],
   "code-hosting-platforms": ["gitlabhq/gitlabhq"],
-  "continuous-integration-services": ["jenkinsci/jenkins"],
+  "continuous-integration-services": [
+    "apache/airflow",
+    "jenkins-x/jx",
+    "jenkinsci/jenkins",
+    "travis-ci/travis-ci"
+  ],
   "browsers": [
     "atlas-engineer/nyxt",
     "beakerbrowser/beaker",

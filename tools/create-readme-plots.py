@@ -1,10 +1,15 @@
 import json
+import os
 from pathlib import Path
 
 from _main import fetch_data, plot
 
-with open(Path.home() / ".github-access-token") as f:
-    token = f.read().strip()
+try:
+    token = os.environ["GH_ACCESS_TOKEN"]
+except KeyError:
+    # fall back to file
+    with open(Path.home() / ".github-access-token") as f:
+        token = f.read().strip()
 
 this_dir = Path(__file__).parents[0]
 

@@ -1,14 +1,14 @@
 name: update
 
-  # # at 3:37am at the first day of each month
-  # on:
-  #   schedule:
-  #     - cron: "37 3 1 0 *"
-
+# at 3:37am at the first day of each month
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "37 3 1 0 *"
+
+  # on:
+  #   push:
+  #     branches:
+  #       - main
 
 jobs:
   update:
@@ -25,6 +25,17 @@ jobs:
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
         run: |
           python3 tools/create-readme-plots.py
+      - name: Commit data
+        run: |
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Weirdly, we need to execute *some* git command here to refresh
+          # git's internal status. Otherwise it'll incorrectly register a
+          # number of changed files. This probably has to do with gitlfs.
+          git status
+          # https://stackoverflow.com/a/8123841/353337
+          git diff-index --quiet HEAD || git commit -am "Automated update"
+          git push
       - name: Optimize files
         run: |
           npm install -g svgo

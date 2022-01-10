@@ -317,6 +317,10 @@
 
 ![gui-toolkits-js](https://nschloe.github.io/gh-trends/gui-toolkits-js.svg)
 
+### GitHub Actions
+
+![github-actions](https://nschloe.github.io/gh-trends/github-actions.svg)
+
 ### Related projects
 
 - [star-history](https://github.com/timqian/star-history)

@@ -21,6 +21,9 @@ all_repos = {repo for item in data.values() for repo in item}
 
 repo_data = fetch_data(all_repos, token=token, cache_dir=this_dir / ".." / "cache")
 
+plot_dir = this_dir / ".." / "plots"
+plot_dir.mkdir(exist_ok=True)
+
 for group_name, repos in data.items():
     plt = plot({repo: repo_data[repo] for repo in repos})
 
@@ -33,6 +36,6 @@ for group_name, repos in data.items():
         fontsize="x-small",
         verticalalignment="top",
     )
-    plt.savefig(f"{group_name}.svg", bbox_inches="tight", transparent=True)
+    plt.savefig(plot_dir / f"{group_name}.svg", bbox_inches="tight", transparent=True)
     # plt.show()
     plt.close()

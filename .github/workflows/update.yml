@@ -1,14 +1,14 @@
 name: update
 
-  # at 3:37am at the first day of each month
-on:
-  schedule:
-    - cron: "37 3 1 0 *"
+  # # at 3:37am at the first day of each month
+  # on:
+  #   schedule:
+  #     - cron: "37 3 1 0 *"
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   update:
@@ -28,26 +28,9 @@ jobs:
       - name: Optimize files
         run: |
           npm install -g svgo
-          svgo *.svg
-          # and move them out of the way
-          mkdir /tmp/plots/
-          mv *.svg /tmp/plots/
-      - name: Commit data
-        run: |
-          git config --local user.name "github-actions[bot]"
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Weirdly, we need to execute *some* git command here to refresh
-          # git's internal status. Otherwise it'll incorrectly register a
-          # number of changed files. This probably has to do with gitlfs.
-          git status
-          # https://stackoverflow.com/a/8123841/353337
-          git diff-index --quiet HEAD || git commit -am "Automated update"
-          git push
-      - name: Commit plots
-        run: |
-          git fetch
-          git checkout gh-pages
-          mv /tmp/plots/*.svg .
-          git add *.svg
-          git diff-index --quiet HEAD || git commit -am "Automated update"
-          git push
+          svgo plots
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.2.1
+        with:
+          branch: gh-pages
+          folder: plots/

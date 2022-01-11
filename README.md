@@ -167,6 +167,10 @@
 
 ![python-obfuscators](https://nschloe.github.io/gh-trends/python-obfuscators.svg)
 
+##### CLI
+
+![python-cli](https://nschloe.github.io/gh-trends/python-cli.svg)
+
 ### Terminals
 
 ##### Shells

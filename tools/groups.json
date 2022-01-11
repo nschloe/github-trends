@@ -60,6 +60,7 @@
     "fish-shell/fish-shell",
     "microsoft/terminal",
     "mobile-shell/mosh",
+    "oh-my-fish/oh-my-fish",
     "ohmyzsh/ohmyzsh",
     "PowerShell/PowerShell",
     "tcsh-org/tcsh",
@@ -283,6 +284,14 @@
     "liftoff/pyminifier",
     "Nuitka/Nuitka"
   ],
+  "python-cli": [
+    "pallets/click",
+    "tartley/colorama",
+    "tiangolo/typer",
+    "Textualize/rich",
+    "Textualize/textual",
+    "tqdm/tqdm"
+  ],
   "popular-javascript": [
     "airbnb/javascript",
     "jquery/jquery",
@@ -412,6 +421,8 @@
     "lanoxx/tilda",
     "LukeSmithxyz/st",
     "Maximus5/ConEmu",
+    "railsware/upterm",
+    "Swordfish90/cool-retro-term",
     "thestinger/termite",
     "tmux/tmux",
     "xfce-mirror/xfce4-terminal"
@@ -636,15 +647,28 @@
     "Huachao/vscode-restclient",
     "asvetliakov/vscode-neovim"
   ],
-  "command-line-tools": [
+  "modern-unix-tools": [
+    "bootandy/dust",
     "BurntSushi/ripgrep",
+    "Canop/broot",
+    "cantino/mcfly",
     "chalk/chalk",
+    "cheat/cheat",
+    "chmln/sd",
     "chubin/cheat.sh",
+    "dalance/procs",
+    "dandavison/delta",
+    "ggreer/the_silver_searcher",
     "junegunn/fzf",
+    "muesli/duf",
     "ogham/exa",
+    "orf/gping",
     "Peltoche/lsd",
     "sharkdp/bat",
-    "sharkdp/fd"
+    "sharkdp/fd",
+    "sharkdp/hyperfine",
+    "stedolan/jq",
+    "tldr-pages/tldr"
   ],
   "command-line-system-monitoring": [
     "aksakalli/gtop",
@@ -662,6 +686,9 @@
     "xxxserxxx/gotop"
   ],
   "git-tools": [
+    "dandavison/delta",
+    "donnemartin/gitsome",
+    "extrawurst/gitui",
     "jesseduffield/lazygit",
     "pre-commit/pre-commit",
     "so-fancy/diff-so-fancy",

@@ -42,7 +42,9 @@ class Cache:
             )
 
 
-def fetch_data(repos: list[str] | set[str], token: str, cache_dir: Path | None) -> dict:
+def fetch_data(
+    repos: list[str] | set[str], token: str, cache_dir: Path | None = None
+) -> dict:
     out = {}
     with Progress() as progress:
         task1 = progress.add_task("Total", total=len(repos))

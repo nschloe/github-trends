@@ -329,8 +329,3 @@
 
 - [star-history](https://github.com/timqian/star-history)
 - [star-history](https://github.com/dtolnay/star-history)
-
-### License
-
-This software is published under the [GPLv3
-license](https://www.gnu.org/licenses/gpl-3.0.en.html).

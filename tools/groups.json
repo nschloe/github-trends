@@ -63,6 +63,7 @@
     "oh-my-fish/oh-my-fish",
     "ohmyzsh/ohmyzsh",
     "PowerShell/PowerShell",
+    "sorin-ionescu/prezto",
     "tcsh-org/tcsh",
     "zsh-users/zsh"
   ],
@@ -135,7 +136,12 @@
     "prettier/prettier",
     "Unibeautify/unibeautify"
   ],
-  "node-version-managers": ["nvm-sh/nvm", "tj/n"],
+  "node-version-managers": [
+    "ekalinin/nodeenv",
+    "nodenv/nodenv",
+    "nvm-sh/nvm",
+    "tj/n"
+  ],
   "content-management-systems": [
     "dnnsoftware/Dnn.Platform",
     "drupal/drupal",
@@ -656,10 +662,12 @@
     "cheat/cheat",
     "chmln/sd",
     "chubin/cheat.sh",
+    "clvv/fasd",
     "dalance/procs",
     "dandavison/delta",
     "ggreer/the_silver_searcher",
     "junegunn/fzf",
+    "mikefarah/yq",
     "muesli/duf",
     "ogham/exa",
     "orf/gping",
@@ -690,6 +698,7 @@
     "donnemartin/gitsome",
     "extrawurst/gitui",
     "jesseduffield/lazygit",
+    "jonas/tig",
     "pre-commit/pre-commit",
     "so-fancy/diff-so-fancy",
     "tj/git-extras",
@@ -719,6 +728,7 @@
     "yaml/yaml-spec"
   ],
   "encryption": [
+    "cryptomator/cryptomator",
     "FiloSottile/age",
     "gpg/gnupg",
     "henryboldi/felony",
@@ -807,6 +817,7 @@
   ],
   "graphics": ["inkscape/inkscape", "GNOME/gimp", "KDE/krita"],
   "password-managers": [
+    "bitwarden/server",
     "buttercup/buttercup-desktop",
     "gopasspw/gopass",
     "keepassx/keepassx",

@@ -12,7 +12,7 @@ from rich.progress import Progress
 
 
 class Cache:
-    def __init__(self, repo: str, cache_dir: Path | None):
+    def __init__(self, repo: str, cache_dir: Path | None) -> None:
         if cache_dir is None:
             import appdirs
 
@@ -22,7 +22,7 @@ class Cache:
         nrepo = repo.replace("/", "_")
         self.filename = cache_dir / f"{nrepo}.json"
 
-    def read(self) -> dict:
+    def read(self) -> dict[datetime, int]:
         if not self.filename.is_file():
             return {}
         try:
@@ -32,7 +32,7 @@ class Cache:
             return {}
         return {datetime.fromisoformat(key): value for key, value in content.items()}
 
-    def write(self, data: dict[datetime, int]):
+    def write(self, data: dict[datetime, int]) -> None:
         with open(self.filename, "w") as f:
             json.dump(
                 {key.isoformat(): value for key, value in data.items()},
@@ -44,7 +44,7 @@ class Cache:
 
 def fetch_data(
     repos: list[str] | set[str], token: str, cache_dir: Path | None = None
-) -> dict:
+) -> dict[str, dict[datetime, int]]:
     out = {}
     with Progress() as progress:
         task1 = progress.add_task("Total", total=len(repos))
@@ -54,22 +54,25 @@ def fetch_data(
             cache = Cache(repo, cache_dir)
 
             data = cache.read()
-            data = _update(data, repo, token, progress_task=(progress, task2))
-            cache.write(data)
+            new_data = _update(data, repo, token, progress_task=(progress, task2))
+            if new_data != data:
+                cache.write(new_data)
 
-            out[repo] = data
+            out[repo] = new_data
             progress.advance(task1)
     return out
 
 
-def _update(data, repo, token, progress_task):
-    old_times = list(data.keys())
-    old_numstars = list(data.values())
+def _update(
+    in_data: dict[datetime, int], repo: str, token: str, progress_task
+) -> dict[datetime, int]:
+    old_times = list(in_data.keys())
+    old_numstars = list(in_data.values())
 
     now = datetime.utcnow().replace(microsecond=0)
 
     if len(old_times) > 0 and old_times[-1] == datetime(now.year, now.month, 1):
-        return data
+        return in_data
 
     owner, name = repo.split("/")
 
@@ -180,7 +183,7 @@ def _update(data, repo, token, progress_task):
     return dict(zip(times, counts))
 
 
-def _get_num_remaining_api_calls(owner, name, token):
+def _get_num_remaining_api_calls(owner: str, name: str, token: str) -> int:
     # find total
     query = f"""
     {{
@@ -203,7 +206,7 @@ def _get_num_remaining_api_calls(owner, name, token):
     return res["data"]["repository"]["stargazers"]["totalCount"]
 
 
-def _decrement_month(dt):
+def _decrement_month(dt: datetime) -> datetime:
     month = (dt.month - 2) % 12 + 1
     year = dt.year - month // 12
     return datetime(year, month, 1)

@@ -19,7 +19,7 @@ with open(this_dir / "groups.json") as f:
 
 all_repos = {repo for item in data.values() for repo in item}
 
-repo_data = fetch_data(all_repos, token=token, cache_dir=this_dir / ".." / "cache")
+repo_data = fetch_data(all_repos, token=token, cache_dir=this_dir / ".." / ".cache")
 
 plot_dir = this_dir / ".." / "plots"
 plot_dir.mkdir(exist_ok=True)

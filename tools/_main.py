@@ -153,7 +153,7 @@ def _update(
             break
 
         new_times.append(c)
-        c = _decrement_month(c)
+        c = _increment_month(c, -1)
         # fast-backward to next beginning of the month
         try:
             k = next(i for i, dt in enumerate(datetimes) if dt < c)
@@ -206,9 +206,9 @@ def _get_num_remaining_api_calls(owner: str, name: str, token: str) -> int:
     return res["data"]["repository"]["stargazers"]["totalCount"]
 
 
-def _decrement_month(dt: datetime) -> datetime:
-    month = (dt.month - 2) % 12 + 1
-    year = dt.year - month // 12
+def _increment_month(dt: datetime, inc: int) -> datetime:
+    month = (dt.month + inc - 1) % 12 + 1
+    year = dt.year + (dt.month + inc - 1) // 12
     return datetime(year, month, 1)
 
 

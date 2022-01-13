@@ -155,6 +155,7 @@
   "code-hosting-platforms": ["gitlabhq/gitlabhq"],
   "continuous-integration-services": [
     "apache/airflow",
+    "circleci/circleci-docs",
     "jenkins-x/jx",
     "jenkinsci/jenkins",
     "travis-ci/travis-ci"

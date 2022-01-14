@@ -299,6 +299,12 @@
     "Textualize/textual",
     "tqdm/tqdm"
   ],
+  "python-spell-checkers": [
+    "bakwc/JamSpell",
+    "barrust/pyspellchecker",
+    "filyp/autocorrect",
+    "pyenchant/pyenchant"
+  ],
   "popular-javascript": [
     "airbnb/javascript",
     "jquery/jquery",
@@ -654,7 +660,7 @@
     "Huachao/vscode-restclient",
     "asvetliakov/vscode-neovim"
   ],
-  "modern-unix-tools": [
+  "command-line-tools": [
     "bootandy/dust",
     "BurntSushi/ripgrep",
     "Canop/broot",
@@ -670,6 +676,7 @@
     "junegunn/fzf",
     "mikefarah/yq",
     "muesli/duf",
+    "nvbn/thefuck",
     "ogham/exa",
     "orf/gping",
     "Peltoche/lsd",
@@ -858,7 +865,9 @@
   ],
   "numerical-software": [
     "boostorg/ublas",
+    "conradsnicta/armadillo",
     "flame/blis",
+    "flame/libflame",
     "math-atlas/math-atlas",
     "opencollab/arpack-ng",
     "Reference-LAPACK/lapack",

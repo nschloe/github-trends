@@ -25,7 +25,7 @@ plot_dir = this_dir / ".." / "plots"
 plot_dir.mkdir(exist_ok=True)
 
 for group_name, repos in data.items():
-    plt = plot({repo: repo_data[repo] for repo in repos})
+    plt = plot({repo: repo_data[repo] for repo in repos}, max_num=15)
 
     xlim = plt.gca().get_xlim()
     ylim = plt.gca().get_ylim()

@@ -249,9 +249,9 @@
 
 ![dependency-managers](https://nschloe.github.io/gh-trends/dependency-managers.svg)
 
-### Modern Unix tools
+### Command-line tools
 
-![modern-unix--tools](https://nschloe.github.io/gh-trends/modern-unix-tools.svg)
+![command-line-tools](https://nschloe.github.io/gh-trends/command-line-tools.svg)
 
 ### Command-line system monitoring
 

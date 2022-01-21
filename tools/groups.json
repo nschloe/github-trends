@@ -67,6 +67,16 @@
     "tcsh-org/tcsh",
     "zsh-users/zsh"
   ],
+  "command-prompts": [
+    "b-ryan/powerline-shell",
+    "enquirer/enquirer",
+    "nojhan/liquidprompt",
+    "Powerlevel9k/powerlevel9k",
+    "romkatv/powerlevel10k",
+    "sindresorhus/pure",
+    "spaceship-prompt/spaceship-prompt",
+    "starship/starship"
+  ],
   "terminal-recorders": [
     "asciinema/asciinema",
     "ConradIrwin/showterm",
@@ -304,6 +314,16 @@
     "barrust/pyspellchecker",
     "filyp/autocorrect",
     "pyenchant/pyenchant"
+  ],
+  "python-build-tools": [
+    "conda/conda",
+    "jazzband/pip-tools",
+    "pdm-project/pdm",
+    "pypa/flit",
+    "pypa/pip",
+    "pypa/pipenv",
+    "pypa/setuptools",
+    "python-poetry/poetry"
   ],
   "popular-javascript": [
     "airbnb/javascript",

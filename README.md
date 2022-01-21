@@ -189,6 +189,10 @@
 
 ![terminal-recorders](https://nschloe.github.io/gh-trends/terminal-recorders.svg)
 
+##### Command prompts
+
+![command-prompts](https://nschloe.github.io/gh-trends/command-prompts.svg)
+
 ### Fonts
 
 ##### Monospaced fonts

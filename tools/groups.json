@@ -213,6 +213,7 @@
     "waf-project/waf"
   ],
   "machine-learning": [
+    "apache/incubator-mxnet",
     "BVLC/caffe",
     "fastai/fastai",
     "keras-team/keras",
@@ -221,11 +222,14 @@
     "tensorflow/tensorflow",
     "Theano/Theano"
   ],
+
   "scientific-python": [
     "astropy/astropy",
     "biopython/biopython",
+    "cupy/cupy",
     "dask/dask",
     "DEAP/deap",
+    "google/jax",
     "jupyter/notebook",
     "numpy/numpy",
     "pandas-dev/pandas",
@@ -383,6 +387,7 @@
     "crystal-lang/crystal",
     "dart-lang/sdk",
     "dotnet/csharplang",
+    "Felienne/hedy",
     "golang/go",
     "JetBrains/kotlin",
     "JuliaLang/julia",

@@ -329,6 +329,10 @@
 
 ![github-actions](https://nschloe.github.io/gh-trends/github-actions.svg)
 
+### Icon sets
+
+![icon-sets](https://nschloe.github.io/gh-trends/icon-sets.svg)
+
 ### Related projects
 
 - [star-history](https://github.com/timqian/star-history)

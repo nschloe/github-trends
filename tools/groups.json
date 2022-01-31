@@ -222,16 +222,17 @@
     "tensorflow/tensorflow",
     "Theano/Theano"
   ],
-
-  "scientific-python": [
-    "astropy/astropy",
-    "biopython/biopython",
+  "python-array": [
     "cupy/cupy",
     "dask/dask",
-    "DEAP/deap",
     "google/jax",
+    "numpy/numpy"
+  ],
+  "python-scientific": [
+    "astropy/astropy",
+    "biopython/biopython",
+    "DEAP/deap",
     "jupyter/notebook",
-    "numpy/numpy",
     "pandas-dev/pandas",
     "psychopy/psychopy",
     "pydata/xarray",

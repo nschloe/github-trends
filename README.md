@@ -135,9 +135,13 @@
 
 ### Python
 
+##### Array/Tensor
+
+![python-array](https://nschloe.github.io/gh-trends/python-array.svg)
+
 ##### Science
 
-![scientific-python](https://nschloe.github.io/gh-trends/scientific-python.svg)
+![python-scientific](https://nschloe.github.io/gh-trends/python-scientific.svg)
 
 ##### Plotting
 

@@ -54,8 +54,11 @@ def fetch_data(
             cache = Cache(repo, cache_dir)
 
             data = cache.read()
+            old_len = len(data)
+
             new_data = _update(data, repo, token, progress_task=(progress, task2))
-            if new_data != data:
+
+            if old_len != len(new_data):
                 cache.write(new_data)
 
             out[repo] = new_data

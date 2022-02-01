@@ -170,12 +170,13 @@ def _update(
     new_numstars.reverse()
 
     times = old_times[:-1] + new_times
+
     # cumsum:
     cs = list(accumulate(new_numstars))
     n = len(cs)
     if len(old_numstars) > 0:
         for k in range(n):
-            cs[k] += old_numstars[-1][k]
+            cs[k] += old_numstars[-1]
     new_numstars = [int(item) for item in cs]
     # list concatenation:
     counts = old_numstars[:-1] + new_numstars

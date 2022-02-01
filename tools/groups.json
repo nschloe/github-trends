@@ -183,7 +183,6 @@
   ],
   "office-suites": ["LibreOffice/core", "apache/openoffice"],
   "computer-algebra-systems": [
-    "andrejv/maxima",
     "sagemath/sage",
     "sympy/sympy"
   ],
@@ -510,7 +509,6 @@
     "Yggdroot/indentLine"
   ],
   "nvim-plugins": [
-    "asvetliakov/vscode-neovim",
     "folke/tokyonight.nvim",
     "glepnir/lspsaga.nvim",
     "hrsh7th/nvim-cmp",
@@ -603,10 +601,10 @@
     "gustaYo/vue-chess",
     "jhlywa/chess.js",
     "LeelaChessZero/lc0",
+    "lichess-org/lila",
     "mcostalba/Stockfish",
     "niklasf/python-chess",
     "official-stockfish/Stockfish",
-    "ornicar/lila",
     "thomasahle/sunfish",
     "veloce/lichobile",
     "Zeta36/chess-alpha-zero"
@@ -688,7 +686,7 @@
     "microsoft/codetour",
     "microsoft/vscode-python",
     "Huachao/vscode-restclient",
-    "asvetliakov/vscode-neovim"
+    "vscode-neovim/vscode-neovim"
   ],
   "command-line-tools": [
     "bootandy/dust",
@@ -843,7 +841,7 @@
   ],
   "video-downloaders": [
     "coursera-dl/coursera-dl",
-    "iawia002/annie",
+    "iawia002/lux",
     "jely2002/youtube-dl-gui",
     "MrS0m30n3/youtube-dl-gui",
     "pytube/pytube",

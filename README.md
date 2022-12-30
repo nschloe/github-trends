@@ -30,6 +30,14 @@ All graphs are updated monthly.
 
 ![databases](plots/databases.svg)
 
+### Time-series databases
+
+![time-series-databases](plots/time-series-databases.svg)
+
+### Search engines
+
+![search-engines](plots/search-engines.svg)
+
 ### CSS frameworks
 
 ![css-frameworks](plots/css-frameworks.svg)
@@ -48,9 +56,17 @@ All graphs are updated monthly.
 
 ![javascript-bundlers](plots/javascript-bundlers.svg)
 
+##### Runtimes
+
+![javascript-runtimes](plots/javascript-runtimes.svg)
+
 ##### Testing frameworks
 
 ![javascript-testing-frameworks](plots/javascript-testing-frameworks.svg)
+
+##### End-to-end testing
+
+![javascript-e2e-testing](plots/javascript-e2e-testing.svg)
 
 ##### Browser automation
 
